@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Наша База — пространство для&nbsp;групп на&nbsp;Байкале</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#FFFFFF;
+  --white:#FFFFFF;
+  --sand:#8EC5E8;
+  --graphite:#2F2B28;
+  --text:#2E3133;
+  --text-light:#7A7A7A;
+  --baikal:#5FA8D3;
+  --baikal-light:#8EC5E8;
+  --shadow:0 2px 20px rgba(45,45,45,.05);
+  --shadow-hover:0 8px 40px rgba(45,45,45,.08);
+}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Inter',sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  overflow-x:hidden;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+
+/* PRELOADER */
+#preloader{
+  position:fixed;inset:0;z-index:9999;
+  background:var(--bg);
+  display:flex;align-items:center;justify-content:center;
+  flex-direction:column;gap:16px;
+  transition:opacity .6s,visibility .6s;
+}
+#preloader.hidden{opacity:0;visibility:hidden}
+.pl-logo{font-family:'Plus Jakarta Sans',sans-serif;font-size:18px;font-weight:700;color:var(--graphite);letter-spacing:-.3px}
+.pl-logo span{color:var(--baikal)}
+.pl-bar{width:100px;height:2px;background:var(--sand);border-radius:2px;overflow:hidden}
+.pl-bar::after{content:'';display:block;width:40%;height:100%;background:var(--baikal);border-radius:2px;animation:pl 1s ease-in-out infinite}
+@keyframes pl{0%{transform:translateX(-100%)}100%{transform:translateX(350%)}}
+
+/* NAV */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:1000;
+  padding:18px 40px;
+  display:flex;justify-content:space-between;align-items:center;
+  transition:all .4s;
+}
+nav.scrolled{background:rgba(255,255,255,.95);backdrop-filter:blur(16px);padding:12px 40px}
+.nav-logo{
+  font-family:'Plus Jakarta Sans',sans-serif;
+  font-size:22px;font-weight:700;color:var(--graphite);
+  text-decoration:none;letter-spacing:-.3px;
+}
+.nav-logo span{color:var(--baikal)}
+.nav-links{display:flex;gap:28px;list-style:none;align-items:center}
+.nav-links a{
+  color:#5F6368;text-decoration:none;
+  font-size:14px;font-weight:500;transition:color .3s;
+}
+.nav-links a:hover{color:var(--baikal)}
+.nav-cta{
+  background:var(--baikal);color:var(--white)!important;
+  padding:9px 22px;border-radius:100px;font-size:13px!important;
+  transition:background .3s;
+}
+.nav-cta:hover{background:#5F8A9A!important}
+
+/* HERO */
+.hero{
+  min-height:92vh;display:flex;align-items:center;
+  padding:60px 40px 40px;
+  background:var(--white);
+  position:relative;overflow:hidden;
+}
+.hero::before{
+  content:'';position:absolute;top:-30%;right:-10%;
+  width:660px;height:660px;
+  background:radial-gradient(circle,rgba(90,125,140,.06) 0%,transparent 70%);
+  border-radius:50%;
+  pointer-events:none;
+}
+.hero-inner{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:60px;max-width:1200px;margin:0 auto;
+  align-items:center;width:100%;
+  position:relative;z-index:1;
+}
+.hero h1{
+  font-family:'Plus Jakarta Sans',sans-serif;
+  font-size:clamp(30px,4.2vw,52px);
+  font-weight:700;color:var(--graphite);
+  line-height:1.15;letter-spacing:-.5px;
+  margin-bottom:16px;
+}
+.hero h1 .word>span{color:var(--baikal)}
+.hero p{
+  font-size:17px;color:#5F6368;line-height:1.7;
+  margin-bottom:32px;max-width:440px;
+}
+.hero-badge{
+  display:flex;align-items:center;gap:6px;
+  font-size:13px;color:var(--text-light);margin-bottom:28px;font-weight:500;
+}
+.hero-badge span:empty{width:4px;height:4px;border-radius:50%;background:var(--baikal);margin:0 4px;display:inline-block}
+.hero-buttons{display:flex;gap:12px;flex-wrap:wrap}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:14px 30px;border-radius:100px;
+  text-decoration:none;font-size:14px;font-weight:500;
+  transition:all .3s;cursor:pointer;border:none;
+}
+.btn-primary{background:var(--baikal);color:var(--white)}
+.btn-primary:hover{background:#5F8A9A;transform:translateY(-2px)}
+.btn-outline{border:1px solid var(--sand);color:var(--text);background:transparent}
+.btn-outline:hover{border-color:var(--baikal);color:var(--baikal);transform:translateY(-2px);background:rgba(95,168,211,.06)}
+.hero-photo{
+  border-radius:20px;overflow:hidden;outline:none;
+  aspect-ratio:5/4;
+  display:flex;flex-direction:column;
+  align-items:center;justify-content:center;gap:12px;
+  color:rgba(255,255,255,.25);
+  box-shadow:0 4px 24px rgba(0,0,0,.04);
+  transform:perspective(1000px) rotateY(0) rotateX(0);
+  transition:transform .15s ease-out,box-shadow .4s ease;
+}
+.hero-photo .icon,.hero-photo-label{display:none}
+.hero-scroll{
+  position:absolute;bottom:28px;left:50%;transform:translateX(-50%);
+  display:flex;flex-direction:column;align-items:center;gap:6px;
+  color:var(--text-light);font-size:10px;letter-spacing:2px;text-transform:uppercase;opacity:.35;
+}
+.scroll-dot{width:2px;height:14px;background:var(--graphite);border-radius:2px;animation:sd 2s ease-in-out infinite}
+@keyframes sd{0%,100%{transform:translateY(0);opacity:.3}50%{transform:translateY(6px);opacity:1}}
+
+/* SECTIONS */
+section{padding:100px 40px;border-top:1px solid rgba(142,197,232,0.2)}
+section:first-of-type{border-top:none}
+.section-inner{max-width:1200px;margin:0 auto}
+.label{
+  font-size:12px;letter-spacing:2px;text-transform:uppercase;
+  color:var(--baikal);font-weight:600;margin-bottom:12px;
+}
+.title{
+  font-family:'Plus Jakarta Sans',sans-serif;
+  font-size:clamp(26px,3.2vw,40px);
+  font-weight:700;color:var(--graphite);
+  line-height:1.2;letter-spacing:-.3px;margin-bottom:16px;
+}
+.sub{font-size:16px;color:var(--text-light);line-height:1.7;max-width:480px}
+
+/* PHOTO PLACEHOLDER */
+.photo{
+  border-radius:16px;overflow:hidden;
+  background:linear-gradient(160deg,var(--baikal-light),var(--baikal));
+  display:flex;flex-direction:column;
+  align-items:center;justify-content:center;gap:8px;
+  color:rgba(255,255,255,.2);position:relative;
+  min-height:286px;will-change:transform;
+  transform:translateY(var(--py,0));
+}
+.photo .icon{font-size:44px;opacity:.35;transition:transform .5s,opacity .5s}
+.photo:hover .icon{opacity:.55}
+.atm-grid+.photo{transition:transform .4s cubic-bezier(.22,1,.36,1),box-shadow .4s ease;cursor:pointer}
+.atm-grid+.photo:hover{transform:scale(1.02);box-shadow:0 8px 30px rgba(0,0,0,.08)}
+.why-list+.photo-grid img{transition:transform .4s cubic-bezier(.22,1,.36,1),box-shadow .4s ease;cursor:pointer}
+.why-list+.photo-grid img:hover{transform:scale(1.05);box-shadow:0 8px 30px rgba(0,0,0,.1)}
+
+.photo-label{color:rgba(255,255,255,.3);font-size:11px;text-align:center;padding:0 16px;max-width:260px}
+.photo-sm{min-height:176px}
+.photo-sm .icon{font-size:32px}
+
+/* ABOUT */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:stretch}
+.about-photos{display:flex;flex-direction:column;gap:16px}
+.about-photos .photo:first-child{min-height:352px}
+.about-photos .photo:last-child{flex-shrink:0}
+.about-text{display:flex;flex-direction:column;gap:16px;flex:1}
+.about-text .about-note{margin-top:auto;margin-bottom:0}
+.about-text p{font-size:15px;color:var(--text-light);line-height:1.9;margin-bottom:16px}
+.about-note{
+  display:flex;gap:16px;align-items:stretch;
+  padding:24px;background:#F5F9FC;
+  border-radius:12px;border-left:3px solid var(--baikal);
+}
+.about-avatar{width:90px;flex-shrink:0;border-radius:10px;background-size:cover;background-position:center}
+.about-note-text{flex:1}
+.about-note strong{display:block;font-size:15px;color:var(--graphite);margin-bottom:2px}
+.about-note span{font-size:13px;color:var(--text-light)}
+
+/* GRID CARDS */
+.card-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;max-width:800px;margin:40px auto 0;background:var(--sand);border-radius:12px;overflow:hidden}
+.card-grid-item{padding:32px 20px;background:#F5F9FC;text-align:center;transition:background .3s}
+.card-grid-item:hover{background:var(--white)}
+.card-grid-item .icon{font-size:26px;margin-bottom:8px}
+.card-grid-item h4{font-size:15px;font-weight:600;color:var(--graphite);margin-bottom:2px}
+.card-grid-item p{font-size:13px;color:var(--text-light);margin:0}
+
+/* WHY */
+.why-list{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:32px}
+.why-list li{display:flex;align-items:center;gap:12px;padding:16px 20px;background:#F5F9FC;border-radius:10px;font-size:14px;font-weight:500;color:var(--text);list-style:none;transition:all .3s}
+.why-list li:hover{box-shadow:var(--shadow);transform:translateY(-2px);background:var(--white)}
+.why-list li .ck{width:24px;height:24px;border-radius:50%;background:var(--bg);border:1px solid var(--sand);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:12px;color:var(--baikal)}
+
+/* ROOMS */
+.rooms{background:var(--white)}
+.rooms-grid{display:grid;grid-template-columns:1fr;gap:48px;margin-top:48px;align-items:start}
+.room-list{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.room-item{padding:18px;background:#F5F9FC;border-radius:10px;transition:all .3s}
+.room-item:hover{background:rgba(95,168,211,.06)}
+.room-item .icon{font-size:18px;margin-bottom:4px}
+.room-item strong{display:block;font-size:14px;color:var(--graphite);margin-bottom:2px}
+.room-item span{font-size:13px;color:var(--text-light)}
+.room-tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:16px}
+.room-tags span{padding:5px 12px;background:#F5F9FC;border-radius:100px;font-size:12px;color:var(--text-light);border:1px solid var(--sand)}
+.room-photos{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.room-photos .photo-grid{grid-column:span 2}
+.room-photos .photo-grid img,.room-photos>div:not(.photo-grid) img{transition:transform .4s cubic-bezier(.22,1,.36,1),box-shadow .4s ease;cursor:pointer;border-radius:10px}
+.room-photos .photo-grid img:hover,.room-photos>div:not(.photo-grid) img:hover{transform:scale(1.04);box-shadow:0 8px 30px rgba(0,0,0,.1)}
+
+/* SPACES */
+.spaces-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px}
+.sp-card{border-radius:12px;overflow:hidden;background:#F5F9FC;border:1px solid var(--sand);transition:all .3s}
+.sp-card:hover{box-shadow:var(--shadow-hover);transform:translateY(-3px);border-color:transparent}
+.sp-card:hover{box-shadow:var(--shadow-hover);transform:translateY(-3px)}
+.sp-card .photo{border-radius:0;min-height:154px}
+.sp-card-body{padding:16px}
+.sp-card-body h4{font-size:15px;font-weight:600;color:var(--graphite);margin-bottom:4px}
+.sp-card-body p{font-size:13px;color:var(--text-light);margin:0}
+
+/* BAIKAL */
+.baikal-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.baikal-text p{font-size:15px;color:var(--text-light);line-height:1.9;margin-bottom:16px}
+.baikal-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+.baikal-tags span{padding:5px 14px;background:var(--white);border-radius:100px;font-size:13px;color:var(--text-light);border:1px solid var(--sand)}
+
+/* ATMOSPHERE */
+.atm-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;max-width:800px;margin:40px auto 0;background:var(--sand);border-radius:12px;overflow:hidden}
+.atm-card{padding:32px 20px;text-align:center;background:#F5F9FC;transition:background .3s}
+.atm-card:hover{background:var(--white)}
+.atm-card .icon{font-size:26px;margin-bottom:8px}
+.atm-card h4{font-size:15px;font-weight:600;color:var(--graphite);margin-bottom:2px}
+.atm-card p{font-size:13px;color:var(--text-light);margin:0}
+
+/* BOOKING */
+.booking-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.booking-text p{font-size:15px;color:var(--text-light);line-height:1.9;margin-bottom:16px}
+.booking-tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px}
+.booking-tags span{padding:5px 14px;background:var(--bg);border-radius:100px;font-size:13px;color:var(--text)}
+.booking-note{padding:20px;background:#F5F9FC;border-radius:12px;font-size:14px;color:var(--text-light);border-left:3px solid var(--baikal);line-height:1.7}
+
+/* PRICE */
+.price-cards{display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:600px;margin:40px auto 0}
+.price-card{padding:36px 28px;text-align:center;background:#F5F9FC;border-radius:16px;transition:all .3s}
+.price-card:hover{box-shadow:var(--shadow-hover);transform:translateY(-4px)}
+.price-card h3{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--baikal);font-weight:600;margin-bottom:10px}
+.price-amount{font-family:'Plus Jakarta Sans',sans-serif;font-size:36px;font-weight:700;color:var(--baikal);margin-bottom:4px}
+.price-amount span{font-size:16px;font-weight:400;color:var(--text-light)}
+.price-card p{font-size:14px;color:var(--text-light);margin:0}
+.price-free{font-size:13px;color:var(--baikal);font-weight:500;margin-top:10px}
+
+/* CONTACT */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;margin-top:48px}
+.c-item{display:flex;align-items:center;gap:14px;padding:16px 0;border-bottom:1px solid var(--sand)}
+.c-item:last-child{border:none}
+.c-item .ci{
+  width:40px;height:40px;background:rgba(95,168,211,.12);border-radius:10px;
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:16px;color:var(--baikal);
+}
+.c-item strong{display:block;font-size:14px;color:var(--graphite);margin-bottom:2px}
+.c-item span{font-size:13px;color:var(--text-light)}
+
+/* ESSENTIALS */
+.essentials-grid{
+  display:grid;
+  grid-template-columns:repeat(8,1fr);
+  gap:12px;
+  max-width:900px;margin:36px auto 0;
+}
+.ess-item{
+  display:flex;flex-direction:column;align-items:center;gap:8px;
+  padding:20px 8px;
+  background:#F5F9FC;border-radius:12px;
+  text-align:center;font-size:13px;font-weight:500;color:var(--text);
+  transition:all .3s;
+}
+.ess-item:hover{background:rgba(95,168,211,.06);transform:translateY(-3px);box-shadow:var(--shadow)}
+.ess-icon{font-size:24px;line-height:1}
+
+/* REVIEWS */
+.reviews-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:16px;
+  max-width:1000px;margin:40px auto 0;
+}
+.rev-card{
+  padding:28px 24px;
+  background:#F5F9FC;border-radius:14px;
+  transition:all .3s;
+}
+.rev-card:hover{box-shadow:var(--shadow-hover);transform:translateY(-3px)}
+.rev-author{
+  display:flex;align-items:center;gap:12px;
+  margin-bottom:16px;
+}
+.rev-avatar{
+  width:44px;height:44px;border-radius:50%;
+  background:linear-gradient(135deg,var(--baikal),var(--baikal-light));
+  display:flex;align-items:center;justify-content:center;
+  color:var(--white);font-size:16px;font-weight:600;flex-shrink:0;
+}
+.rev-author strong{display:block;font-size:14px;color:var(--graphite);margin-bottom:2px}
+.rev-author span{font-size:12px;color:var(--text-light)}
+.rev-card p{
+  font-size:14px;color:var(--text-light);line-height:1.7;
+  font-style:italic;margin:0;
+}
+
+/* NUMBERS */
+.num{color:var(--baikal);font-weight:600}
+
+/* REVEAL */
+.r{opacity:0;transform:translateY(30px) scale(.97);transition:all .8s cubic-bezier(.22,1,.36,1)}
+.r.v{opacity:1;transform:translateY(0) scale(1)}
+.r1{transition-delay:.1s}.r2{transition-delay:.2s}.r3{transition-delay:.3s}.r4{transition-delay:.4s}
+.hero-fade{opacity:0;transform:translateY(24px);animation:hf .8s cubic-bezier(.22,1,.36,1) forwards}
+.hf1{animation-delay:.1s}.hf2{animation-delay:.25s}.hf3{animation-delay:.4s}.hf4{animation-delay:.55s}
+.hero-photo{opacity:0;animation:hf 1s .35s forwards}
+@keyframes hf{to{opacity:1}}
+.hero-title{overflow:hidden;line-height:1.2}
+.hero-title .word{display:inline-block;opacity:0;transform:translateY(60px) rotateX(20deg)}
+.hero-title.play .word{animation:wordIn .7s cubic-bezier(.22,1,.36,1) forwards}
+.hero-title.play .word-1{animation-delay:.1s}.hero-title.play .word-2{animation-delay:.2s}.hero-title.play .word-3{animation-delay:.3s}
+.hero-title.play .word-4{animation-delay:.38s}.hero-title.play .word-5{animation-delay:.46s}.hero-title.play .word-6{animation-delay:.54s}
+.hero-title.play .word-7{animation-delay:.62s}.hero-title.play .word-8{animation-delay:.7s}.hero-title.play .word-9{animation-delay:.78s}
+@keyframes wordIn{to{opacity:1;transform:translateY(0) rotateX(0)}}
+.hero-title .word>span{background:linear-gradient(135deg,var(--baikal),var(--baikal-light),var(--baikal));background-size:200% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:shimmer 3s ease-in-out infinite}
+@keyframes shimmer{0%,100%{background-position:0% center}50%{background-position:100% center}}
+
+/* FOOTER */
+footer{background:var(--graphite) url('bg.jpg') center/cover;padding:64px 40px 32px;text-align:center;position:relative}
+footer::before{content:'';position:absolute;inset:0;background:rgba(47,43,40,.65);pointer-events:none}
+footer>*{position:relative;z-index:1}
+footer .fl{font-family:'Plus Jakarta Sans',sans-serif;font-size:20px;font-weight:700;color:var(--bg);margin-bottom:10px}
+footer .fl span{color:var(--baikal)}
+footer p{color:rgba(255,255,255,.35);font-size:13px;max-width:380px;margin:0 auto 20px;line-height:1.7}
+footer .copy{color:rgba(255,255,255,.18);font-size:12px}
+
+/* RESPONSIVE */
+@media(max-width:968px){
+  .hero-inner,.about-grid,.baikal-grid,.booking-grid,.contact-grid,.rooms-grid{grid-template-columns:1fr;gap:40px}
+  .hero{padding:80px 24px 40px}
+  .card-grid{grid-template-columns:repeat(2,1fr)}
+  .spaces-grid{grid-template-columns:repeat(2,1fr)}
+  .atm-grid{grid-template-columns:repeat(2,1fr)}
+  .essentials-grid{grid-template-columns:repeat(4,1fr)}
+  .reviews-grid{grid-template-columns:1fr}
+  .section-inner{padding:0}
+}
+@media(max-width:640px){
+  .hero h1{font-size:28px}.hero-buttons{flex-direction:column}.btn{justify-content:center}
+  .card-grid{grid-template-columns:1fr}.spaces-grid,.atm-grid{grid-template-columns:1fr}
+  .why-list{grid-template-columns:1fr}.room-list{grid-template-columns:1fr}
+  .room-photos{grid-template-columns:1fr}.room-photos .photo:first-child{grid-column:span 1}
+  .price-cards{grid-template-columns:1fr}
+  .essentials-grid{grid-template-columns:repeat(2,1fr)}
+  nav{padding:14px 20px}nav.scrolled{padding:10px 20px}.nav-links{display:none}
+  section{padding:60px 20px}
+}
+</style>
+</head>
+<body>
+
+<div id="preloader">
+  <div class="pl-logo">Наша <span>База</span></div>
+  <div class="pl-bar"></div>
+</div>
+
+<nav id="nav">
+  <a href="#" class="nav-logo">Наша <span>База</span></a>
+  <ul class="nav-links">
+    <li><a href="#about">О нас</a></li>
+    <li><a href="#rooms">Проживание</a></li>
+    <li><a href="#spaces">Пространства</a></li>
+    <li><a href="#baikal">Байкал</a></li>
+    <li><a href="#price">Стоимость</a></li>
+    <li><a href="#contact">Контакты</a></li>
+     <li><a href="https://msngr.me/79025631716" target="_blank" class="nav-cta">Связаться</a></li>
+  </ul>
+</nav>
+
+<!-- 1. HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-text">
+      <div class="hero-badge hero-fade hf1">📍 с. Сухая, Бурятия <span></span> <span class="num">10</span>&nbsp;мин пешком до&nbsp;Байкала</div>
+      <h1 class="hero-title"><span class="word word-1">Пространство</span> <span class="word word-2">для</span>&nbsp;<span class="word word-3">групп,</span> <span class="word word-4">программ</span> <span style="white-space:nowrap"><span class="word word-5">и</span>&nbsp;<span class="word word-6">отдыха</span></span> <span class="word word-7"><span>на&nbsp;Байкале</span></span></h1>
+      <p class="hero-fade hf3">Для детских смен, тренингов, выездных школ, спортивных сборов и&nbsp;организованных коллективов.</p>
+      <div class="hero-buttons hero-fade hf4">
+        <a href="https://msngr.me/79025631716" target="_blank" class="btn btn-primary">✈️ Узнать свободные даты</a>
+        <a href="#spaces" class="btn btn-outline">Что есть на&nbsp;базе</a>
+      </div>
+    </div>
+    <div class="hero-photos">
+      <div class="hero-photo" id="heroPhoto" style="background:var(--baikal) url('image 2.webp') center/cover no-repeat">
+        <div class="icon">🌅</div>
+        <div class="hero-photo-label">Закат над&nbsp;Байкалом, люди на&nbsp;веранде</div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-scroll">
+    <span>Листайте</span>
+    <div class="scroll-dot"></div>
+  </div>
+</section>
+
+<!-- 2. О ПРОСТРАНСТВЕ -->
+<section id="about">
+  <div class="section-inner">
+    <div class="about-grid">
+      <div class="about-photos">
+        <div class="photo r" id="aboutPhoto" style="background:var(--baikal) url('image 1.webp') center/cover no-repeat"></div>
+        <div class="photo r" id="aboutPhoto2" style="background:var(--baikal) url('image 3.webp') center/cover no-repeat"></div>
+      </div>
+      <div class="about-text">
+        <div class="label r">О пространстве</div>
+        <h2 class="title r r1">База, созданная организатором групп —<br>для организаторов групп</h2>
+        <p class="r r3" style="font-weight:600;color:var(--graphite)">В&nbsp;<span class="num">2024</span> году появилась «Наша База» в&nbsp;Сухой, как&nbsp;ответ на&nbsp;многолетний поиск подходящего места для&nbsp;детских выездных программ.</p>
+        <div class="about-note r r3" style="margin-top:auto">
+          <div class="about-avatar" style="background-image:url('anna.webp')"></div>
+          <div class="about-note-text">
+            <strong>Анна Марактаева</strong>
+            <span>Психолог со&nbsp;стажем более <span class="num">30</span> лет и&nbsp;организатор выездных программ с&nbsp;<span class="num">2013</span> года. В&nbsp;своей работе она создаёт атмосферу доверия, спокойствия и&nbsp;настоящего человеческого общения для&nbsp;детей, семей и&nbsp;участников команд.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 3. ДЛЯ КОГО -->
+<section style="background:var(--white)" id="forwhom">
+  <div class="section-inner">
+    <div class="label r" style="text-align:center">Для кого</div>
+    <h2 class="title r r1" style="text-align:center">Кому подходит «Наша&nbsp;База»</h2>
+    <div class="card-grid">
+      <div class="card-grid-item r"><div class="icon">🧒</div><h4>Детские программы</h4><p>Смены и лагеря</p></div>
+      <div class="card-grid-item r r1"><div class="icon">🏅</div><h4>Спортивные сборы</h4><p>Группы и команды</p></div>
+      <div class="card-grid-item r r1"><div class="icon">🧘</div><h4>Тренинги и ретриты</h4><p>Практики и обучение</p></div>
+      <div class="card-grid-item r r2"><div class="icon">🎨</div><h4>Творческие школы</h4><p>Мастер-классы</p></div>
+      <div class="card-grid-item r r2"><div class="icon">🎵</div><h4>Музыкальные, языковые, шахматные</h4><p>Интенсивы и лагеря</p></div>
+      <div class="card-grid-item r r3"><div class="icon">📚</div><h4>Образовательные интенсивы</h4><p>Выездные школы</p></div>
+    </div>
+    <div class="photo r" style="max-width:800px;margin:32px auto 0;min-height:396px;background:var(--baikal) url('image 4.webp') center/cover no-repeat"></div>
+  </div>
+</section>
+
+<!-- 4. ПОЧЕМУ -->
+<section id="why">
+  <div class="section-inner">
+    <div class="label r">Преимущества</div>
+    <h2 class="title r r1">Почему группам у&nbsp;нас удобно</h2>
+    <p class="sub r r2" style="max-width:520px">Место, где продумано всё для&nbsp;работы группы: от&nbsp;тишины до&nbsp;пространств для&nbsp;занятий.</p>
+    <ul class="why-list">
+      <li class="r"><div class="ck">✓</div>Закрытая территория — безопасно и&nbsp;спокойно</li>
+
+      <li class="r r1"><div class="ck">✓</div>Пространства для&nbsp;занятий — в&nbsp;помещении и&nbsp;в&nbsp;беседке на&nbsp;воздухе</li>
+      <li class="r r2"><div class="ck">✓</div>Благоустроенные номера (душ, туалет, горячая вода)</li>
+      <li class="r r2"><div class="ck">✓</div>Вместимость до&nbsp;<span class="num">70</span> человек</li>
+      <li class="r r3"><div class="ck">✓</div>Просторная столовая и&nbsp;оборудованная кухня</li>
+      <li class="r r3"><div class="ck">✓</div>Спортплощадка: волейбол, мини-футбол, баскетбол, большой теннис, настольный теннис</li>
+      <li class="r r3"><div class="ck">✓</div>Байкал в&nbsp;<span class="num">10</span> минутах пешком — песчаный пляж и&nbsp;тишина</li>
+    </ul>
+    <div class="photo-grid" style="display:flex;gap:12px;margin-top:28px;max-width:900px;margin-left:auto;margin-right:auto;justify-content:center">
+      <img class="r" src="image 5.webp" alt="" style="height:220px;width:auto;border-radius:12px;display:block">
+      <img class="r r1" src="image 6.webp" alt="" style="height:220px;width:auto;border-radius:12px;display:block">
+      <img class="r r1" src="image 7.webp" alt="" style="height:220px;width:auto;border-radius:12px;display:block">
+      <img class="r r2" src="image 8.webp" alt="" style="height:220px;width:auto;border-radius:12px;display:block">
+      <img class="r r2" src="image 9.webp" alt="" style="height:220px;width:auto;border-radius:12px;display:block">
+      <img class="r r3" src="image 28.jpg" alt="" style="height:220px;width:auto;border-radius:12px;display:block">
+    </div>
+  </div>
+</section>
+
+<!-- 5. ВСЁ НЕОБХОДИМОЕ -->
+<section style="background:var(--white);padding:60px 40px" id="essentials">
+  <div class="section-inner">
+    <div class="label r" style="text-align:center">Удобства</div>
+    <h2 class="title r r1" style="text-align:center">Всё необходимое для комфортного отдыха</h2>
+    <div class="essentials-grid">
+      <div class="ess-item r"><div class="ess-icon">🚿</div><span>Горячая вода</span></div>
+      <div class="ess-item r r1"><div class="ess-icon">🔥</div><span>Обогреватели</span></div>
+      <div class="ess-item r r1"><div class="ess-icon">🍽️</div><span>Столовая</span></div>
+      <div class="ess-item r r2"><div class="ess-icon">👨‍🍳</div><span>Оборуд. кухня</span></div>
+      <div class="ess-item r r2"><div class="ess-icon">📖</div><span>Зал для занятий</span></div>
+      <div class="ess-item r r3"><div class="ess-icon">🌿</div><span>Беседки</span></div>
+      <div class="ess-item r r3"><div class="ess-icon">🏋️</div><span>Спортзона</span></div>
+      <div class="ess-item r r3"><div class="ess-icon">📶</div><span>Wi-Fi</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- 6. ПРОЖИВАНИЕ -->
+<section class="rooms" id="rooms">
+  <div class="section-inner">
+    <div class="label r">Проживание</div>
+    <h2 class="title r r1">Комфортное размещение для&nbsp;групп</h2>
+    <p class="sub r r2">Благоустроенные номера разного формата. В&nbsp;каждом — душ, туалет, горячая вода, обогреватели.</p>
+    <div class="room-photos" style="margin:48px 0 32px">
+      <div class="photo-grid" style="display:flex;gap:8px;grid-column:span 2;justify-content:center">
+        <img class="r" src="image 10.jpg" alt="" style="height:220px;width:auto;border-radius:10px;display:block">
+        <img class="r r1" src="image 11.jpg" alt="" style="height:220px;width:auto;border-radius:10px;display:block">
+        <img class="r r1" src="image 12.jpg" alt="" style="height:220px;width:auto;border-radius:10px;display:block">
+        <img class="r r2" src="image 13.webp" alt="" style="height:220px;width:auto;border-radius:10px;display:block">
+        <img class="r r2" src="image 14.jpg" alt="" style="height:220px;width:auto;border-radius:10px;display:block">
+      </div>
+      <div style="display:flex;gap:8px;grid-column:span 2;justify-content:center">
+        <img class="r" src="image 22.jpg" alt="" style="height:220px;width:auto;border-radius:10px;display:block">
+        <img class="r r1" src="image 15.webp" alt="" style="height:220px;width:auto;border-radius:10px;display:block">
+        <img class="r r1" src="image 16.webp" alt="" style="height:220px;width:auto;border-radius:10px;display:block">
+        <img class="r r2" src="image 17.jpg" alt="" style="height:220px;width:auto;border-radius:10px;display:block">
+        <img class="r r2" src="image 18.webp" alt="" style="height:220px;width:auto;border-radius:10px;display:block">
+        <img class="r r2" src="image 19.webp" alt="" style="height:220px;width:auto;border-radius:10px;display:block">
+      </div>
+    </div>
+    <div class="rooms-grid">
+      <div>
+        <div class="room-list">
+          <div class="room-item r"><div class="icon">🛏️</div><strong>2-местные</strong></div>
+          <div class="room-item r r1"><div class="icon">🛌</div><strong>3-местные</strong><span>Небольшие группы</span></div>
+          <div class="room-item r r2"><div class="icon">🛌</div><strong>4-местные</strong><span>Небольшие группы</span></div>
+          <div class="room-item r r3"><div class="icon">🏠</div><strong>Комната на&nbsp;8&nbsp;мест</strong><span>Отдельный корпус</span></div>
+        </div>
+        <div class="room-tags r">
+          <span>🚿 Душ</span><span>🚽 Туалет</span><span>💧 Горячая вода</span><span>🔥 Обогреватели</span><span>🪑 Мебель</span><span>📶 Wi-Fi</span>
+        </div>
+        <div class="r r3" style="margin-top:20px;padding:20px;background:#F5F9FC;border-radius:12px;text-align:center">
+          <strong style="font-family:'Plus Jakarta Sans',sans-serif;font-size:22px">до&nbsp;<span class="num">70</span>&nbsp;человек</strong><br>
+          <span style="font-size:14px;color:var(--text-light)">комфортное размещение организованных групп</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 7. ОБЩИЕ ПРОСТРАНСТВА -->
+<section id="spaces">
+  <div class="section-inner">
+    <div class="label r" style="text-align:center">Инфраструктура</div>
+    <h2 class="title r r1" style="text-align:center">Общие пространства</h2>
+    <div class="spaces-grid">
+      <div class="sp-card r"><img loading="lazy" src="image 20.webp" alt="" style="width:100%;height:176px;object-fit:cover;display:block"><div class="sp-card-body"><h4>Просторная столовая</h4><p>Обеденный зал для&nbsp;групп</p></div></div>
+      <div class="sp-card r r1"><img loading="lazy" src="image 21.webp" alt="" style="width:100%;height:176px;object-fit:cover;display:block"><div class="sp-card-body"><h4>Оборудованная кухня</h4><p>Всё для&nbsp;приготовления</p></div></div>
+      <div class="sp-card r r1"><img loading="lazy" src="image 23.jpg" alt="" style="width:100%;height:176px;object-fit:cover;display:block"><div class="sp-card-body"><h4>Зал для&nbsp;занятий</h4><p>Просторное помещение</p></div></div>
+      <div class="sp-card r r2"><img loading="lazy" src="image 24.webp" alt="" style="width:100%;height:176px;object-fit:cover;display:block"><div class="sp-card-body"><h4>Беседки и&nbsp;веранда</h4><p>Отдых на&nbsp;воздухе</p></div></div>
+      <div class="sp-card r r2"><img loading="lazy" src="image 25.jpg" alt="" style="width:100%;height:176px;object-fit:cover;display:block"><div class="sp-card-body"><h4>Спортивная зона</h4><p>Турники, площадка</p></div></div>
+      <div class="sp-card r r3"><img loading="lazy" src="image 26.webp" alt="" style="width:100%;height:176px;object-fit:cover;display:block"><div class="sp-card-body"><h4>Мангал</h4><p>Для вечерних посиделок</p></div></div>
+      <div class="sp-card r r4"><img loading="lazy" src="image 27.webp" alt="" style="width:100%;height:176px;object-fit:cover;display:block"><div class="sp-card-body"><h4>Баня</h4><p>Отдых и&nbsp;восстановление</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 8. БАЙКАЛ -->
+<section id="baikal">
+  <div class="section-inner">
+    <div class="baikal-grid">
+      <div class="photo r" id="baikalPhoto" style="min-height:330px;background:var(--baikal) url('image 29.webp') center/cover no-repeat"></div>
+      <div class="baikal-text">
+        <div class="label r">Байкал</div>
+        <h2 class="title r r1">Рядом с&nbsp;великим озером</h2>
+        <p class="r r2">До&nbsp;берега Байкала — <span class="num">10</span>&nbsp;минут пешком. Песчаный пляж, тишина, простор и&nbsp;возможность по-настоящему выдохнуть.</p>
+        <p class="r r3">Место подходит не&nbsp;только для&nbsp;отдыха, но&nbsp;и&nbsp;для&nbsp;программ, где важны атмосфера и&nbsp;состояние группы.</p>
+        <div class="baikal-tags r r3">
+          <span>🏖️ Песчаный пляж</span><span>🌅 Закаты</span><span>🌲 Тишина</span><span>💨 Свежий воздух</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 9. АТМОСФЕРА -->
+<section style="background:var(--white)" id="atmosphere">
+  <div class="section-inner">
+    <div class="label r" style="text-align:center">Атмосфера</div>
+    <h2 class="title r r1" style="text-align:center">Атмосфера «Нашей Базы»</h2>
+    <p class="sub r r2" style="margin:0 auto;text-align:center">Мы хотим, чтобы&nbsp;здесь было тепло и&nbsp;по-настоящему хорошо группе</p>
+    <div class="atm-grid">
+      <div class="atm-card r"><div class="icon">🌆</div><h4>Вечерние разговоры на&nbsp;веранде</h4><p>Уютные вечера</p></div>
+      <div class="atm-card r r1"><div class="icon">🧒</div><h4>Дети, играющие во&nbsp;дворе</h4><p>Свобода и&nbsp;радость</p></div>
+      <div class="atm-card r r1"><div class="icon">🎤</div><h4>Караоке и&nbsp;дискотеки</h4><p>Веселье для&nbsp;всех</p></div>
+      <div class="atm-card r r2"><div class="icon">🎬</div><h4>Проектор с&nbsp;экраном</h4><p>Кино и&nbsp;разбор игр</p></div>
+      <div class="atm-card r r2"><div class="icon">🃏</div><h4>Настольные игры в&nbsp;беседке</h4><p>Командный досуг</p></div>
+      <div class="atm-card r r3"><div class="icon">🍽️</div><h4>Совместные ужины</h4><p>Общение за&nbsp;столом</p></div>
+    </div>
+    <div class="photo r" style="max-width:800px;margin:32px auto 0;min-height:242px;background:var(--baikal) url('image 31.webp') center/cover no-repeat"></div>
+  </div>
+</section>
+
+<!-- 10. КАК ПРОХОДЯТ ДНИ -->
+<section id="days">
+  <div class="section-inner">
+    <div class="label r" style="text-align:center">Будни</div>
+    <h2 class="title r r1" style="text-align:center">Как проходят дни на&nbsp;«Нашей&nbsp;Базе»</h2>
+    <div class="photo-grid" style="display:flex;gap:12px;margin-top:28px;max-width:900px;margin-left:auto;margin-right:auto;justify-content:center">
+      <img class="r" src="image 34.webp" alt="" style="height:220px;width:auto;border-radius:12px;display:block">
+      <img class="r r1" src="image 35.webp" alt="" style="height:220px;width:auto;border-radius:12px;display:block">
+      <img class="r r1" src="image 36.webp" alt="" style="height:220px;width:auto;border-radius:12px;display:block">
+      <img class="r r2" src="image 37.webp" alt="" style="height:220px;width:auto;border-radius:12px;display:block">
+      <img class="r r2" src="image 38.webp" alt="" style="height:220px;width:auto;border-radius:12px;display:block">
+      <img class="r r3" src="image 39.webp" alt="" style="height:220px;width:auto;border-radius:12px;display:block">
+    </div>
+  </div>
+</section>
+
+<!-- 11. ОТЗЫВЫ -->
+<section style="background:var(--white)" id="reviews">
+  <div class="section-inner">
+    <div class="label r" style="text-align:center">Отзывы</div>
+    <h2 class="title r r1" style="text-align:center">Что говорят организаторы</h2>
+    <div class="reviews-grid">
+      <div class="rev-card r">
+        <div class="rev-author">
+          <div class="rev-avatar"><span>Е</span></div>
+          <div>
+            <strong>Елена</strong>
+            <span>Ведущая детских программ</span>
+          </div>
+        </div>
+        <p>«Приезжаем с&nbsp;группой уже второй год. Здесь действительно удобно работать: есть зал для&nbsp;занятий, тихо, никто не&nbsp;мешает. Дети в&nbsp;восторге от&nbsp;Байкала и&nbsp;спортивной площадки.»</p>
+      </div>
+      <div class="rev-card r r1">
+        <div class="rev-author">
+          <div class="rev-avatar"><span>С</span></div>
+          <div>
+            <strong>Светлана</strong>
+            <span>Организатор тренингов</span>
+          </div>
+        </div>
+        <p>«Наконец нашла место, где можно провести ретрит с&nbsp;группой до&nbsp;<span class="num">30</span>&nbsp;человек. Всё продумано: столовая, кухня, номера с&nbsp;удобствами. И&nbsp;Байкал в&nbsp;двух минутах — это магия.»</p>
+      </div>
+      <div class="rev-card r r2">
+        <div class="rev-author">
+          <div class="rev-avatar"><span>М</span></div>
+          <div>
+            <strong>Михаил</strong>
+            <span>Тренер спортивной команды</span>
+          </div>
+        </div>
+        <p>«Отличная база для&nbsp;сборов. Закрытая территория, турники, просторная столовая. Разместили всю команду — <span class="num">25</span>&nbsp;человек. Обязательно вернёмся в&nbsp;следующем сезоне.»</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 12. БРОНИРОВАНИЕ -->
+<section id="booking">
+  <div class="section-inner">
+    <div class="booking-grid">
+      <div class="booking-text">
+        <div class="label r">Бронирование</div>
+        <h2 class="title r r1">Как забронировать</h2>
+        <p class="r r2">База бронируется организованными группами:</p>
+        <div class="baikal-tags r r2">
+          <span>🧒 Детскими</span><span>🏅 Спортивными</span><span>📚 Обучающими</span><span>🎨 Творческими</span><span>🧘‍♂️ Тренинговыми</span>
+        </div>
+        <p class="r r2">Основной формат — смены по&nbsp;<span class="num">10</span> дней в&nbsp;летние месяцы.</p>
+        <p class="r r3">Питание организовано — привлекаем поваров, готовим по&nbsp;технологическим картам.</p>
+        <div class="booking-note r r4">
+          ⚠️ Некоторые даты уже заняты. Многие группы бронируют заранее.
+        </div>
+        <a href="https://msngr.me/79025631716" target="_blank" class="btn btn-primary r r3" style="display:inline-flex;margin-top:24px">✈️ Узнать свободные даты</a>
+      </div>
+      <div class="photo r r2" style="min-height:280px;background:var(--baikal) url('image 33.webp') center/cover no-repeat"></div>
+    </div>
+  </div>
+</section>
+
+<!-- 13. СТОИМОСТЬ -->
+<section style="background:var(--white)" id="price">
+  <div class="section-inner">
+    <div class="label r" style="text-align:center">Стоимость</div>
+    <h2 class="title r r1" style="text-align:center">Цены на&nbsp;проживание</h2>
+    <div class="price-cards" style="grid-template-columns:1fr;max-width:500px;margin:0 auto">
+      <div class="price-card r">
+        <h3>Организованные группы</h3>
+        <div class="price-amount">2&nbsp;700 <span>₽</span></div>
+        <p>с&nbsp;человека за&nbsp;сутки, проживание + питание</p>
+        <a href="https://msngr.me/79025631716" target="_blank" class="btn btn-primary" style="display:inline-flex;margin-top:16px;padding:10px 22px;font-size:13px">Забронировать</a>
+      </div>
+    </div>
+    <div class="photo r" style="max-width:600px;margin:28px auto 0;min-height:200px;background:var(--baikal) url('image 30.webp') center/cover no-repeat"></div>
+  </div>
+</section>
+
+<!-- 14. КОНТАКТЫ -->
+<section id="contact">
+  <div class="section-inner">
+    <div class="label r" style="text-align:center">Контакты</div>
+    <h2 class="title r r1" style="text-align:center">Свяжитесь с&nbsp;нами</h2>
+    <div class="contact-grid">
+      <div>
+        <div class="c-item r"><div class="ci">📍</div><div><strong>Адрес</strong><span>Республика Бурятия, Кабанский район, село Сухая, Байкальская 33</span></div></div>
+        <div class="c-item r r1"><div class="ci">🚗</div><div><strong>Как добраться</strong><span>Автобус из&nbsp;Улан-Удэ, на&nbsp;машине из&nbsp;Улан-Удэ и&nbsp;Иркутска</span></div></div>
+        <div class="c-item r r2"><div class="ci">🌊</div><div><strong>До&nbsp;Байкала</strong><span><span class="num">10</span>&nbsp;минут пешком</span></div></div>
+        <div class="c-item r r3"><div class="ci">✈️</div><div><strong>Max / VK</strong><span>Анна — +7&nbsp;902&nbsp;563&nbsp;17&nbsp;16</span></div></div>
+        <div class="r r3" style="margin-top:20px;display:flex;flex-direction:column;gap:8px">
+          <a href="https://msngr.me/79025631716" target="_blank" class="btn btn-primary" style="font-size:13px;padding:12px 24px;text-align:center;justify-content:center">Написать в Max</a>
+          <a href="https://vk.me/annamaraktaeva" target="_blank" class="btn btn-outline" style="font-size:13px;padding:12px 24px;text-align:center;justify-content:center">Написать во&nbsp;ВКонтакте</a>
+          <a href="https://t.me/sukhaya33" target="_blank" class="btn btn-outline" style="font-size:13px;padding:12px 24px;text-align:center;justify-content:center">Канал «Наша&nbsp;База в&nbsp;Сухой»</a>
+        </div>
+      </div>
+      <div class="photo r r2" style="min-height:280px;background:var(--baikal) url('image 32.webp') center/cover no-repeat"></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="fl">Наша <span>База</span></div>
+  <p>Пространство для&nbsp;групп, программ и&nbsp;отдыха на&nbsp;Байкале. Село Сухая, Республика Бурятия.</p>
+  <div class="copy">© 2026 Наша База</div>
+</footer>
+
+<script>
+window.addEventListener('load',()=>{setTimeout(()=>{document.getElementById('preloader').classList.add('hidden');document.querySelector('.hero-title')?.classList.add('play')},500)});
+
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>{requestAnimationFrame(()=>{nav.classList.toggle('scrolled',window.scrollY>60)})});
+
+const observer=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('v')})},{threshold:.12});
+document.querySelectorAll('.r').forEach(el=>observer.observe(el));
+
+// Mouse 3D effect on hero photo
+(function(){
+  ['heroPhoto','aboutPhoto','baikalPhoto','aboutPhoto2'].forEach(function(id){
+    const el=document.getElementById(id);
+    if(!el)return;
+    let entered=false;
+    el.addEventListener('mouseenter',function(e){
+      entered=true;
+      const r=el.getBoundingClientRect();
+      const x=(e.clientX-r.left)/r.width-.5;
+      const y=(e.clientY-r.top)/r.height-.5;
+      el.style.transition='none';
+      el.style.transform='perspective(1000px) rotateY('+(x*8)+'deg) rotateX('+(-y*8)+'deg)';
+      el.style.boxShadow='0 12px 40px rgba(0,0,0,.1)';
+      requestAnimationFrame(function(){el.style.transition=''});
+    });
+    el.addEventListener('mousemove',function(e){
+      if(!entered)return;
+      const r=el.getBoundingClientRect();
+      const x=(e.clientX-r.left)/r.width-.5;
+      const y=(e.clientY-r.top)/r.height-.5;
+      el.style.transform='perspective(1000px) rotateY('+(x*8)+'deg) rotateX('+(-y*8)+'deg)';
+      el.style.boxShadow='0 12px 40px rgba(0,0,0,.1)';
+    });
+    el.addEventListener('mouseleave',function(){
+      entered=false;
+      el.style.transform='';
+      el.style.boxShadow='';
+    });
+  });
+})();
+
+// Parallax on scroll
+(function(){
+  const photos=document.querySelectorAll('.photo');
+  let ticking=false;
+  window.addEventListener('scroll',()=>{
+    if(!ticking){requestAnimationFrame(()=>{
+      photos.forEach(p=>{
+        const r=p.getBoundingClientRect();
+        if(r.top<window.innerHeight&&r.bottom>0){
+          const amt=(r.top/window.innerHeight-.3)*24;
+          p.style.setProperty('--py',amt+'px');
+        }
+      });ticking=false});ticking=true}
+  });
+})();
+</script>
+</body>
+</html>
