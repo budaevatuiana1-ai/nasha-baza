@@ -68,22 +68,23 @@ nav.scrolled{background:rgba(255,255,255,.95);backdrop-filter:blur(16px);padding
 .nav-logo span{color:var(--baikal-light)}
 nav.scrolled .nav-logo{color:var(--graphite)}
 nav.scrolled .nav-logo span{color:var(--baikal)}
-.nav-links{display:flex;gap:28px;list-style:none;align-items:center}
+.nav-links{position:fixed;right:40px;top:18px;display:flex;gap:28px;list-style:none;align-items:center;z-index:1000;transition:all .4s}
+nav.scrolled ~ .nav-links{top:12px}
 .nav-links a{
   color:rgba(255,255,255,.85);text-decoration:none;
   font-size:14px;font-weight:500;transition:color .3s;
 }
 .nav-links a:hover{color:var(--white)}
-nav.scrolled .nav-links a{color:#5F6368}
-nav.scrolled .nav-links a:hover{color:var(--baikal)}
+nav.scrolled ~ .nav-links a{color:#5F6368}
+nav.scrolled ~ .nav-links a:hover{color:var(--baikal)}
 .nav-cta{
   background:rgba(255,255,255,.2);color:var(--white)!important;
   padding:9px 22px;border-radius:100px;font-size:13px!important;
   transition:background .3s;
 }
 .nav-cta:hover{background:rgba(255,255,255,.35)!important}
-nav.scrolled .nav-cta{background:var(--baikal);color:var(--white)!important}
-nav.scrolled .nav-cta:hover{background:#5F8A9A!important}
+nav.scrolled ~ .nav-links .nav-cta{background:var(--baikal);color:var(--white)!important}
+nav.scrolled ~ .nav-links .nav-cta:hover{background:#5F8A9A!important}
 .nav-toggle{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:14px 20px;border:none;background:none;position:fixed;top:0;right:0;z-index:1002;transition:all .4s}
 .nav-toggle span{display:block;width:24px;height:2px;background:var(--white);border-radius:2px;transition:all .3s;transform-origin:center}
 .nav-toggle.scrolled span{background:var(--graphite)}
@@ -392,10 +393,10 @@ footer .copy{color:rgba(255,255,255,.18);font-size:12px}
   .essentials-grid{grid-template-columns:repeat(2,1fr)}
   nav{padding:14px 20px}nav.scrolled{padding:10px 20px}.nav-links{display:none}
   .nav-toggle{display:flex}
-  .nav-links.open{display:flex;position:fixed;inset:0;flex-direction:column;background:rgba(255,255,255,.88);backdrop-filter:blur(12px);gap:4px;padding:70px 40px 40px;z-index:1001;justify-content:flex-start;align-items:center;overflow-y:auto}
+  .nav-links.open{display:flex;position:fixed;inset:0;flex-direction:column;background:rgba(255,255,255,.88);backdrop-filter:blur(12px);gap:4px;padding:70px 40px 40px;z-index:1001;justify-content:flex-start;align-items:center;overflow-y:auto;top:0!important;right:0!important;left:0!important;bottom:0!important}
   .nav-links.open a{color:var(--graphite)!important;font-size:18px;padding:14px 0;border-bottom:1px solid rgba(142,197,232,.12);width:100%;text-align:center;font-weight:500;flex-shrink:0}
   .nav-links.open a:hover{color:var(--baikal)!important}
-  .nav-links.open .nav-cta{margin-top:16px;background:var(--baikal)!important;color:var(--white)!important;border-radius:100px;max-width:240px;border:none!important;flex-shrink:0}
+  .nav-links.open .nav-cta{margin-top:24px;padding:16px 32px!important;background:var(--baikal)!important;color:var(--white)!important;border-radius:100px;border:none!important;width:auto!important;font-size:16px!important;font-weight:600!important}
   .nav-toggle.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
   .nav-toggle.open span:nth-child(2){opacity:0}
   .nav-toggle.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
@@ -424,16 +425,17 @@ footer .copy{color:rgba(255,255,255,.18);font-size:12px}
 
 <nav id="nav">
   <a href="#" class="nav-logo">Наша <span>База</span></a>
-  <ul class="nav-links">
-    <li><a href="#about">О нас</a></li>
-    <li><a href="#rooms">Проживание</a></li>
-    <li><a href="#spaces">Пространства</a></li>
-    <li><a href="#baikal">Байкал</a></li>
-    <li><a href="#price">Стоимость</a></li>
-    <li><a href="#contact">Контакты</a></li>
-     <li><a href="https://vk.me/annamaraktaeva" target="_blank" class="nav-cta">Связаться</a></li>
-  </ul>
 </nav>
+
+<ul class="nav-links" id="navLinks">
+  <li><a href="#about">О нас</a></li>
+  <li><a href="#rooms">Проживание</a></li>
+  <li><a href="#spaces">Пространства</a></li>
+  <li><a href="#baikal">Байкал</a></li>
+  <li><a href="#price">Стоимость</a></li>
+  <li><a href="#contact">Контакты</a></li>
+   <li><a href="https://vk.me/annamaraktaeva" target="_blank" class="nav-cta">Связаться</a></li>
+</ul>
 
 <!-- 1. HERO -->
 <section class="hero">
