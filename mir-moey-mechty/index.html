@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Мир Моей Мечты — смена на Байкале для детей 8–15 лет</title>
+<meta name="description" content="Смена «Мир Моей Мечты» на Байкале для детей 8–15 лет. Дети учатся общаться, принимать решения, брать ответственность и чувствовать себя частью команды — в тёплой атмосфере, с психологами и тренерами.">
+<meta property="og:title" content="Мир Моей Мечты — смена на Байкале для детей">
+<meta property="og:description" content="Смена «Мир Моей Мечты» на Байкале для детей 8–15 лет. Дети учатся общаться, принимать решения, брать ответственность, чувствовать себя частью команды.">
+<meta property="og:image" content="https://raw.githubusercontent.com/budaevatuiana1-ai/nasha-baza/main/image%201.webp">
+<meta property="og:url" content="https://nashabaza03.ru/mir-moey-mechty">
+<meta property="og:type" content="website">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%235FA8D3'/><text x='16' y='22' text-anchor='middle' font-family='Plus+Jakarta+Sans,sans-serif' font-size='18' font-weight='700' fill='white'>Н</text></svg>">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#FFFFFF;--white:#FFFFFF;--sand:#8EC5E8;--graphite:#2F2B28;--text:#2E3133;--text-light:#7A7A7A;--baikal:#5FA8D3;--baikal-light:#8EC5E8;--shadow:0 2px 20px rgba(45,45,45,.05);--shadow-hover:0 8px 40px rgba(45,45,45,.08)}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden;line-height:1.6;-webkit-font-smoothing:antialiased}
+img{max-width:100%;height:auto}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:18px 40px;display:flex;justify-content:space-between;align-items:center;transition:all .4s;background:rgba(255,255,255,.95);backdrop-filter:blur(16px)}
+.nav-logo{font-family:'Plus Jakarta Sans',sans-serif;font-size:22px;font-weight:700;color:var(--graphite);text-decoration:none;letter-spacing:-.3px}
+.nav-logo span{color:var(--baikal)}
+.nav-back{display:flex;align-items:center;gap:6px;color:var(--baikal);text-decoration:none;font-size:14px;font-weight:500;transition:color .3s}
+.nav-back:hover{color:var(--graphite)}
+
+.hero{min-height:100vh;padding:180px 60px 60px;background:#F5F9FC;position:relative}
+.hero-inner{display:grid;grid-template-columns:1.15fr 1fr;gap:48px;align-items:center;max-width:1500px;margin:0 auto}
+.hero-left{max-width:620px}
+.hero-badge{display:inline-flex;padding:7px 18px;background:rgba(95,168,211,.1);border-radius:100px;font-size:13px;color:var(--baikal);font-weight:500;letter-spacing:.3px;margin-bottom:28px;gap:10px;align-items:center}
+.hero-badge span{color:var(--text-light)}
+.hero h1{font-family:'Plus Jakarta Sans',sans-serif;font-size:clamp(34px,4.6vw,62px);font-weight:700;color:var(--baikal);line-height:1.05;letter-spacing:-.6px;margin-bottom:36px}
+.hero h1 .sub-title{display:block;font-size:clamp(21px,1.8vw,25px);font-weight:600;color:var(--graphite);margin-top:28px;letter-spacing:-.2px;line-height:1.35;max-width:620px}
+.hero p{font-size:clamp(17px,1.5vw,20px);color:#3A3A3A;line-height:1.7;margin:0 0 4px;max-width:540px}
+.hero-buttons{display:flex;gap:14px;justify-content:flex-start;flex-wrap:wrap;margin-top:40px}
+.hero .btn-primary{background:var(--baikal);color:var(--white);font-weight:600;box-shadow:0 4px 20px rgba(95,168,211,.3);padding:14px 32px;font-size:14px}
+.hero .btn-primary:hover{background:#5F8A9A;box-shadow:0 6px 28px rgba(95,168,211,.35)}
+.hero .btn-outline{border:1px solid var(--sand);color:var(--text-light);background:transparent;font-weight:500;padding:14px 32px;font-size:14px}
+.hero .btn-outline:hover{border-color:var(--baikal);color:var(--baikal);background:rgba(95,168,211,.06)}
+.hero-trust{display:flex;flex-wrap:wrap;gap:6px;margin-top:40px}
+.hero-trust .chip{padding:4px 12px;background:rgba(95,168,211,.08);border-radius:100px;font-size:12px;color:#5A6A7A;font-weight:500;white-space:nowrap}
+section{padding:100px 40px;border-top:1px solid rgba(142,197,232,0.15)}
+.section-inner{max-width:960px;margin:0 auto}
+.label{font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--baikal);font-weight:600;margin-bottom:12px}
+.title{font-family:'Plus Jakarta Sans',sans-serif;font-size:clamp(24px,3vw,36px);font-weight:700;color:var(--graphite);line-height:1.2;letter-spacing:-.3px;margin-bottom:32px}
+.title-sm{font-size:clamp(20px,2.4vw,28px)}
+.sub{font-size:16px;color:var(--text-light);line-height:1.7;margin-bottom:24px}
+p{font-size:15px;color:var(--text);line-height:1.9;margin-bottom:16px}
+.t-text{color:var(--text-light);line-height:1.9}
+
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 30px;border-radius:100px;text-decoration:none;font-size:14px;font-weight:500;transition:all .3s;cursor:pointer;border:none}
+.btn-primary{background:var(--baikal);color:var(--white)}
+.btn-primary:hover{background:#5F8A9A;transform:translateY(-2px)}
+.btn-outline{border:1px solid var(--sand);color:var(--text);background:transparent}
+.btn-outline:hover{border-color:var(--baikal);color:var(--baikal);transform:translateY(-2px);background:rgba(95,168,211,.06)}
+.btn-lg{padding:16px 36px;font-size:15px}
+.hero-collage{position:relative;width:100%;height:520px;display:flex;align-items:center;justify-content:center}
+.hero-collage .ph{position:absolute;border-radius:24px;object-fit:cover;box-shadow:0 10px 48px rgba(45,45,45,.08);border:5px solid var(--white);background:linear-gradient(160deg,var(--sand),var(--baikal))}
+.hero-collage .ph-main{width:clamp(300px,36vw,500px);height:clamp(200px,24vw,350px);top:50%;left:46%;transform:translate(-50%,-50%);z-index:2}
+.hero-collage .ph-main .ph-label{position:absolute;bottom:12px;right:12px;padding:7px 18px;background:var(--white);border-radius:100px;font-size:13px;color:var(--baikal);font-weight:500;box-shadow:0 2px 16px rgba(0,0,0,.07);z-index:5;white-space:nowrap}
+.hero-collage .ph-top{width:clamp(150px,17vw,250px);height:clamp(100px,12vw,175px);top:1%;right:-8%;z-index:3;transform:rotate(2deg)}
+.hero-collage .ph-bot{width:clamp(180px,20vw,300px);height:clamp(130px,15vw,210px);bottom:-4%;left:-12%;z-index:1;transform:rotate(-1.5deg)}
+.hero-decor{position:absolute;pointer-events:none;z-index:1}
+.hero-decor-circle{width:80px;height:80px;border-radius:50%;border:1.5px dashed rgba(142,197,232,.2);top:5%;right:3%;opacity:.4}
+
+.card-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:32px 0}
+.card{padding:28px 24px;background:#F5F9FC;border-radius:14px;transition:all .3s;border:1px solid transparent}
+.card:hover{box-shadow:var(--shadow-hover);transform:translateY(-3px);border-color:var(--sand)}
+.card .icon{font-size:26px;margin-bottom:10px}
+.card h4{font-size:16px;font-weight:600;color:var(--graphite);margin-bottom:6px}
+.card p{font-size:14px;color:var(--text-light);margin:0;line-height:1.7}
+
+.highlight{padding:36px 32px;background:#F5F9FC;border-radius:16px;border-left:4px solid var(--baikal);margin:32px 0}
+.highlight p:last-child{margin-bottom:0}
+
+.steps{display:grid;gap:20px;margin:32px 0}
+.step{display:flex;gap:16px;padding:20px 24px;background:#F5F9FC;border-radius:12px;transition:all .3s}
+.step:hover{box-shadow:var(--shadow);transform:translateX(4px)}
+.step-n{width:36px;height:36px;border-radius:50%;background:var(--baikal);color:var(--white);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:16px}
+.step-body{flex:1}
+.step-body strong{display:block;font-size:15px;color:var(--graphite);margin-bottom:2px}
+.step-body span{font-size:14px;color:var(--text-light);line-height:1.6}
+
+.faq-item{padding:20px 0;border-bottom:1px solid rgba(142,197,232,0.2)}
+.faq-item:last-child{border:none}
+.faq-q{font-size:16px;font-weight:600;color:var(--graphite);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;user-select:none;padding:4px 0}
+.faq-q::after{content:'+';font-size:20px;color:var(--baikal);font-weight:300;transition:transform .3s;flex-shrink:0}
+.faq-q.open::after{transform:rotate(45deg)}
+.faq-a{font-size:15px;color:var(--text-light);line-height:1.8;padding-top:12px;display:none}
+.faq-a.show{display:block}
+
+.checklist{display:grid;gap:8px;margin:24px 0}
+.checklist li{display:flex;align-items:flex-start;gap:12px;padding:14px 18px;list-style:none;background:#F5F9FC;border-radius:10px;font-size:14px;color:var(--text);line-height:1.6;transition:all .3s}
+.checklist li:hover{background:var(--white);box-shadow:var(--shadow)}
+.checklist .ck{width:22px;height:22px;border-radius:50%;background:var(--baikal);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:11px;color:var(--white);margin-top:1px}
+
+.price-card{max-width:500px;margin:32px auto;padding:40px 32px;background:#F5F9FC;border-radius:16px;text-align:center;border:1px solid transparent;transition:all .3s}
+.price-card:hover{box-shadow:var(--shadow-hover);border-color:var(--sand);transform:translateY(-4px)}
+.price-card h3{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--baikal);font-weight:600;margin-bottom:16px}
+.price-amount{font-family:'Plus Jakarta Sans',sans-serif;font-size:42px;font-weight:700;color:var(--baikal);margin-bottom:16px;letter-spacing:-1px}
+.price-amount span{font-size:18px;font-weight:400;color:var(--text-light)}
+.price-includes{text-align:left;padding:20px 0}
+.price-includes li{padding:6px 0;font-size:14px;color:var(--text-light);list-style:none;display:flex;align-items:center;gap:10px}
+.price-includes li::before{content:'✓';color:var(--baikal);font-weight:600}
+.price-excludes{margin-top:12px;padding:16px 20px;background:var(--white);border-radius:10px;font-size:13px;color:var(--text-light);border:1px solid rgba(142,197,232,0.2)}
+
+.early-prices{display:grid;gap:10px;margin:24px 0}
+.early-row{display:flex;justify-content:space-between;align-items:center;padding:14px 20px;background:#F5F9FC;border-radius:10px;font-size:14px;gap:12px;transition:all .3s}
+.early-row:hover{background:var(--white);box-shadow:var(--shadow)}
+.early-row .date{color:var(--text-light)}
+.early-row .cost{font-weight:600;color:var(--baikal);font-size:16px;white-space:nowrap}
+
+.tag{display:inline-flex;padding:5px 14px;background:#F5F9FC;border-radius:100px;font-size:13px;color:var(--text-light);border:1px solid var(--sand)}
+.tag-wrap{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0}
+
+.s-div{max-width:60px;height:2px;background:var(--sand);margin:0 auto 20px;border-radius:2px}
+
+.photo-block{border-radius:16px;overflow:hidden;min-height:280px;background:linear-gradient(160deg,var(--baikal-light),var(--baikal));margin:32px 0}
+
+.video-placeholder{border-radius:16px;overflow:hidden;background:var(--graphite);min-height:340px;margin:32px 0;display:flex;align-items:center;justify-content:center;padding:40px 24px}
+.trainer-grid{position:relative;z-index:1}
+.trainer-grid>div:hover{box-shadow:var(--shadow-hover);transform:translateY(-3px)}
+.trainer-card{position:relative}
+.trainer-card .popup{position:absolute;top:calc(100% + 8px);left:50%;transform:translateX(-50%);width:260px;padding:16px;background:var(--white);border-radius:12px;box-shadow:0 8px 32px rgba(0,0,0,.12);opacity:0;visibility:hidden;transition:all .2s ease;z-index:20;pointer-events:none;font-size:13px;color:var(--text-light);line-height:1.5;text-align:left;border:1px solid rgba(142,197,232,0.15)}
+.trainer-card:hover .popup,.trainer-card .popup.show{opacity:1;visibility:visible}
+.trainer-card:nth-child(4n+1) .popup{left:0;transform:none}
+.trainer-card:nth-child(4n) .popup{left:auto;right:0;transform:none}
+.trainer-card .popup.above{top:auto;bottom:calc(100% + 8px)}
+
+.final{text-align:left;padding:100px 40px;background:linear-gradient(160deg,#F5F9FC,var(--white))}
+.final .title{max-width:800px}
+.final p{max-width:680px}
+.final .s-div{margin:24px 0}
+.final .hero-buttons{justify-content:flex-start}
+
+footer{background:var(--graphite);padding:48px 40px 32px;text-align:center}
+footer .fl{font-family:'Plus Jakarta Sans',sans-serif;font-size:18px;font-weight:700;color:var(--bg);margin-bottom:10px}
+footer .fl span{color:var(--baikal)}
+footer p{color:rgba(255,255,255,.35);font-size:13px;max-width:380px;margin:0 auto 20px;line-height:1.7}
+footer .copy{color:rgba(255,255,255,.18);font-size:12px}
+
+.r{opacity:0;transform:translateY(30px) scale(.97);transition:all .8s cubic-bezier(.22,1,.36,1)}
+.r.v{opacity:1;transform:translateY(0) scale(1)}
+.r1{transition-delay:.1s}.r2{transition-delay:.2s}.r3{transition-delay:.3s}.r4{transition-delay:.4s}
+.hero-fade{opacity:0;transform:translateY(24px);animation:hf .8s cubic-bezier(.22,1,.36,1) forwards}
+.hf1{animation-delay:.1s}.hf2{animation-delay:.2s}.hf3{animation-delay:.35s}.hf4{animation-delay:.5s}.hf5{animation-delay:.65s}
+
+@keyframes hf{to{opacity:1;transform:translateY(0)}}
+
+.hero h1{overflow:hidden}
+.hero h1 .word{display:inline-block;opacity:0;transform:translateY(60px)}
+.hero h1.play .word{animation:wIn .7s cubic-bezier(.22,1,.36,1) forwards}
+.hero h1.play .w1{animation-delay:.1s}.hero h1.play .w2{animation-delay:.2s}.hero h1.play .w3{animation-delay:.3s}
+.hero h1.play .w4{animation-delay:.38s}.hero h1.play .w5{animation-delay:.46s}.hero h1.play .w6{animation-delay:.54s}
+.hero h1.play .w7{animation-delay:.62s}.hero h1.play .w8{animation-delay:.7s}
+@keyframes wIn{to{opacity:1;transform:translateY(0)}}
+
+.num{color:var(--baikal);font-weight:600}
+
+@media(max-width:1100px){
+  .hero{padding:130px 48px 60px}
+  .hero-collage .ph-main{width:clamp(260px,32vw,380px);height:clamp(170px,21vw,260px)}
+  .hero-collage .ph-top{width:clamp(130px,15vw,190px);height:clamp(86px,10vw,130px)}
+  .hero-collage .ph-bot{width:clamp(140px,16vw,210px);height:clamp(94px,11vw,140px)}
+}
+@media(max-width:860px){
+  .hero{padding:120px 36px 50px}
+  .hero-collage{height:380px}
+  .hero-collage .ph-main{width:300px;height:220px}
+  .hero-collage .ph-top{width:160px;height:110px;top:0;right:0}
+  .hero-collage .ph-bot{width:180px;height:120px;bottom:2%;left:2%}
+}
+@media(min-width:701px){
+  .hero-trust{flex-wrap:nowrap}
+}
+@media(max-width:700px){
+  .hero{padding:130px 32px 60px}
+  .hero-inner{grid-template-columns:1fr;gap:36px}
+  .hero-left{max-width:100%}
+  .hero-collage{display:flex;flex-flow:row wrap;gap:12px;height:auto;margin-top:8px}
+  .hero-collage .ph{position:static;border-radius:16px;border-width:3px;transform:none}
+  .hero-collage .ph-main{width:100%;height:300px;flex:0 0 100%}
+  .hero-collage .ph-top{width:calc(50% - 6px);height:200px;flex:0 0 calc(50% - 6px)}
+  .hero-collage .ph-bot{width:calc(50% - 6px);height:200px;left:auto;bottom:auto;flex:0 0 calc(50% - 6px)}
+  .hero-collage .ph-main .ph-label{font-size:11px;padding:4px 12px;bottom:8px;right:8px}
+  .hero-decor-circle{display:none}
+}
+@media(max-width:640px){
+  nav{padding:14px 20px}
+  section{padding:60px 20px}
+  .hero{padding:130px 28px 40px}
+  .hero .btn-primary{padding:13px 28px;font-size:13px}
+  .hero .btn-outline{padding:13px 28px;font-size:13px}
+  .hero-collage{display:flex;flex-flow:row wrap;gap:10px;height:auto}
+  .hero-collage .ph{border-width:3px}
+  .hero-collage .ph-main{width:100%;height:240px;flex:0 0 100%}
+  .hero-collage .ph-top{width:calc(50% - 5px);height:150px;flex:0 0 calc(50% - 5px)}
+  .hero-collage .ph-bot{width:calc(50% - 5px);height:150px;left:auto;bottom:auto;flex:0 0 calc(50% - 5px)}
+  .hero-collage .ph-main .ph-label{font-size:11px;padding:4px 12px;bottom:8px;right:8px}
+  .card-grid{grid-template-columns:1fr}
+  .final{padding:60px 20px}
+  footer{padding:40px 20px 24px}
+  .highlight{padding:24px 20px}
+  .step{padding:16px}
+  .price-card{padding:28px 20px}
+  .price-amount{font-size:34px}
+  .early-row{flex-direction:column;align-items:flex-start;gap:4px}
+  .video-placeholder{min-height:220px}
+  .trainer-grid{grid-template-columns:repeat(3,1fr)!important}
+  .hero-buttons .btn{width:100%;justify-content:center}
+}
+@media(max-width:480px){
+  .trainer-grid{grid-template-columns:repeat(2,1fr)!important}
+  .hero{padding:130px 20px 40px}
+  .hero-collage{height:auto}
+  .hero-collage .ph-main{width:100%;height:200px;flex:0 0 100%}
+  .hero-collage .ph-top{width:calc(50% - 5px);height:130px;top:auto;right:auto;flex:0 0 calc(50% - 5px)}
+  .hero-collage .ph-bot{width:calc(50% - 5px);height:130px;left:auto;bottom:auto;flex:0 0 calc(50% - 5px)}
+  .hero-collage .ph-main .ph-label{font-size:9px;padding:2px 8px;bottom:6px;right:6px}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="../index.html" class="nav-logo">Наша <span>База</span></a>
+  <a href="../index.html" class="nav-back">← На главную</a>
+</nav>
+
+<!-- 1. HERO -->
+<section class="hero" id="hero">
+  <div class="hero-inner">
+    <div class="hero-left">
+      <h1 class="hero-fade hf1">
+        <span class="word w1">«Мир</span>
+        <span class="word w2">Моей</span>
+        <span class="word w3">Мечты»</span>
+        <span class="sub-title">Выездная программа для&nbsp;детей 8–15 лет на&nbsp;Байкале</span>
+      </h1>
+      <p class="hero-fade hf3">Дети учатся общаться, принимать решения, брать ответственность и&nbsp;чувствовать себя частью команды&nbsp;— в&nbsp;тёплой атмосфере, рядом с&nbsp;психологами и&nbsp;тренерами.</p>
+      <div class="hero-buttons hero-fade hf4">
+        <a href="#price" class="btn btn-primary btn-lg">Узнать даты и стоимость</a>
+        <a href="https://vk.me/annamaraktaeva" target="_blank" class="btn btn-outline btn-lg">Задать вопрос организатору</a>
+      </div>
+      <div class="hero-trust hero-fade hf5"><span class="chip">Родительское собрание перед программой</span><span class="chip">Обратная связь от&nbsp;психолога после программы</span></div>
+    </div>
+    <div class="hero-right">
+      <div class="hero-collage hero-fade hf2">
+        <div class="ph ph-main" style="background-image:url(hero1.jpg);background-size:cover;background-position:center">
+          <div class="ph-label">На территории «Нашей Базы»</div>
+        </div>
+        <div class="ph ph-top" style="background-image:url(hero2.jpg);background-size:cover;background-position:center"></div>
+        <div class="ph ph-bot" style="background-image:url(hero3.jpg);background-size:cover;background-position:center"></div>
+      </div>
+    </div>
+    <div class="hero-decor hero-decor-circle"></div>
+  </div>
+</section>
+
+<!-- 2. ГЛАВНЫЙ СМЫСЛ -->
+<section>
+  <div class="section-inner">
+    <div class="label r" style="text-align:center">О программе</div>
+    <div class="s-div r r1"></div>
+    <h2 class="title r r1" style="text-align:center">Это не просто отдых на&nbsp;каникулах</h2>
+    <p class="r r2">Программа «Мир Моей Мечты» работает с&nbsp;<span class="num">1997</span> года. За&nbsp;эти годы программа проходила в&nbsp;разных регионах России и&nbsp;помогла многим детям получить важный опыт общения, ответственности и&nbsp;самостоятельности.</p>
+    <p class="r r2">На программе ребёнок не&nbsp;только отдыхает, гуляет и&nbsp;общается. Он получает важный опыт: быть в&nbsp;группе, знакомиться, договариваться, справляться с&nbsp;волнением, принимать решения и&nbsp;пробовать самостоятельность без&nbsp;постоянной поддержки родителей.</p>
+    <div class="highlight r r3">
+      <p style="font-size:17px;margin:0;color:var(--graphite);font-weight:500">Для многих детей такая смена становится первым шагом к&nbsp;ощущению:<br><br><strong style="color:var(--baikal);font-family:'Plus Jakarta Sans',sans-serif;font-size:20px">«Я могу сам. Я справляюсь. Я не один».</strong></p>
+    </div>
+  </div>
+</section>
+
+<!-- 3. БЛОК ДЛЯ РОДИТЕЛЕЙ -->
+<section style="background:#F5F9FC">
+  <div class="section-inner">
+    <div class="label r" style="text-align:center">Родителям</div>
+    <h2 class="title r r1" style="text-align:center;font-size:clamp(22px,2.6vw,32px)">Когда ребёнку уже пора становиться самостоятельнее,<br>но отпускать его всё&nbsp;равно тревожно</h2>
+    <p class="r r2">Родителям часто хочется, чтобы ребёнок стал увереннее, взрослее и&nbsp;самостоятельнее.</p>
+    <p class="r r2">Но&nbsp;просто «отправить в&nbsp;лагерь» бывает страшно: кто будет рядом, как&nbsp;он справится, сможет ли&nbsp;подружиться, не&nbsp;растеряется ли, расскажут ли&nbsp;потом, как&nbsp;он себя чувствовал?</p>
+    <div class="highlight r r3">
+      <p style="margin:0;font-size:16px;color:var(--text-light)">«Мир Моей Мечты» — это формат, где ребёнок пробует самостоятельность не&nbsp;в&nbsp;одиночку, а&nbsp;в&nbsp;безопасной среде, рядом с&nbsp;взрослыми, которые понимают детей.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 4. КОМУ ПОДОЙДЁТ -->
+<section>
+  <div class="section-inner">
+    <div class="label r" style="text-align:center">Присмотритесь</div>
+    <h2 class="title r r1" style="text-align:center">Программа подойдёт, если вы&nbsp;замечаете у&nbsp;ребёнка</h2>
+    <div class="card-grid">
+      <div class="card r"><div class="icon">🤝</div><h4>Он стесняется и боится проявляться</h4><p>Хочет общаться, но&nbsp;не&nbsp;всегда знает, как&nbsp;подойти к&nbsp;другим детям.</p></div>
+      <div class="card r r1"><div class="icon">💬</div><h4>Ему трудно договариваться</h4><p>В&nbsp;конфликте может замыкаться, обижаться или&nbsp;ждать, что&nbsp;взрослые всё решат за&nbsp;него.</p></div>
+      <div class="card r r1"><div class="icon">🌱</div><h4>Он часто не уверен в себе</h4><p>Боится ошибиться, сомневается, спрашивает разрешения даже там, где&nbsp;уже может решить сам.</p></div>
+      <div class="card r r2"><div class="icon">📱</div><h4>Он много времени проводит в&nbsp;телефоне</h4><p>Меньше общается вживую, сложнее включается в&nbsp;реальную группу и&nbsp;живое взаимодействие.</p></div>
+      <div class="card r r2"><div class="icon">🔇</div><h4>Подросток стал закрываться</h4><p>Меньше рассказывает, труднее идёт на&nbsp;контакт, чаще отвечает коротко: «нормально», «не&nbsp;знаю».</p></div>
+      <div class="card r r3"><div class="icon">❤️</div><h4>Вы хотите дать ему опыт самостоятельности без&nbsp;давления</h4><p>Чтобы он попробовал быть взрослее, но&nbsp;рядом были надёжные взрослые.</p></div>
+    </div>
+    <div class="highlight r r3">
+      <p style="margin:0;font-size:15px;color:var(--text-light)">Эта программа не&nbsp;про&nbsp;то, чтобы «переделать» ребёнка.<br>Она про&nbsp;то, чтобы дать ему живой опыт, в&nbsp;котором он сможет попробовать себя по-новому.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 5. ЧТО ПОЛУЧАЕТ РЕБЁНОК -->
+<section style="background:#F5F9FC">
+  <div class="section-inner">
+    <div class="label r" style="text-align:center">Результат</div>
+    <h2 class="title r r1" style="text-align:center">После смены у&nbsp;ребёнка остаются<br>не&nbsp;только впечатления</h2>
+    <p class="sub r r2" style="text-align:center;margin-left:auto;margin-right:auto">Он увозит с&nbsp;собой опыт, который помогает ему становиться увереннее в&nbsp;обычной жизни.</p>
+    <div class="card-grid">
+      <div class="card r"><div class="icon">🌟</div><h4>Ответственность и&nbsp;самостоятельность</h4><p>Ребёнок пробует сам выбирать, решать, отвечать за&nbsp;свои действия и&nbsp;видеть результат.</p></div>
+      <div class="card r r1"><div class="icon">💪</div><h4>Уверенность в&nbsp;себе</h4><p>Через задания, общение и&nbsp;поддержку он получает ощущение: «я&nbsp;справляюсь».</p></div>
+      <div class="card r r1"><div class="icon">🗣️</div><h4>Навыки общения и&nbsp;решения конфликтов</h4><p>Учится знакомиться, слушать, говорить о&nbsp;себе, договариваться, решать споры и&nbsp;быть частью команды.</p></div>
+      <div class="card r r2"><div class="icon">💎</div><h4>Управление эмоциями</h4><p>Начинает лучше понимать свои чувства, управлять ими и&nbsp;говорить о&nbsp;них словами.</p></div>
+      <div class="card r r2"><div class="icon">🎯</div><h4>Лидерство и&nbsp;целеполагание</h4><p>Учится ставить цели, планировать шаги к&nbsp;ним, брать на&nbsp;себя ответственность за&nbsp;результат.</p></div>
+      <div class="card r r3"><div class="icon">🏡</div><h4>Опыт жизни в&nbsp;команде</h4><p>Учится учитывать других, соблюдать общие правила, просить помощь и&nbsp;помогать самому.</p></div>
+    </div>
+    <p class="r r3" style="text-align:center;font-size:14px;color:var(--text-light);margin-top:16px">Это не&nbsp;просто отдых, а&nbsp;развивающая программа, где каждый день приносит ребёнку новый опыт.</p>
+  </div>
+</section>
+
+<!-- 6. КАК ПРОХОДИТ ПРОГРАММА -->
+<section>
+  <div class="section-inner">
+    <div class="label r" style="text-align:center">Формат</div>
+    <h2 class="title r r1" style="text-align:center">Занятия, игры, команда и&nbsp;живая практика каждый день</h2>
+    <p class="r r2">Программа проходит в&nbsp;выездном формате. Дети живут на&nbsp;базе, участвуют в&nbsp;групповых занятиях, играх, обсуждениях и&nbsp;командных заданиях.</p>
+    <p class="r r2">Это не&nbsp;школьные уроки и&nbsp;не&nbsp;лекции. Всё построено через практику, движение, разговоры, игровые ситуации и&nbsp;проживание реального опыта.</p>
+
+    <div class="highlight r r3">
+      <p style="margin:0;font-size:15px;color:var(--text-light)"><strong style="color:var(--graphite)">Разновозрастная программа:</strong> смена не&nbsp;делится по&nbsp;возрастам — младшие и&nbsp;старшие живут вместе, учатся взаимодействовать, поддерживать друг друга и&nbsp;договариваться.</p>
+    </div>
+
+    <p class="r r3" style="font-weight:500;color:var(--graphite);margin-top:24px"><strong>Важный принцип: жизнь на&nbsp;базе планируют сами дети.</strong> Взрослые (тренеры и&nbsp;консультанты) поддерживают и&nbsp;направляют, но&nbsp;основные решения ребята принимают сами. Это создаёт реальный опыт ответственности, а&nbsp;не&nbsp;просто «говорильню на&nbsp;тренингах».</p>
+
+    <div class="card-grid" style="margin-top:24px">
+      <div class="card r"><div class="icon">👥</div><h4>Групповые занятия</h4><p>2–4 интерактивных занятия в&nbsp;день. Темы, которые близки детям: я, дружба, чувства, команда, семья, цели, мечты, отношения.</p></div>
+      <div class="card r r1"><div class="icon">🤝</div><h4>Командные задания</h4><p>Дети учатся взаимодействовать, распределять роли, договариваться и&nbsp;вместе находить решения.</p></div>
+      <div class="card r r1"><div class="icon">🎲</div><h4>Игры и обсуждения</h4><p>Через игру ребёнку проще проявляться, пробовать новое и&nbsp;говорить о&nbsp;важном.</p></div>
+      <div class="card r r2"><div class="icon">🏕️</div><h4>Жизнь в&nbsp;группе</h4><p>Ребёнок получает опыт самостоятельности не&nbsp;в&nbsp;теории, а&nbsp;в&nbsp;обычных ежедневных ситуациях.</p></div>
+      <div class="card r r2"><div class="icon">🌇</div><h4>Вечерние разговоры и&nbsp;рефлексия</h4><p>Дети учатся замечать, что&nbsp;получилось за&nbsp;день, что&nbsp;было сложным и&nbsp;чем&nbsp;можно гордиться.</p></div>
+      <div class="card r r3"><div class="icon">🧑‍🏫</div><h4>Поддержка тренеров</h4><p>Рядом взрослые, которые помогают не&nbsp;давить на&nbsp;ребёнка, а&nbsp;направлять и&nbsp;поддерживать.</p></div>
+    </div>
+
+    <div style="margin-top:32px;padding:24px;background:#F5F9FC;border-radius:12px" class="r r3">
+      <p style="font-size:14px;font-weight:600;color:var(--graphite);margin-bottom:12px">Пример дня на&nbsp;программе:</p>
+      <div style="display:grid;grid-template-columns:auto 1fr;gap:6px 16px;font-size:14px;color:var(--text-light)">
+        <span style="color:var(--baikal);font-weight:500">8:30</span><span>Подъём, зарядка</span>
+        <span style="color:var(--baikal);font-weight:500">9:00</span><span>Завтрак</span>
+        <span style="color:var(--baikal);font-weight:500">10:00–13:00</span><span>Тренинги, игры, командные задания</span>
+        <span style="color:var(--baikal);font-weight:500">14:00</span><span>Обед</span>
+        <span style="color:var(--baikal);font-weight:500">15:00–18:00</span><span>Творчество, прогулки к&nbsp;Байкалу, свободное общение</span>
+        <span style="color:var(--baikal);font-weight:500">19:00</span><span>Ужин</span>
+        <span style="color:var(--baikal);font-weight:500">20:00</span><span>Вечерний круг, рефлексия, планы на&nbsp;следующий день</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 7. ВИДЕО ОБ АТМОСФЕРЕ -->
+<section style="background:#F5F9FC">
+  <div class="section-inner">
+    <div class="label r" style="text-align:center">Видео</div>
+    <h2 class="title r r1" style="text-align:center">Посмотрите, как проходит программа</h2>
+    <p class="r r2" style="text-align:center;max-width:520px;margin:0 auto">Лучше один раз увидеть атмосферу: дети, Байкал, занятия, игры, команда, вечерние разговоры и&nbsp;живое общение.</p>
+    <div class="video-placeholder r r3">
+      <p style="color:rgba(255,255,255,.35);font-size:14px;text-align:center;margin:0;max-width:380px">Видео об атмосфере смены появится здесь после согласования материалов.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 8. РОДИТЕЛИ НЕ ОСТАЮТСЯ В СТОРОНЕ -->
+<section>
+  <div class="section-inner">
+    <div class="label r" style="text-align:center">Для родителей</div>
+    <h2 class="title r r1" style="text-align:center">Вы не&nbsp;просто отправляете ребёнка в&nbsp;смену<br>и&nbsp;ждёте новостей</h2>
+    <p class="r r2">Мы понимаем, что для родителей важно не&nbsp;только, чтобы ребёнку было интересно, но&nbsp;и&nbsp;чтобы было спокойно. Поэтому в&nbsp;программе есть сопровождение не&nbsp;только для&nbsp;детей, но&nbsp;и&nbsp;для&nbsp;родителей.</p>
+    <div class="card-grid">
+      <div class="card r"><div class="icon">📋</div><h4>Родительское собрание перед сменой</h4><p>Перед заездом рассказываем о&nbsp;программе, условиях, правилах, связи с&nbsp;детьми, бытовых моментах и&nbsp;отвечаем на&nbsp;вопросы.</p></div>
+      <div class="card r r1"><div class="icon">🎒</div><h4>Подготовка ребёнка к&nbsp;поездке</h4><p>Родители заранее понимают, как&nbsp;настроить ребёнка, что&nbsp;обсудить с&nbsp;ним перед сменой и&nbsp;что&nbsp;взять с&nbsp;собой.</p></div>
+      <div class="card r r1"><div class="icon">📞</div><h4>Понятная связь с&nbsp;организаторами</h4><p>Вы&nbsp;знаете, кто&nbsp;отвечает за&nbsp;программу, к&nbsp;кому обращаться и&nbsp;как&nbsp;устроена коммуникация во&nbsp;время смены.</p></div>
+      <div class="card r r2"><div class="icon">📝</div><h4>Обратная связь от&nbsp;психолога после программы</h4><p>После смены родители получают бережную обратную связь: как&nbsp;ребёнок проявлялся в&nbsp;группе, что&nbsp;у&nbsp;него получилось, где&nbsp;было сложнее и&nbsp;что&nbsp;можно поддержать дома.</p></div>
+    </div>
+    <div class="highlight r r3">
+      <p style="margin:0;font-size:15px;color:var(--text-light)">Это не&nbsp;«психологический диагноз» и&nbsp;не&nbsp;оценка ребёнка.<br>Это внимательные наблюдения специалиста, которые помогают родителям лучше понять своего ребёнка и&nbsp;поддержать его после программы.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 9. БЕЗОПАСНОСТЬ И ДОВЕРИЕ -->
+<section style="background:#F5F9FC">
+  <div class="section-inner">
+    <div class="label r" style="text-align:center">Безопасность</div>
+    <h2 class="title r r1" style="text-align:center">Самостоятельность — да.<br>Оставить ребёнка одного с&nbsp;трудностями — нет</h2>
+    <p class="r r2">Самостоятельность ребёнка не&nbsp;должна означать, что&nbsp;он остаётся один на&nbsp;один со&nbsp;своими переживаниями.</p>
+    <p class="r r2">На&nbsp;программе рядом есть взрослые, которые помогают детям договариваться, уважать границы, говорить о&nbsp;чувствах, решать конфликты и&nbsp;пробовать новое без&nbsp;давления.</p>
+    <div class="card-grid">
+      <div class="card r"><div class="icon">👤</div><h4>Рядом взрослые, которые умеют работать с&nbsp;детьми</h4><p>Не&nbsp;просто присмотр, а&nbsp;внимательное сопровождение. Команда из&nbsp;2&nbsp;сертифицированных тренеров-психологов и&nbsp;обученных консультантов.</p></div>
+      <div class="card r r1"><div class="icon">📏</div><h4>Понятные правила безопасности</h4><p>В&nbsp;начале смены дети вместе с&nbsp;командой принимают правила, которые помогают сохранять уважение, границы и&nbsp;спокойствие в&nbsp;группе. Серьёзные нарушения обсуждаются с&nbsp;родителями и&nbsp;могут стать причиной досрочного завершения участия.</p></div>
+      <div class="card r r1"><div class="icon">🌿</div><h4>Нет давления и&nbsp;«ломания характера»</h4><p>Ребёнка не&nbsp;заставляют быть другим. Ему помогают пробовать новое в&nbsp;комфортном темпе.</p></div>
+      <div class="card r r2"><div class="icon">🎯</div><h4>Камерный формат</h4><p>Количество мест ограничено, чтобы&nbsp;команда могла видеть каждого ребёнка, а&nbsp;не&nbsp;работать с&nbsp;большим потоком.</p></div>
+      <div class="card r r2" style="grid-column:span 2"><div class="icon">📢</div><h4>Родители заранее знают условия</h4><p>Перед сменой проходит собрание, где можно задать вопросы и&nbsp;спокойно подготовиться. Сопровождение взрослых — 24/7.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 10. ГДЕ ПРОХОДИТ ПРОГРАММА -->
+<section>
+  <div class="section-inner">
+    <div class="label r" style="text-align:center">Место</div>
+    <h2 class="title r r1" style="text-align:center">Программа проходит на&nbsp;Байкале,<br>на&nbsp;«Нашей Базе»</h2>
+    <p class="r r2">«Наша База» — пространство для&nbsp;детских, обучающих и&nbsp;тренинговых групп рядом с&nbsp;Байкалом. Здесь есть условия для&nbsp;проживания, занятий, общения, отдыха и&nbsp;спокойной групповой жизни.</p>
+    <p class="r r2">Для&nbsp;программы важно не&nbsp;только расписание, но&nbsp;и&nbsp;сама атмосфера: природа, воздух, пространство, вечерние разговоры, команда и&nbsp;ощущение живого настоящего места.</p>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px" class="r r3">
+      <div class="photo-block" style="background:var(--baikal) url('место.jpg') center/cover no-repeat;min-height:260px"></div>
+      <div class="photo-block" style="background:var(--baikal) url('место2.jpg') center/cover no-repeat;min-height:260px"></div>
+    </div>
+    <div class="tag-wrap r r3" style="justify-content:center">
+      <span class="tag">🏠 Проживание на базе</span>
+      <span class="tag">🍽️ Питание</span>
+      <span class="tag">📖 Место для занятий</span>
+      <span class="tag">🌲 Территория для игр и общения</span>
+      <span class="tag">🌊 Байкал рядом</span>
+      <span class="tag">🌿 Веранда и беседка</span>
+    </div>
+    <div style="text-align:center;margin-top:28px" class="r r4">
+      <a href="../index.html" class="btn btn-outline">Посмотреть условия базы</a>
+    </div>
+  </div>
+</section>
+
+<!-- Фото базы -->
+<section style="background:#F5F9FC">
+  <div class="section-inner">
+    <div class="label r" style="text-align:center">Как это выглядит</div>
+    <h2 class="title r r1" style="text-align:center">Пространство программы</h2>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:32px">
+      <div class="photo-block r" style="background:var(--baikal) url('image 1.webp') center/cover no-repeat;min-height:200px"></div>
+      <div class="photo-block r r1" style="background:var(--baikal) url('image 3.webp') center/cover no-repeat;min-height:200px"></div>
+      <div class="photo-block r r1" style="background:var(--baikal) url('image 10.jpg') center/cover no-repeat;min-height:200px"></div>
+      <div class="photo-block r r2" style="background:var(--baikal) url('image 29.webp') center/cover no-repeat;min-height:200px"></div>
+    </div>
+  </div>
+</section>
+
+<!-- 11. КТО ВЕДЁТ -->
+<section>
+  <div class="section-inner">
+    <div class="label r" style="text-align:center">Команда</div>
+    <h2 class="title r r1" style="text-align:center">Программу ведут психологи и&nbsp;тренеры,<br>которые работают с&nbsp;детьми и&nbsp;родителями</h2>
+<!-- ANNA - main trainer -->
+    <div style="display:grid;grid-template-columns:auto 1fr;gap:28px;align-items:start;margin-top:32px;padding:32px;background:#F5F9FC;border-radius:16px" class="r r2">
+      <div style="width:140px;height:140px;border-radius:50%;background:var(--baikal) url('anna.webp') center/cover no-repeat;flex-shrink:0"></div>
+      <div>
+        <h3 style="font-family:'Plus Jakarta Sans',sans-serif;font-size:22px;font-weight:600;color:var(--graphite);margin-bottom:4px">Анна Марактаева</h3>
+        <span style="font-size:14px;color:var(--baikal);font-weight:500">Психолог, арт-терапевт, руководитель программы</span>
+        <p style="margin-top:12px;font-size:15px;color:var(--text-light);line-height:1.8">Психолог, тренер детских и&nbsp;родительских программ, руководитель Центра Взаимоотношений в&nbsp;Улан-Удэ. Ведущая выездной программы «Мир Моей Мечты».</p>
+        <p style="font-size:15px;color:var(--text-light);line-height:1.8">Более <span class="num">30</span> лет психологической практики. В&nbsp;своей работе Анна помогает детям и&nbsp;родителям лучше понимать друг друга, выстраивать отношения, развивать уверенность, самостоятельность и&nbsp;внутреннюю опору.</p>
+      </div>
+    </div>
+
+    <!-- ALL OTHER TRAINERS -->
+    <div class="trainer-grid r r3" style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:24px">
+      <div class="trainer-card" style="padding:20px 12px;background:#F5F9FC;border-radius:12px;text-align:center;transition:all .3s">
+        <div style="width:64px;height:64px;border-radius:50%;background:var(--sand);margin:0 auto 10px;display:flex;align-items:center;justify-content:center;font-family:'Plus Jakarta Sans',sans-serif;font-size:20px;font-weight:700;color:var(--white)">П</div>
+        <h4 style="font-size:14px;font-weight:600;color:var(--graphite);margin-bottom:2px">Павел Попов</h4>
+        <span style="font-size:12px;color:var(--baikal);font-weight:500">Тренер программы</span>
+        <div class="popup">Сертифицированный тренер, прошёл подготовку в&nbsp;Школе тренеров. Опыт работы с&nbsp;детьми в&nbsp;выездных программах, ведёт групповые занятия и&nbsp;командные задания.</div>
+      </div>
+      <div class="trainer-card" style="padding:20px 12px;background:#F5F9FC;border-radius:12px;text-align:center;transition:all .3s">
+        <div style="width:64px;height:64px;border-radius:50%;background:var(--sand);margin:0 auto 10px;display:flex;align-items:center;justify-content:center;font-family:'Plus Jakarta Sans',sans-serif;font-size:20px;font-weight:700;color:var(--white)">С</div>
+        <h4 style="font-size:14px;font-weight:600;color:var(--graphite);margin-bottom:2px">Саяна Федорова</h4>
+        <span style="font-size:12px;color:var(--baikal);font-weight:500">Тренер-психолог</span>
+        <div class="popup">Психологическое образование, специалист по&nbsp;детско-родительским отношениям. Ведёт групповые занятия, тренинги и&nbsp;рефлексивные практики. Работает с&nbsp;детьми в&nbsp;выездном формате.</div>
+      </div>
+      <div class="trainer-card" style="padding:20px 12px;background:#F5F9FC;border-radius:12px;text-align:center;transition:all .3s">
+        <div style="width:64px;height:64px;border-radius:50%;background:var(--sand);margin:0 auto 10px;display:flex;align-items:center;justify-content:center;font-family:'Plus Jakarta Sans',sans-serif;font-size:20px;font-weight:700;color:var(--white)">Е</div>
+        <h4 style="font-size:14px;font-weight:600;color:var(--graphite);margin-bottom:2px">Екатерина Албашеева</h4>
+        <span style="font-size:12px;color:var(--baikal);font-weight:500">Сертифицированный тренер-психолог</span>
+        <div class="popup">Сертифицированный тренер-психолог, работает с&nbsp;детьми и&nbsp;взрослыми с&nbsp;<span class="num">2022</span> года. Прошла обучение по&nbsp;программе «Мир Моей Мечты». Ведёт групповые занятия и&nbsp;индивидуальное сопровождение.</div>
+      </div>
+      <div class="trainer-card" style="padding:20px 12px;background:#F5F9FC;border-radius:12px;text-align:center;transition:all .3s">
+        <div style="width:64px;height:64px;border-radius:50%;background:var(--sand);margin:0 auto 10px;display:flex;align-items:center;justify-content:center;font-family:'Plus Jakarta Sans',sans-serif;font-size:20px;font-weight:700;color:var(--white)">Ц</div>
+        <h4 style="font-size:14px;font-weight:600;color:var(--graphite);margin-bottom:2px">Цырена Максарова</h4>
+        <span style="font-size:12px;color:var(--baikal);font-weight:500">Тренер-психолог</span>
+        <div class="popup">Специалист по&nbsp;работе с&nbsp;группой, ведёт тренинги и&nbsp;командные занятия. Опыт работы в&nbsp;детских выездных программах, помогает детям раскрываться через игры и&nbsp;обсуждения.</div>
+      </div>
+      <div class="trainer-card" style="padding:20px 12px;background:#F5F9FC;border-radius:12px;text-align:center;transition:all .3s">
+        <div style="width:64px;height:64px;border-radius:50%;background:var(--sand);margin:0 auto 10px;display:flex;align-items:center;justify-content:center;font-family:'Plus Jakarta Sans',sans-serif;font-size:20px;font-weight:700;color:var(--white)">И</div>
+        <h4 style="font-size:14px;font-weight:600;color:var(--graphite);margin-bottom:2px">Ирина Сунграпова</h4>
+        <span style="font-size:12px;color:var(--baikal);font-weight:500">Психолог, тренер</span>
+        <div class="popup">Психолог, опыт работы с&nbsp;детьми и&nbsp;подростками в&nbsp;формате выездных программ. Прошла подготовку в&nbsp;Центре Взаимоотношений. Ведёт групповые занятия и&nbsp;вечерние рефлексии.</div>
+      </div>
+      <div class="trainer-card" style="padding:20px 12px;background:#F5F9FC;border-radius:12px;text-align:center;transition:all .3s">
+        <div style="width:64px;height:64px;border-radius:50%;background:var(--sand);margin:0 auto 10px;display:flex;align-items:center;justify-content:center;font-family:'Plus Jakarta Sans',sans-serif;font-size:20px;font-weight:700;color:var(--white)">А</div>
+        <h4 style="font-size:14px;font-weight:600;color:var(--graphite);margin-bottom:2px">Александр Марактаев</h4>
+        <span style="font-size:12px;color:var(--baikal);font-weight:500">Тренер, организатор</span>
+        <div class="popup">Участвует в&nbsp;организации смен, работает с&nbsp;группой, обеспечивает бытовое сопровождение и&nbsp;комфорт участников. Помогает создавать безопасную и&nbsp;дружелюбную атмосферу на&nbsp;программе.</div>
+      </div>
+      <div class="trainer-card" style="padding:20px 12px;background:#F5F9FC;border-radius:12px;text-align:center;transition:all .3s">
+        <div style="width:64px;height:64px;border-radius:50%;background:var(--sand);margin:0 auto 10px;display:flex;align-items:center;justify-content:center;font-family:'Plus Jakarta Sans',sans-serif;font-size:20px;font-weight:700;color:var(--white)">А</div>
+        <h4 style="font-size:14px;font-weight:600;color:var(--graphite);margin-bottom:2px">Александр Бадмаев</h4>
+        <span style="font-size:12px;color:var(--baikal);font-weight:500">Тренер-консультант</span>
+        <div class="popup">Консультант программы, работает с&nbsp;детьми в&nbsp;быту и&nbsp;на&nbsp;тренингах. Помогает участникам адаптироваться, выстраивать отношения в&nbsp;группе и&nbsp;чувствовать себя уверенно.</div>
+      </div>
+      <div class="trainer-card" style="padding:20px 12px;background:#F5F9FC;border-radius:12px;text-align:center;transition:all .3s">
+        <div style="width:64px;height:64px;border-radius:50%;background:var(--sand);margin:0 auto 10px;display:flex;align-items:center;justify-content:center;font-family:'Plus Jakarta Sans',sans-serif;font-size:20px;font-weight:700;color:var(--white)">Т</div>
+        <h4 style="font-size:14px;font-weight:600;color:var(--graphite);margin-bottom:2px">Татьяна Говенько</h4>
+        <span style="font-size:12px;color:var(--baikal);font-weight:500">Психолог, тренер</span>
+        <div class="popup">Психолог, специалист по&nbsp;работе с&nbsp;детьми и&nbsp;подростками в&nbsp;групповом формате. Психологическое образование, опыт ведения групповых занятий и&nbsp;тренинговых программ.</div>
+      </div>
+      <div class="trainer-card" style="padding:20px 12px;background:#F5F9FC;border-radius:12px;text-align:center;transition:all .3s">
+        <div style="width:64px;height:64px;border-radius:50%;background:var(--sand);margin:0 auto 10px;display:flex;align-items:center;justify-content:center;font-family:'Plus Jakarta Sans',sans-serif;font-size:20px;font-weight:700;color:var(--white)">О</div>
+        <h4 style="font-size:14px;font-weight:600;color:var(--graphite);margin-bottom:2px">Оюна Имыкшенова</h4>
+        <span style="font-size:12px;color:var(--baikal);font-weight:500">Тренер-психолог</span>
+        <div class="popup">Специалист по&nbsp;детской и&nbsp;подростковой психологии, участница команды программы «Мир Моей Мечты». Прошла подготовку, работает с&nbsp;группой и&nbsp;индивидуально.</div>
+      </div>
+      <div class="trainer-card" style="padding:20px 12px;background:#F5F9FC;border-radius:12px;text-align:center;transition:all .3s">
+        <div style="width:64px;height:64px;border-radius:50%;background:var(--sand);margin:0 auto 10px;display:flex;align-items:center;justify-content:center;font-family:'Plus Jakarta Sans',sans-serif;font-size:20px;font-weight:700;color:var(--white)">Д</div>
+        <h4 style="font-size:14px;font-weight:600;color:var(--graphite);margin-bottom:2px">Дмитрий Марактаев</h4>
+        <span style="font-size:12px;color:var(--baikal);font-weight:500">Со-организатор, тренер</span>
+        <div class="popup">Участвует в&nbsp;организации и&nbsp;проведении смен, работает с&nbsp;группой, поддерживает детей в&nbsp;быту и&nbsp;тренинговых блоках. Помогает создавать доброжелательную атмосферу на&nbsp;программе.</div>
+      </div>
+    </div>
+    <p class="r r4" style="margin-top:24px;padding:20px 24px;background:#F5F9FC;border-radius:12px;font-size:14px;color:var(--text-light);border-left:3px solid var(--baikal)">В&nbsp;программе участвует команда тренеров и&nbsp;сопровождающих взрослых. Перед сменой родители могут задать вопросы и&nbsp;уточнить, подойдёт ли&nbsp;формат именно их&nbsp;ребёнку.</p>
+  </div>
+</section>
+
+<!-- 12. ОТЗЫВЫ -->
+<section style="background:#F5F9FC">
+  <div class="section-inner">
+    <div class="label r" style="text-align:center">Отзывы</div>
+    <h2 class="title r r1" style="text-align:center">Что говорят дети и&nbsp;родители</h2>
+    <div class="highlight r r2">
+      <p style="margin:0;font-size:15px;color:var(--text-light);text-align:center">Скоро здесь появятся реальные отзывы детей и&nbsp;родителей после согласования публикации.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 13. КОГДА ЛУЧШЕ ОБСУДИТЬ -->
+<section>
+  <div class="section-inner">
+    <div class="label r" style="text-align:center">Важно</div>
+    <h2 class="title r r1" style="text-align:center">Когда лучше заранее задать вопрос организатору</h2>
+    <p class="r r2">Выездной формат подходит многим детям, но&nbsp;важно заранее учитывать особенности ребёнка.</p>
+    <p class="r r2">Лучше обсудить участие до&nbsp;записи, если&nbsp;ребёнок:</p>
+    <div class="checklist">
+      <li class="r"><div class="ck">—</div>раньше не&nbsp;ездил без&nbsp;родителей</li>
+      <li class="r r1"><div class="ck">—</div>сильно тревожится перед поездками</li>
+      <li class="r r1"><div class="ck">—</div>тяжело переносит разлуку с&nbsp;близкими</li>
+      <li class="r r2"><div class="ck">—</div>нуждается в&nbsp;особом внимании</li>
+      <li class="r r2"><div class="ck">—</div>имеет особенности здоровья или&nbsp;поведения, о&nbsp;которых команде важно знать заранее</li>
+    </div>
+    <p class="r r3">Мы&nbsp;поможем понять, будет ли&nbsp;программа комфортной и&nbsp;полезной именно для&nbsp;вашего ребёнка.</p>
+    <div style="text-align:center;margin-top:24px" class="r r4">
+      <a href="https://vk.me/annamaraktaeva" target="_blank" class="btn btn-primary btn-lg">Обсудить участие ребёнка</a>
+    </div>
+  </div>
+</section>
+
+<!-- 14. ДАТЫ И СТОИМОСТЬ -->
+<section id="price">
+  <div class="section-inner">
+    <div class="label r" style="text-align:center">Участие</div>
+    <h2 class="title r r1" style="text-align:center">Ближайшая смена</h2>
+    <div class="tag-wrap r r2" style="justify-content:center">
+      <span class="tag">📅 Даты: <strong style="color:var(--graphite)">уточняются</strong></span>
+      <span class="tag">👦 8–15 лет</span>
+      <span class="tag">📍 Байкал, «Наша База»</span>
+      <span class="tag">👥 Мест: <strong style="color:var(--graphite)">уточняется</strong></span>
+    </div>
+    <div class="price-card r r3">
+      <h3>Полная стоимость участия</h3>
+      <div class="price-amount">44 000 <span>₽</span></div>
+      <p style="font-size:13px;color:var(--text-light);margin:0">8-дневная программа</p>
+      <div style="border-top:1px solid rgba(142,197,232,0.2);margin:16px 0 0"></div>
+      <div class="price-includes">
+        <li>проживание на базе</li>
+        <li>питание</li>
+        <li>участие в программе</li>
+        <li>групповые занятия и практики</li>
+        <li>игры, командные задания и обсуждения</li>
+        <li>сопровождение команды</li>
+        <li>родительское собрание перед сменой</li>
+        <li>обратная связь от психолога после программы</li>
+      </div>
+    </div>
+    <p class="r r4" style="font-size:14px;color:var(--text-light);text-align:center;max-width:500px;margin:0 auto">Организатор программы — команда Анны Марактаевой. Запись и&nbsp;оплата происходят через организаторов. Оставьте заявку, мы&nbsp;передадим ваши контакты.</p>
+  </div>
+</section>
+
+<!-- 15. РАННЕЕ БРОНИРОВАНИЕ -->
+<section style="background:#F5F9FC">
+  <div class="section-inner">
+    <div class="label r" style="text-align:center">Скидки</div>
+    <h2 class="title r r1" style="text-align:center">При раннем бронировании<br>действуют специальные условия</h2>
+    <p class="r r2">Мы заранее формируем группу, готовим программу и&nbsp;команду, поэтому для&nbsp;родителей, которые бронируют место заранее, действуют специальные условия.</p>
+    <div class="early-prices r r3">
+      <div class="early-row"><span class="date">до [дата]</span><span class="cost">[цена] ₽</span></div>
+      <div class="early-row"><span class="date">до [дата]</span><span class="cost">[цена] ₽</span></div>
+      <div class="early-row"><span class="date">после [дата]</span><span class="cost">44 000 ₽</span></div>
+    </div>
+    <div class="highlight r r4">
+      <p style="margin:0;font-size:15px;color:var(--text-light)">Количество мест ограничено: нам&nbsp;важно сохранить камерный формат и&nbsp;внимание к&nbsp;каждому ребёнку.<br><br>Чем раньше вы&nbsp;бронируете место, тем&nbsp;спокойнее проходит подготовка к&nbsp;смене&nbsp;— и&nbsp;тем&nbsp;выгоднее стоимость участия.</p>
+    </div>
+    <div style="text-align:center;margin-top:24px" class="r r4">
+      <a href="https://vk.me/annamaraktaeva" target="_blank" class="btn btn-primary btn-lg">Забронировать место</a>
+    </div>
+  </div>
+</section>
+
+<!-- 16. КАК ЗАПИСАТЬСЯ -->
+<section>
+  <div class="section-inner">
+    <div class="label r" style="text-align:center">Запись</div>
+    <h2 class="title r r1" style="text-align:center">Как записаться на&nbsp;программу</h2>
+    <div class="steps">
+      <div class="step r"><div class="step-n">1</div><div class="step-body"><strong>Вы оставляете заявку</strong><span>Указываете имя, возраст ребёнка и&nbsp;контакт для&nbsp;связи.</span></div></div>
+      <div class="step r r1"><div class="step-n">2</div><div class="step-body"><strong>Мы связываемся с&nbsp;вами</strong><span>Отвечаем на&nbsp;вопросы, рассказываем о&nbsp;формате, условиях, стоимости и&nbsp;подготовке.</span></div></div>
+      <div class="step r r1"><div class="step-n">3</div><div class="step-body"><strong>Обсуждаем, подойдёт ли&nbsp;программа ребёнку</strong><span>Нам&nbsp;важно, чтобы участие было комфортным и&nbsp;полезным.</span></div></div>
+      <div class="step r r2"><div class="step-n">4</div><div class="step-body"><strong>Вы бронируете место</strong><span>После подтверждения получаете всю организационную информацию.</span></div></div>
+      <div class="step r r2"><div class="step-n">5</div><div class="step-body"><strong>Участвуете в&nbsp;родительском собрании</strong><span>Узнаёте подробности программы, правила, бытовые моменты и&nbsp;можете задать вопросы.</span></div></div>
+      <div class="step r r3"><div class="step-n">6</div><div class="step-body"><strong>После смены получаете обратную связь</strong><span>Психолог делится наблюдениями: как&nbsp;ребёнок проявлялся, что&nbsp;получилось, что&nbsp;было сложнее и&nbsp;что&nbsp;можно поддержать дома.</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 17. FAQ -->
+<section style="background:#F5F9FC">
+  <div class="section-inner">
+    <div class="label r" style="text-align:center">Вопросы и ответы</div>
+    <h2 class="title r r1" style="text-align:center">Частые вопросы родителей</h2>
+    <div style="margin-top:32px">
+      <div class="faq-item r">
+        <div class="faq-q" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('show')">Это лагерь или программа?</div>
+        <div class="faq-a">Это выездная программа в&nbsp;формате смены. Дети отдыхают, общаются, живут на&nbsp;базе, но&nbsp;при&nbsp;этом участвуют в&nbsp;занятиях, играх, обсуждениях и&nbsp;заданиях, которые помогают развивать самостоятельность, уверенность и&nbsp;навыки общения.</div>
+      </div>
+      <div class="faq-item r r1">
+        <div class="faq-q" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('show')">Подойдёт ли программа, если ребёнок стеснительный?</div>
+        <div class="faq-a">Да, если ребёнок готов пробовать общаться в&nbsp;группе. Мы&nbsp;не&nbsp;заставляем детей резко проявляться и&nbsp;не&nbsp;давим на&nbsp;них. Задача программы — создать среду, где&nbsp;ребёнку легче раскрыться в&nbsp;своём темпе.</div>
+      </div>
+      <div class="faq-item r r2">
+        <div class="faq-q" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('show')">Будет ли связь с&nbsp;родителями?</div>
+        <div class="faq-a">Перед сменой проходит родительское собрание, где&nbsp;рассказывают о&nbsp;правилах связи и&nbsp;организации программы. Во&nbsp;время смены коммуникация строится так, чтобы&nbsp;ребёнок получал опыт самостоятельности, а&nbsp;родители при&nbsp;этом понимали, что&nbsp;происходит.</div>
+      </div>
+      <div class="faq-item r r2">
+        <div class="faq-q" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('show')">Что будет после смены?</div>
+        <div class="faq-a">После программы родители получают обратную связь от&nbsp;психолога: как&nbsp;ребёнок проявлялся в&nbsp;группе, что&nbsp;у&nbsp;него получилось, где&nbsp;было сложнее и&nbsp;на&nbsp;что&nbsp;можно обратить внимание дома.</div>
+      </div>
+      <div class="faq-item r r2">
+        <div class="faq-q" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('show')">Кто отвечает за&nbsp;безопасность?</div>
+        <div class="faq-a">На&nbsp;программе работает команда из&nbsp;2&nbsp;сертифицированных тренеров-психологов и&nbsp;обученных консультантов. Сопровождение взрослых&nbsp;— 24/7. Территория базы закрытая, с&nbsp;безопасной прогулочной зоной к&nbsp;Байкалу. В&nbsp;начале смены дети вместе с&nbsp;командой принимают правила, которые помогают сохранять уважение, границы и&nbsp;спокойствие в&nbsp;группе.</div>
+      </div>
+      <div class="faq-item r r3">
+        <div class="faq-q" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('show')">Как организовано питание и&nbsp;проживание?</div>
+        <div class="faq-a">Дети живут на&nbsp;базе «Наша База» в&nbsp;благоустроенных номерах (душ, туалет, горячая вода). Питание организовано в&nbsp;столовой&nbsp;— готовим по&nbsp;технологическим картам. Привлекаем поваров, которые работают специально для&nbsp;программы. По&nbsp;вопросам организации проживания отвечает база, по&nbsp;вопросам программы&nbsp;— команда тренеров.</div>
+      </div>
+      <div class="faq-item r r3">
+        <div class="faq-q" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('show')">Можно ли сначала задать вопросы?</div>
+        <div class="faq-a">Да. Если вы&nbsp;сомневаетесь, подойдёт ли&nbsp;программа вашему ребёнку, лучше сначала оставить заявку или&nbsp;написать организатору. Мы&nbsp;обсудим ситуацию и&nbsp;поможем принять решение.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 18. ФИНАЛЬНЫЙ ЭКРАН -->
+<section class="final" id="contact">
+  <div class="section-inner">
+    <div class="s-div"></div>
+    <h2 class="title">Дайте ребёнку опыт, после&nbsp;которого он сможет сказать:&nbsp;<span style="color:var(--baikal)">«я&nbsp;справился»</span></h2>
+    <p>«Мир Моей Мечты» — это смена, где ребёнок отдыхает, общается, пробует самостоятельность и&nbsp;получает поддержку взрослых, которые понимают детей.</p>
+    <p>А родители получают не&nbsp;только спокойствие за&nbsp;организацию, но&nbsp;и&nbsp;обратную связь от&nbsp;психолога после программы.</p>
+    <p style="margin-bottom:32px">Если вы&nbsp;хотите, чтобы это лето стало для&nbsp;ребёнка не&nbsp;просто каникулами, а&nbsp;важным шагом к&nbsp;уверенности и&nbsp;взрослению — оставьте заявку.</p>
+    <div class="hero-buttons">
+      <a href="https://vk.me/annamaraktaeva" target="_blank" class="btn btn-primary btn-lg">Узнать даты и забронировать место</a>
+      <a href="https://vk.me/annamaraktaeva" target="_blank" class="btn btn-outline btn-lg">Задать вопрос</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="fl">Наша <span>База</span></div>
+  <p>Пространство для&nbsp;групп, программ и&nbsp;отдыха на&nbsp;Байкале. Село Сухая, Республика Бурятия.</p>
+  <p style="margin-top:12px">Программа «Мир Моей Мечты»</p>
+  <div class="copy">© 2026 Наша База</div>
+</footer>
+
+<script>
+window.addEventListener('load',function(){document.querySelector('.hero h1').classList.add('play')});
+
+const observer=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting)e.target.classList.add('v')})},{threshold:.1});
+document.querySelectorAll('.r').forEach(function(el){observer.observe(el)});
+
+function popupFit(pop,card){
+  var rect=pop.getBoundingClientRect();
+  var h=window.innerHeight;
+  pop.classList.toggle('above',rect.bottom>h-20);
+  if(pop.classList.contains('above')){
+    var r2=pop.getBoundingClientRect();
+    if(r2.top<20)pop.classList.remove('above');
+  }
+}
+function cardZ(card,on){
+  document.querySelectorAll('.trainer-card.hover').forEach(function(c){c.classList.remove('hover');c.style.zIndex=''});
+  if(on){card.classList.add('hover');card.style.zIndex='30'}
+}
+document.querySelectorAll('.trainer-card').forEach(function(card){
+  var pop=card.querySelector('.popup');
+  card.addEventListener('mouseenter',function(){
+    if(pop&&!pop.classList.contains('show')){cardZ(card,1);popupFit(pop,card)}
+  });
+  card.addEventListener('mouseleave',function(){
+    if(pop&&!pop.classList.contains('show'))cardZ(card,0);
+  });
+  card.addEventListener('click',function(e){
+    e.stopPropagation();
+    document.querySelectorAll('.trainer-card .popup.show').forEach(function(p){if(p!==pop)p.classList.remove('show')});
+    if(pop){
+      var was=pop.classList.contains('show');
+      pop.classList.toggle('show');
+      if(pop.classList.contains('show')){cardZ(card,1);popupFit(pop,card)}else cardZ(card,0);
+    }
+  });
+});
+document.addEventListener('click',function(){
+  document.querySelectorAll('.trainer-card .popup.show').forEach(function(p){p.classList.remove('show')});
+  document.querySelectorAll('.trainer-card').forEach(function(c){c.style.zIndex='';c.classList.remove('hover')});
+});
+</script>
+</body>
+</html>
