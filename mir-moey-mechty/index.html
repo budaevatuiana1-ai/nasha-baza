@@ -226,6 +226,10 @@ footer .copy{color:rgba(255,255,255,.18);font-size:12px}
   .hero-collage .ph-bot{width:calc(50% - 5px);height:150px;left:auto;bottom:auto;flex:0 0 calc(50% - 5px)}
   .hero-collage .ph-main .ph-label{font-size:9px;padding:2px 8px;bottom:6px;right:6px}
 }
+.lightbox-overlay{display:none;position:fixed;top:0;left:0;right:0;bottom:0;z-index:9999;background:rgba(0,0,0,.9);cursor:pointer;align-items:center;justify-content:center}
+.lightbox-overlay.show{display:flex}
+.lightbox-overlay img{max-width:95vw;max-height:95vh;object-fit:contain;border-radius:8px}
+.lightbox-overlay .close{position:absolute;top:16px;right:20px;font-size:32px;color:#fff;cursor:pointer;background:none;border:none;line-height:1}
 </style>
 </head>
 <body>
@@ -254,11 +258,11 @@ footer .copy{color:rgba(255,255,255,.18);font-size:12px}
     </div>
     <div class="hero-right">
       <div class="hero-collage hero-fade hf2">
-        <div class="ph ph-main" style="background-image:url(hero1.jpg);background-size:cover;background-position:center">
+        <div class="ph ph-main lightbox-trigger" style="background-image:url(hero1.jpg);background-size:cover;background-position:center">
           <div class="ph-label">На территории «Нашей Базы»</div>
         </div>
-        <div class="ph ph-top" style="background-image:url(hero2.jpg);background-size:cover;background-position:center"></div>
-        <div class="ph ph-bot" style="background-image:url(hero3.jpg);background-size:cover;background-position:center"></div>
+        <div class="ph ph-top lightbox-trigger" style="background-image:url(hero2.jpg);background-size:cover;background-position:center"></div>
+        <div class="ph ph-bot lightbox-trigger" style="background-image:url(hero3.jpg);background-size:cover;background-position:center"></div>
       </div>
     </div>
     <div class="hero-decor hero-decor-circle"></div>
@@ -445,10 +449,10 @@ footer .copy{color:rgba(255,255,255,.18);font-size:12px}
     <div class="label r" style="text-align:center">Как это выглядит</div>
     <h2 class="title r r1" style="text-align:center">Пространство программы</h2>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:32px">
-      <div class="photo-block r" style="background:var(--baikal) url('пространство1.jpg') center/cover no-repeat;aspect-ratio:4/3"></div>
-      <div class="photo-block r r1" style="background:var(--baikal) url('пространство2.jpg') center/cover no-repeat;aspect-ratio:4/3"></div>
-      <div class="photo-block r r1" style="background:var(--baikal) url('пространство3.jpg') center/cover no-repeat;aspect-ratio:4/3"></div>
-      <div class="photo-block r r2" style="background:var(--baikal) url('пространство4.jpg') center/cover no-repeat;aspect-ratio:4/3"></div>
+      <div class="photo-block r lightbox-trigger" style="background:var(--baikal) url('пространство1.jpg') center/cover no-repeat;aspect-ratio:4/3"></div>
+      <div class="photo-block r r1 lightbox-trigger" style="background:var(--baikal) url('пространство2.jpg') center/cover no-repeat;aspect-ratio:4/3"></div>
+      <div class="photo-block r r1 lightbox-trigger" style="background:var(--baikal) url('пространство3.jpg') center/cover no-repeat;aspect-ratio:4/3"></div>
+      <div class="photo-block r r2 lightbox-trigger" style="background:var(--baikal) url('пространство4.jpg') center/cover no-repeat;aspect-ratio:4/3"></div>
     </div>
   </div>
 </section>
@@ -739,6 +743,30 @@ document.querySelectorAll('.trainer-card').forEach(function(card){
 document.addEventListener('click',function(){
   document.querySelectorAll('.trainer-card .popup.show').forEach(function(p){p.classList.remove('show')});
   document.querySelectorAll('.trainer-card').forEach(function(c){c.style.zIndex='';c.classList.remove('hover')});
+});
+</script>
+
+<div class="lightbox-overlay" id="lightbox" onclick="if(event.target===this)closeLightbox()">
+  <button class="close" onclick="closeLightbox()">×</button>
+  <img id="lightbox-img" src="" alt="">
+</div>
+
+<script>
+function openLightbox(src){
+  document.getElementById('lightbox-img').src=src;
+  document.getElementById('lightbox').classList.add('show');
+}
+function closeLightbox(){
+  document.getElementById('lightbox').classList.remove('show');
+}
+document.querySelectorAll('.lightbox-trigger').forEach(function(el){
+  el.addEventListener('click',function(e){
+    var bg=window.getComputedStyle(this).backgroundImage;
+    if(bg&&bg!='none'){
+      var m=bg.match(/url\(["']?([^"')]+)["']?\)/);
+      if(m&&m[1])openLightbox(m[1]);
+    }
+  });
 });
 </script>
 </body>
