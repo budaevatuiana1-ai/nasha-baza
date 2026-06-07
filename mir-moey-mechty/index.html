@@ -691,7 +691,7 @@ footer .copy{color:rgba(255,255,255,.18);font-size:12px}
 </footer>
 
 <script>
-window.addEventListener('load',function(){document.querySelector('.hero h1').classList.add('play')});
+document.querySelector('.hero h1').classList.add('play');
 
 const observer=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting)e.target.classList.add('v')})},{threshold:.1});
 document.querySelectorAll('.r').forEach(function(el){observer.observe(el)});
