@@ -108,20 +108,15 @@ p{font-size:15px;color:var(--text);line-height:1.9;margin-bottom:16px}
 .price-includes{text-align:left;padding:20px 0}
 .price-includes li{padding:6px 0;font-size:14px;color:var(--text-light);list-style:none;display:flex;align-items:center;gap:10px}
 .price-includes li::before{content:'✓';color:var(--baikal);font-weight:600}
-.price-excludes{margin-top:12px;padding:16px 20px;background:var(--white);border-radius:10px;font-size:13px;color:var(--text-light);border:1px solid rgba(142,197,232,0.2)}
-
-.early-prices{display:grid;gap:10px;margin:24px 0}
-.early-row{display:flex;justify-content:space-between;align-items:center;padding:14px 20px;background:#F5F9FC;border-radius:10px;font-size:14px;gap:12px;transition:all .3s}
-.early-row:hover{background:var(--white);box-shadow:var(--shadow)}
-.early-row .date{color:var(--text-light)}
-.early-row .cost{font-weight:600;color:var(--baikal);font-size:16px;white-space:nowrap}
 
 .tag{display:inline-flex;padding:5px 14px;background:#F5F9FC;border-radius:100px;font-size:13px;color:var(--text-light);border:1px solid var(--sand)}
 .tag-wrap{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0}
 
 .s-div{max-width:60px;height:2px;background:var(--sand);margin:0 auto 20px;border-radius:2px}
 
-.photo-block{border-radius:16px;overflow:hidden;min-height:280px;background:linear-gradient(160deg,var(--baikal-light),var(--baikal));margin:32px 0}
+.photo-block{border-radius:16px;overflow:hidden;background:linear-gradient(160deg,var(--baikal-light),var(--baikal))}
+.photo-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:32px}
+.photo-grid .photo-block{margin:0;min-height:0}
 .trainer-grid{position:relative;z-index:1}
 .trainer-grid>div:hover{box-shadow:var(--shadow-hover);transform:translateY(-3px)}
 .trainer-card{position:relative}
@@ -222,12 +217,12 @@ footer .copy{color:rgba(255,255,255,.18);font-size:12px}
   .step{padding:16px}
   .price-card{padding:28px 20px}
   .price-amount{font-size:34px}
-  .early-row{flex-direction:column;align-items:flex-start;gap:4px}
   .trainer-grid{grid-template-columns:repeat(3,1fr)!important}
   .trainer-card:nth-child(4n+1) .popup,.trainer-card:nth-child(4n) .popup,.trainer-card:nth-child(3n) .popup{left:50%;right:auto;transform:translateX(-50%)}
   .hero-buttons .btn{width:100%;justify-content:center}
   .anna-row{grid-template-columns:1fr!important;justify-items:center;text-align:center}
   .anna-row > div:last-child{text-align:left;width:100%}
+  .photo-grid{grid-template-columns:1fr}
 }
 @media(max-width:480px){
   .trainer-grid{grid-template-columns:repeat(2,1fr)!important}
@@ -502,7 +497,7 @@ footer .copy{color:rgba(255,255,255,.18);font-size:12px}
     <h2 class="title r r1" style="text-align:center">Программа проходит на&nbsp;Байкале,<br>на&nbsp;«Нашей Базе»</h2>
     <p class="r r2">«Наша База» — пространство для&nbsp;детских, обучающих и&nbsp;тренинговых групп рядом с&nbsp;Байкалом. Здесь есть условия для&nbsp;проживания, занятий, общения, отдыха и&nbsp;спокойной групповой жизни.</p>
     <p class="r r2">Для&nbsp;программы важно не&nbsp;только расписание, но&nbsp;и&nbsp;сама атмосфера: природа, воздух, пространство, вечерние разговоры, команда и&nbsp;ощущение живого настоящего места.</p>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px" class="r r3">
+    <div class="photo-grid r r3">
       <div class="photo-block" style="background:var(--baikal) url('место.jpg') center/cover no-repeat;min-height:260px"></div>
       <div class="photo-block" style="background:var(--baikal) url('место2.jpg') center/cover no-repeat;min-height:260px"></div>
     </div>
@@ -525,7 +520,7 @@ footer .copy{color:rgba(255,255,255,.18);font-size:12px}
   <div class="section-inner">
     <div class="label r" style="text-align:center">Как это выглядит</div>
     <h2 class="title r r1" style="text-align:center">Пространство программы</h2>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:32px">
+    <div class="photo-grid" style="margin-top:32px">
       <div class="photo-block r lightbox-trigger" style="background:var(--baikal) url('пространство1.jpg') center/cover no-repeat;aspect-ratio:4/3"></div>
       <div class="photo-block r r1 lightbox-trigger" style="background:var(--baikal) url('пространство2.jpg') center/cover no-repeat;aspect-ratio:4/3"></div>
       <div class="photo-block r r1 lightbox-trigger" style="background:var(--baikal) url('пространство3.jpg') center/cover no-repeat;aspect-ratio:4/3"></div>
@@ -684,8 +679,9 @@ footer .copy{color:rgba(255,255,255,.18);font-size:12px}
       </div>
     </div>
     <div class="price-card r r3">
-      <h3>Полная стоимость участия</h3>
+      <h3>Стоимость участия</h3>
       <div class="price-amount">44 000 <span>₽</span></div>
+      <div style="font-size:13px;color:var(--text-light);margin-bottom:16px">При раннем бронировании действуют специальные условия</div>
 
       <div style="border-top:1px solid rgba(142,197,232,0.2);margin:16px 0 0"></div>
       <div class="price-includes">
@@ -699,24 +695,11 @@ footer .copy{color:rgba(255,255,255,.18);font-size:12px}
         <li>обратная связь от психолога после программы</li>
       </div>
     </div>
+    <div class="highlight r r4" style="margin-top:0">
+      <p style="margin:0;font-size:14px;color:var(--text-light);line-height:1.7"><strong style="color:var(--graphite)">Количество мест ограничено:</strong> нам важно сохранить камерный формат и внимание к каждому ребёнку.</p>
+      <p style="margin:12px 0 0;font-size:14px;color:var(--text-light);line-height:1.7">Чем раньше вы бронируете место, тем спокойнее проходит подготовка к сезону — и тем выгоднее стоимость участия.</p>
+    </div>
     <p class="r r4" style="font-size:14px;color:var(--text-light);text-align:center;max-width:500px;margin:0 auto">Организатор программы — команда Анны Марактаевой. Запись и&nbsp;оплата происходят через организаторов. Оставьте заявку, мы&nbsp;передадим ваши контакты.</p>
-  </div>
-</section>
-
-<!-- 15. РАННЕЕ БРОНИРОВАНИЕ -->
-<section style="background:#F5F9FC">
-  <div class="section-inner">
-    <div class="label r" style="text-align:center">Скидки</div>
-    <h2 class="title r r1" style="text-align:center">При раннем бронировании<br>действуют специальные условия</h2>
-    <p class="r r2">Мы заранее формируем группу, готовим программу и&nbsp;команду, поэтому для&nbsp;родителей, которые бронируют место заранее, действуют специальные условия.</p>
-    <div class="early-prices r r3">
-      <div class="early-row"><span class="date">до [дата]</span><span class="cost">[цена] ₽</span></div>
-      <div class="early-row"><span class="date">до [дата]</span><span class="cost">[цена] ₽</span></div>
-      <div class="early-row"><span class="date">после [дата]</span><span class="cost">44 000 ₽</span></div>
-    </div>
-    <div class="highlight r r4">
-      <p style="margin:0;font-size:15px;color:var(--text-light)">Количество мест ограничено: нам&nbsp;важно сохранить камерный формат и&nbsp;внимание к&nbsp;каждому ребёнку.<br><br>Чем раньше вы&nbsp;бронируете место, тем&nbsp;спокойнее проходит подготовка к&nbsp;сезону&nbsp;— и&nbsp;тем&nbsp;выгоднее стоимость участия.</p>
-    </div>
     <div style="text-align:center;margin-top:24px" class="r r4">
       <a href="https://vk.me/annamaraktaeva" target="_blank" class="btn btn-primary btn-lg">Забронировать место</a>
     </div>
