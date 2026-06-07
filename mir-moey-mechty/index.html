@@ -251,6 +251,7 @@ footer .copy{color:rgba(255,255,255,.18);font-size:12px}
 .video-card{border-radius:14px;overflow:hidden;background:var(--white);box-shadow:0 2px 20px rgba(45,45,45,.05);cursor:pointer;transition:all .3s}
 .video-card:hover{box-shadow:0 8px 40px rgba(45,45,45,.12);transform:translateY(-3px)}
 .video-preview{position:relative;width:100%;aspect-ratio:16/9;display:flex;align-items:center;justify-content:center}
+.video-preview::after{content:'';position:absolute;inset:0;background:rgba(0,0,0,.18);z-index:1}
 .video-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);transition:transform .3s;z-index:2}
 .video-card:hover .video-play{transform:translate(-50%,-50%) scale(1.1)}
 .video-info{padding:14px 18px}
@@ -431,7 +432,7 @@ footer .copy{color:rgba(255,255,255,.18);font-size:12px}
     <p class="r r2" style="text-align:center;max-width:520px;margin:0 auto">Лучше один раз увидеть атмосферу: дети, Байкал, занятия, игры, команда, вечерние разговоры и&nbsp;живое общение.</p>
     <div class="video-grid r r3">
       <div class="video-card" onclick="openVideo(this)" data-video='{"oid":"-52472195","id":"456239565"}'>
-        <div class="video-preview" style="background:linear-gradient(135deg,#2F2B28,#5FA8D3)">
+        <div class="video-preview" style="background-image:url(video1.jpg);background-size:cover;background-position:center">
           <div class="video-play"><svg viewBox="0 0 24 24" width="48" height="48" fill="white"><circle cx="12" cy="12" r="11" fill="rgba(255,255,255,.2)" stroke="rgba(255,255,255,.8)" stroke-width="1"/><polygon points="10,7 10,17 18,12" fill="white"/></svg></div>
         </div>
         <div class="video-info">
@@ -440,7 +441,7 @@ footer .copy{color:rgba(255,255,255,.18);font-size:12px}
         </div>
       </div>
       <div class="video-card" onclick="openVideo(this)" data-video='{"oid":"-52472195","id":"456239518"}'>
-        <div class="video-preview" style="background:linear-gradient(135deg,#5FA8D3,#2F2B28)">
+        <div class="video-preview" style="background-image:url(video2.jpg);background-size:cover;background-position:center">
           <div class="video-play"><svg viewBox="0 0 24 24" width="48" height="48" fill="white"><circle cx="12" cy="12" r="11" fill="rgba(255,255,255,.2)" stroke="rgba(255,255,255,.8)" stroke-width="1"/><polygon points="10,7 10,17 18,12" fill="white"/></svg></div>
         </div>
         <div class="video-info">
