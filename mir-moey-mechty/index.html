@@ -122,8 +122,6 @@ p{font-size:15px;color:var(--text);line-height:1.9;margin-bottom:16px}
 .s-div{max-width:60px;height:2px;background:var(--sand);margin:0 auto 20px;border-radius:2px}
 
 .photo-block{border-radius:16px;overflow:hidden;min-height:280px;background:linear-gradient(160deg,var(--baikal-light),var(--baikal));margin:32px 0}
-
-.video-placeholder{border-radius:16px;overflow:hidden;background:var(--graphite);min-height:340px;margin:32px 0;display:flex;align-items:center;justify-content:center;padding:40px 24px}
 .trainer-grid{position:relative;z-index:1}
 .trainer-grid>div:hover{box-shadow:var(--shadow-hover);transform:translateY(-3px)}
 .trainer-card{position:relative}
@@ -225,7 +223,6 @@ footer .copy{color:rgba(255,255,255,.18);font-size:12px}
   .price-card{padding:28px 20px}
   .price-amount{font-size:34px}
   .early-row{flex-direction:column;align-items:flex-start;gap:4px}
-  .video-placeholder{min-height:220px}
   .trainer-grid{grid-template-columns:repeat(3,1fr)!important}
   .trainer-card:nth-child(4n+1) .popup,.trainer-card:nth-child(4n) .popup,.trainer-card:nth-child(3n) .popup{left:50%;right:auto;transform:translateX(-50%)}
   .hero-buttons .btn{width:100%;justify-content:center}
@@ -250,6 +247,29 @@ footer .copy{color:rgba(255,255,255,.18);font-size:12px}
 .totop.show{opacity:1;visibility:visible;transform:translateY(0)}
 .totop:hover{background:#2B7BA0;transform:translateY(-2px)}
 .totop.show:hover{transform:translateY(-2px)}
+.video-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;max-width:900px;margin:32px auto}
+.video-card{border-radius:14px;overflow:hidden;background:var(--white);box-shadow:0 2px 20px rgba(45,45,45,.05);cursor:pointer;transition:all .3s}
+.video-card:hover{box-shadow:0 8px 40px rgba(45,45,45,.12);transform:translateY(-3px)}
+.video-preview{position:relative;width:100%;aspect-ratio:16/9;display:flex;align-items:center;justify-content:center}
+.video-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);transition:transform .3s;z-index:2}
+.video-card:hover .video-play{transform:translate(-50%,-50%) scale(1.1)}
+.video-info{padding:14px 18px}
+.video-info h4{font-size:15px;font-weight:600;color:var(--graphite);margin-bottom:2px}
+.video-info span{font-size:12px;color:var(--text-light)}
+.video-overlay{display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.9);align-items:center;justify-content:center;padding:20px}
+.video-overlay.show{display:flex}
+.video-modal{position:relative;width:100%;max-width:900px;border-radius:12px;overflow:hidden;background:#000}
+.video-close{position:absolute;top:-40px;right:0;font-size:28px;color:#fff;cursor:pointer;background:none;border:none;line-height:1;z-index:10;padding:4px 8px}
+.video-wrap{position:relative;width:100%;padding-bottom:56.25%}
+.video-wrap iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:none}
+@media(max-width:640px){
+  .video-grid{grid-template-columns:1fr}
+  .video-card{border-radius:10px}
+  .video-info{padding:12px 14px}
+  .video-info h4{font-size:14px}
+  .video-overlay{padding:12px}
+  .video-close{top:8px;right:8px;font-size:24px;background:rgba(0,0,0,.5);border-radius:50%;width:36px;height:36px;display:flex;align-items:center;justify-content:center}
+}
 </style>
 </head>
 <body>
@@ -409,11 +429,35 @@ footer .copy{color:rgba(255,255,255,.18);font-size:12px}
     <div class="label r" style="text-align:center">Видео</div>
     <h2 class="title r r1" style="text-align:center">Посмотрите, как проходит программа</h2>
     <p class="r r2" style="text-align:center;max-width:520px;margin:0 auto">Лучше один раз увидеть атмосферу: дети, Байкал, занятия, игры, команда, вечерние разговоры и&nbsp;живое общение.</p>
-    <div class="video-placeholder r r3">
-      <p style="color:rgba(255,255,255,.35);font-size:14px;text-align:center;margin:0;max-width:380px">Видео об атмосфере сезона появится здесь после согласования материалов.</p>
+    <div class="video-grid r r3">
+      <div class="video-card" onclick="openVideo(this)" data-video='{"oid":"-52472195","id":"456239565"}'>
+        <div class="video-preview" style="background:linear-gradient(135deg,#2F2B28,#5FA8D3)">
+          <div class="video-play"><svg viewBox="0 0 24 24" width="48" height="48" fill="white"><circle cx="12" cy="12" r="11" fill="rgba(255,255,255,.2)" stroke="rgba(255,255,255,.8)" stroke-width="1"/><polygon points="10,7 10,17 18,12" fill="white"/></svg></div>
+        </div>
+        <div class="video-info">
+          <h4>Как проходит программа «Мир Моей Мечты»</h4>
+          <span>1:00</span>
+        </div>
+      </div>
+      <div class="video-card" onclick="openVideo(this)" data-video='{"oid":"-52472195","id":"456239518"}'>
+        <div class="video-preview" style="background:linear-gradient(135deg,#5FA8D3,#2F2B28)">
+          <div class="video-play"><svg viewBox="0 0 24 24" width="48" height="48" fill="white"><circle cx="12" cy="12" r="11" fill="rgba(255,255,255,.2)" stroke="rgba(255,255,255,.8)" stroke-width="1"/><polygon points="10,7 10,17 18,12" fill="white"/></svg></div>
+        </div>
+        <div class="video-info">
+          <h4>Будни участников программы</h4>
+          <span>1:00</span>
+        </div>
+      </div>
     </div>
   </div>
 </section>
+
+<div class="video-overlay" id="videoOverlay" onclick="closeVideo()">
+  <div class="video-modal" onclick="event.stopPropagation()">
+    <button class="video-close" onclick="closeVideo()">×</button>
+    <div class="video-wrap" id="videoWrap"></div>
+  </div>
+</div>
 
 <!-- 8. РОДИТЕЛИ НЕ ОСТАЮТСЯ В СТОРОНЕ -->
 <section>
@@ -806,6 +850,29 @@ function closeMenu(){navToggle.classList.remove('open');navLinks.classList.remov
 navToggle.addEventListener('click',function(){navToggle.classList.toggle('open');navLinks.classList.toggle('open');document.body.style.overflow=navLinks.classList.contains('open')?'hidden':''});
 navLinks.addEventListener('click',function(e){if(!e.target.closest('a'))closeMenu()});
 navLinks.querySelectorAll('a').forEach(function(a){a.addEventListener('click',closeMenu)});
+
+var videoOverlay=document.getElementById('videoOverlay');
+var videoWrap=document.getElementById('videoWrap');
+var activeIframe=null;
+function openVideo(card){
+  var data=card.getAttribute('data-video');
+  if(!data)return;
+  var v=JSON.parse(data);
+  var iframe=document.createElement('iframe');
+  iframe.src='https://vkvideo.ru/video_ext.php?oid='+v.oid+'&id='+v.id+'&autoplay=1&hd=2';
+  iframe.allow='autoplay; encrypted-media; fullscreen; picture-in-picture';
+  iframe.allowFullscreen=true;
+  videoWrap.appendChild(iframe);
+  activeIframe=iframe;
+  videoOverlay.classList.add('show');
+  document.body.style.overflow='hidden';
+}
+function closeVideo(){
+  if(activeIframe){activeIframe.remove();activeIframe=null}
+  videoOverlay.classList.remove('show');
+  document.body.style.overflow='';
+}
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeVideo()});
 </script>
 
 <div class="lightbox-overlay" id="lightbox" onclick="if(event.target===this)closeLightbox()">
