@@ -230,6 +230,10 @@ footer .copy{color:rgba(255,255,255,.18);font-size:12px}
 .lightbox-overlay.show{display:flex}
 .lightbox-overlay img{max-width:95vw;max-height:95vh;object-fit:contain;border-radius:8px}
 .lightbox-overlay .close{position:absolute;top:16px;right:20px;font-size:32px;color:#fff;cursor:pointer;background:none;border:none;line-height:1}
+.totop{position:fixed;bottom:32px;right:24px;width:48px;height:48px;border-radius:50%;background:var(--baikal);color:#fff;border:none;cursor:pointer;z-index:999;font-size:20px;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(0,0,0,.15);opacity:0;visibility:hidden;transition:opacity .3s,visibility .3s,transform .3s;transform:translateY(12px)}
+.totop.show{opacity:1;visibility:visible;transform:translateY(0)}
+.totop:hover{background:#2B7BA0;transform:translateY(-2px)}
+.totop.show:hover{transform:translateY(-2px)}
 </style>
 </head>
 <body>
@@ -767,6 +771,16 @@ document.querySelectorAll('.lightbox-trigger').forEach(function(el){
       if(m&&m[1])openLightbox(m[1]);
     }
   });
+});
+});
+</script>
+
+<button class="totop" id="totop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Наверх">↑</button>
+
+<script>
+var totop=document.getElementById('totop');
+window.addEventListener('scroll',function(){
+  totop.classList.toggle('show',window.scrollY>500);
 });
 </script>
 </body>
