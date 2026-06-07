@@ -26,7 +26,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:18px 40px;display:f
 .nav-back:hover{color:var(--graphite)}
 
 .hero{min-height:100vh;padding:180px 60px 60px;background:#F5F9FC;position:relative}
-.hero-inner{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;max-width:1500px;margin:0 auto}
+.hero-inner{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:center;max-width:1500px;margin:0 auto}
 .hero-left{max-width:620px}
 .hero-badge{display:inline-flex;padding:7px 18px;background:rgba(95,168,211,.1);border-radius:100px;font-size:13px;color:var(--baikal);font-weight:500;letter-spacing:.3px;margin-bottom:28px;gap:10px;align-items:center}
 .hero-badge span{color:var(--text-light)}
@@ -57,10 +57,10 @@ p{font-size:15px;color:var(--text);line-height:1.9;margin-bottom:16px}
 .btn-lg{padding:16px 36px;font-size:15px}
 .hero-collage{position:relative;width:100%;height:520px;display:flex;align-items:center;justify-content:center}
 .hero-collage .ph{position:absolute;border-radius:24px;object-fit:cover;box-shadow:0 10px 48px rgba(45,45,45,.08);border:5px solid var(--white);background:linear-gradient(160deg,var(--sand),var(--baikal))}
-.hero-collage .ph-main{width:clamp(300px,36vw,500px);height:clamp(200px,24vw,350px);top:50%;left:46%;transform:translate(-50%,-50%);z-index:2}
+.hero-collage .ph-main{width:clamp(340px,40vw,550px);height:clamp(220px,26vw,380px);top:50%;left:46%;transform:translate(-50%,-50%);z-index:2}
 .hero-collage .ph-main .ph-label{position:absolute;bottom:12px;right:12px;padding:7px 18px;background:var(--white);border-radius:100px;font-size:13px;color:var(--baikal);font-weight:500;box-shadow:0 2px 16px rgba(0,0,0,.07);z-index:5;white-space:nowrap}
-.hero-collage .ph-top{width:clamp(150px,17vw,250px);height:clamp(100px,12vw,175px);top:1%;right:-8%;z-index:3;transform:rotate(2deg)}
-.hero-collage .ph-bot{width:clamp(180px,20vw,300px);height:clamp(130px,15vw,210px);bottom:-4%;left:-16%;z-index:1;transform:rotate(-1.5deg)}
+.hero-collage .ph-top{width:clamp(170px,19vw,280px);height:clamp(110px,13vw,190px);top:4%;right:-2%;z-index:3;transform:rotate(2deg)}
+.hero-collage .ph-bot{width:clamp(200px,22vw,330px);height:clamp(140px,16vw,230px);bottom:-2%;left:-5%;z-index:1;transform:rotate(-1.5deg)}
 .hero-decor{position:absolute;pointer-events:none;z-index:1}
 .hero-decor-circle{width:80px;height:80px;border-radius:50%;border:1.5px dashed rgba(142,197,232,.2);top:5%;right:3%;opacity:.4}
 
@@ -160,16 +160,16 @@ footer .copy{color:rgba(255,255,255,.18);font-size:12px}
 
 @media(max-width:1100px){
   .hero{padding:130px 48px 60px}
-  .hero-collage .ph-main{width:clamp(260px,32vw,380px);height:clamp(170px,21vw,260px)}
-  .hero-collage .ph-top{width:clamp(130px,15vw,190px);height:clamp(86px,10vw,130px)}
-  .hero-collage .ph-bot{width:clamp(140px,16vw,210px);height:clamp(94px,11vw,140px)}
+  .hero-collage .ph-main{width:clamp(290px,35vw,420px);height:clamp(190px,23vw,290px)}
+  .hero-collage .ph-top{width:clamp(140px,17vw,210px);height:clamp(100px,11vw,140px);top:3%;right:-2%}
+  .hero-collage .ph-bot{width:clamp(160px,18vw,230px);height:clamp(100px,12vw,150px);bottom:-2%;left:-4%}
 }
 @media(max-width:860px){
   .hero{padding:120px 36px 50px}
-  .hero-collage{height:380px}
-  .hero-collage .ph-main{width:300px;height:220px}
-  .hero-collage .ph-top{width:160px;height:110px;top:0;right:0}
-  .hero-collage .ph-bot{width:180px;height:120px;bottom:2%;left:2%}
+  .hero-collage{height:400px}
+  .hero-collage .ph-main{width:330px;height:240px}
+  .hero-collage .ph-top{width:180px;height:120px;top:2%;right:-2%}
+  .hero-collage .ph-bot{width:200px;height:130px;bottom:0;left:0}
 }
 @media(min-width:701px){
   .hero-trust{flex-wrap:nowrap}
@@ -180,9 +180,9 @@ footer .copy{color:rgba(255,255,255,.18);font-size:12px}
   .hero-left{max-width:100%}
   .hero-collage{display:flex;flex-flow:row wrap;gap:12px;height:auto;margin-top:8px}
   .hero-collage .ph{position:static;border-radius:16px;border-width:3px;transform:none}
-  .hero-collage .ph-main{width:100%;height:300px;flex:0 0 100%}
-  .hero-collage .ph-top{width:calc(50% - 6px);height:200px;flex:0 0 calc(50% - 6px)}
-  .hero-collage .ph-bot{width:calc(50% - 6px);height:200px;left:auto;bottom:auto;flex:0 0 calc(50% - 6px)}
+  .hero-collage .ph-main{width:100%;height:320px;flex:0 0 100%}
+  .hero-collage .ph-top{width:calc(50% - 6px);height:220px;flex:0 0 calc(50% - 6px)}
+  .hero-collage .ph-bot{width:calc(50% - 6px);height:220px;left:auto;bottom:auto;flex:0 0 calc(50% - 6px)}
   .hero-collage .ph-main .ph-label{font-size:11px;padding:4px 12px;bottom:8px;right:8px}
   .hero-decor-circle{display:none}
 }
@@ -198,9 +198,9 @@ footer .copy{color:rgba(255,255,255,.18);font-size:12px}
   .hero .btn-outline{padding:13px 28px;font-size:13px}
   .hero-collage{display:flex;flex-flow:row wrap;gap:10px;height:auto}
   .hero-collage .ph{border-width:3px}
-  .hero-collage .ph-main{width:100%;height:240px;flex:0 0 100%}
-  .hero-collage .ph-top{width:calc(50% - 5px);height:150px;flex:0 0 calc(50% - 5px)}
-  .hero-collage .ph-bot{width:calc(50% - 5px);height:150px;left:auto;bottom:auto;flex:0 0 calc(50% - 5px)}
+  .hero-collage .ph-main{width:100%;height:260px;flex:0 0 100%}
+  .hero-collage .ph-top{width:calc(50% - 5px);height:170px;flex:0 0 calc(50% - 5px)}
+  .hero-collage .ph-bot{width:calc(50% - 5px);height:170px;left:auto;bottom:auto;flex:0 0 calc(50% - 5px)}
   .hero-collage .ph-main .ph-label{font-size:11px;padding:4px 12px;bottom:8px;right:8px}
   .final{padding:60px 20px}
   footer{padding:40px 20px 24px}
@@ -221,9 +221,9 @@ footer .copy{color:rgba(255,255,255,.18);font-size:12px}
   .trainer-card:nth-child(4n+1) .popup,.trainer-card:nth-child(4n) .popup,.trainer-card:nth-child(2n) .popup{left:50%;right:auto;transform:translateX(-50%)}
   .hero{padding:130px 20px 40px}
   .hero-collage{height:auto}
-  .hero-collage .ph-main{width:100%;height:200px;flex:0 0 100%}
-  .hero-collage .ph-top{width:calc(50% - 5px);height:130px;top:auto;right:auto;flex:0 0 calc(50% - 5px)}
-  .hero-collage .ph-bot{width:calc(50% - 5px);height:130px;left:auto;bottom:auto;flex:0 0 calc(50% - 5px)}
+  .hero-collage .ph-main{width:100%;height:220px;flex:0 0 100%}
+  .hero-collage .ph-top{width:calc(50% - 5px);height:150px;top:auto;right:auto;flex:0 0 calc(50% - 5px)}
+  .hero-collage .ph-bot{width:calc(50% - 5px);height:150px;left:auto;bottom:auto;flex:0 0 calc(50% - 5px)}
   .hero-collage .ph-main .ph-label{font-size:9px;padding:2px 8px;bottom:6px;right:6px}
 }
 </style>
