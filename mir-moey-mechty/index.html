@@ -22,11 +22,11 @@ img{max-width:100%;height:auto}
 nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:18px 40px;display:flex;justify-content:space-between;align-items:center;transition:all .4s;background:rgba(255,255,255,.95);backdrop-filter:blur(16px)}
 .nav-logo{font-family:'Plus Jakarta Sans',sans-serif;font-size:22px;font-weight:700;color:var(--graphite);text-decoration:none;letter-spacing:-.3px}
 .nav-logo span{color:var(--baikal)}
-.nav-right{display:flex;align-items:center;gap:20px}
-.nav-back{display:flex;align-items:center;gap:6px;color:var(--baikal);text-decoration:none;font-size:14px;font-weight:500;transition:color .3s}
-.nav-back:hover{color:var(--graphite)}
-.nav-mm{color:var(--text-light);text-decoration:none;font-size:14px;font-weight:500;transition:color .3s;white-space:nowrap}
-.nav-mm:hover{color:var(--graphite)}
+.nav-links{display:flex;gap:24px;list-style:none;align-items:center}
+.nav-links a{color:var(--text-light);text-decoration:none;font-size:14px;font-weight:500;transition:color .3s}
+.nav-links a:hover{color:var(--baikal)}
+.nav-cta{background:var(--baikal);color:var(--white)!important;padding:8px 20px;border-radius:100px;font-size:13px!important;transition:background .3s}
+.nav-cta:hover{background:#4a8db5!important}
 
 .hero{min-height:100vh;padding:180px 60px 60px;background:#F5F9FC;position:relative}
 .hero-inner{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:center;max-width:1500px;margin:0 auto}
@@ -194,7 +194,10 @@ footer .copy{color:rgba(255,255,255,.18);font-size:12px}
   .card-grid .card[style*="span"]{grid-column:auto!important}
 }
 @media(max-width:640px){
-  nav{padding:14px 20px}
+  nav{padding:12px 16px}
+  .nav-links{gap:10px}
+  .nav-links a{font-size:12px}
+  .nav-cta{padding:6px 14px;font-size:12px!important}
   section{padding:60px 20px}
   .hero{padding:130px 28px 40px}
   .hero .btn-primary{padding:13px 28px;font-size:13px}
@@ -243,10 +246,14 @@ footer .copy{color:rgba(255,255,255,.18);font-size:12px}
 
 <nav>
   <a href="../index.html" class="nav-logo">Наша <span>База</span></a>
-  <div class="nav-right">
-    <a href="index.html" class="nav-mm">Мир Моей Мечты</a>
-    <a href="../index.html" class="nav-back">← На главную</a>
-  </div>
+  <ul class="nav-links">
+    <li><a href="#about">О программе</a></li>
+    <li><a href="#program">Как проходит</a></li>
+    <li><a href="#trainers">Ведущие</a></li>
+    <li><a href="#safety">Безопасность</a></li>
+    <li><a href="#price">Стоимость</a></li>
+    <li><a href="#contact" class="nav-cta">Связаться</a></li>
+  </ul>
 </nav>
 
 <!-- 1. HERO -->
@@ -280,7 +287,7 @@ footer .copy{color:rgba(255,255,255,.18);font-size:12px}
 </section>
 
 <!-- 2. ГЛАВНЫЙ СМЫСЛ -->
-<section>
+<section id="about">
   <div class="section-inner">
     <div class="label r" style="text-align:center">О программе</div>
     <div class="s-div r r1"></div>
@@ -344,7 +351,7 @@ footer .copy{color:rgba(255,255,255,.18);font-size:12px}
 </section>
 
 <!-- 6. КАК ПРОХОДИТ ПРОГРАММА -->
-<section>
+<section id="program">
   <div class="section-inner">
     <div class="label r" style="text-align:center">Формат</div>
     <h2 class="title r r1" style="text-align:center">Занятия, игры, команда и&nbsp;живая практика каждый день</h2>
@@ -412,7 +419,7 @@ footer .copy{color:rgba(255,255,255,.18);font-size:12px}
 </section>
 
 <!-- 9. БЕЗОПАСНОСТЬ И ДОВЕРИЕ -->
-<section style="background:#F5F9FC">
+<section id="safety" style="background:#F5F9FC">
   <div class="section-inner">
     <div class="label r" style="text-align:center">Безопасность</div>
     <h2 class="title r r1" style="text-align:center">Самостоятельность — да.<br>Оставить ребёнка одного с&nbsp;трудностями — нет</h2>
@@ -468,7 +475,7 @@ footer .copy{color:rgba(255,255,255,.18);font-size:12px}
 </section>
 
 <!-- 11. КТО ВЕДЁТ -->
-<section>
+<section id="trainers">
   <div class="section-inner">
     <div class="label r" style="text-align:center">Команда</div>
     <h2 class="title r r1" style="text-align:center">Программу ведут психологи и&nbsp;тренеры,<br>которые работают с&nbsp;детьми и&nbsp;родителями</h2>
