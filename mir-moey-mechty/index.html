@@ -22,8 +22,11 @@ img{max-width:100%;height:auto}
 nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:18px 40px;display:flex;justify-content:space-between;align-items:center;transition:all .4s;background:rgba(255,255,255,.95);backdrop-filter:blur(16px)}
 .nav-logo{font-family:'Plus Jakarta Sans',sans-serif;font-size:22px;font-weight:700;color:var(--graphite);text-decoration:none;letter-spacing:-.3px}
 .nav-logo span{color:var(--baikal)}
+.nav-right{display:flex;align-items:center;gap:20px}
 .nav-back{display:flex;align-items:center;gap:6px;color:var(--baikal);text-decoration:none;font-size:14px;font-weight:500;transition:color .3s}
 .nav-back:hover{color:var(--graphite)}
+.nav-mm{color:var(--text-light);text-decoration:none;font-size:14px;font-weight:500;transition:color .3s;white-space:nowrap}
+.nav-mm:hover{color:var(--graphite)}
 
 .hero{min-height:100vh;padding:180px 60px 60px;background:#F5F9FC;position:relative}
 .hero-inner{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:center;max-width:1500px;margin:0 auto}
@@ -240,7 +243,10 @@ footer .copy{color:rgba(255,255,255,.18);font-size:12px}
 
 <nav>
   <a href="../index.html" class="nav-logo">Наша <span>База</span></a>
-  <a href="../index.html" class="nav-back">← На главную</a>
+  <div class="nav-right">
+    <a href="index.html" class="nav-mm">Мир Моей Мечты</a>
+    <a href="../index.html" class="nav-back">← На главную</a>
+  </div>
 </nav>
 
 <!-- 1. HERO -->
