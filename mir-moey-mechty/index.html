@@ -273,6 +273,20 @@ footer .copy{color:rgba(255,255,255,.18);font-size:12px}
   .video-overlay{padding:12px}
   .video-close{top:8px;right:8px;font-size:24px;background:rgba(0,0,0,.5);border-radius:50%;width:36px;height:36px;display:flex;align-items:center;justify-content:center}
 }
+.mmm-gallery-section{padding:80px 0}
+.mmm-gallery-viewport{overflow:hidden;position:relative;width:100%}
+.mmm-gallery-viewport::before,.mmm-gallery-viewport::after{content:'';position:absolute;top:0;bottom:0;width:80px;z-index:2;pointer-events:none}
+.mmm-gallery-viewport::before{left:0;background:linear-gradient(to right,var(--bg),transparent)}
+.mmm-gallery-viewport::after{right:0;background:linear-gradient(to left,var(--bg),transparent)}
+.mmm-gallery-track{display:flex;gap:16px;width:max-content;animation:mmmScroll 50s linear infinite}
+.mmm-gallery-section:hover .mmm-gallery-track{animation-play-state:paused}
+@keyframes mmmScroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.mmm-gallery-item{height:250px;border-radius:18px;overflow:hidden;box-shadow:0 2px 12px rgba(45,45,45,.06);flex-shrink:0;cursor:pointer}
+.mmm-gallery-item img{height:100%;width:auto;object-fit:cover;display:block}
+@media(max-width:1024px){.mmm-gallery-item{height:220px}.mmm-gallery-section{padding:60px 0}}
+@media(max-width:640px){.mmm-gallery-item{height:160px;border-radius:14px}.mmm-gallery-section{padding:40px 0}.mmm-gallery-viewport::before,.mmm-gallery-viewport::after{width:40px}}
+@media(max-width:480px){.mmm-gallery-item{height:140px;border-radius:12px}.mmm-gallery-section{padding:30px 0}}
+@media(prefers-reduced-motion:reduce){.mmm-gallery-track{animation:none}}
 </style>
 </head>
 <body>
@@ -385,6 +399,42 @@ footer .copy{color:rgba(255,255,255,.18);font-size:12px}
       <div class="card r r3"><div class="icon">🏡</div><h4>Опыт жизни в&nbsp;команде</h4><p>Учится учитывать других, соблюдать общие правила, просить помощь и&nbsp;помогать самому.</p></div>
     </div>
     <p class="r r3" style="text-align:center;font-size:14px;color:var(--text-light);margin-top:16px">Это не&nbsp;просто отдых, а&nbsp;развивающая программа, где каждый день приносит ребёнку новый опыт.</p>
+  </div>
+</section>
+
+<!-- 5.5 GALLERY -->
+<section class="mmm-gallery-section">
+  <div class="mmm-gallery-viewport">
+    <div class="mmm-gallery-track" id="galleryTrack">
+      <div class="mmm-gallery-item"><img src="gallery-01.jpg" alt=""></div>
+      <div class="mmm-gallery-item"><img src="gallery-02.jpg" alt=""></div>
+      <div class="mmm-gallery-item"><img src="gallery-03.jpg" alt=""></div>
+      <div class="mmm-gallery-item"><img src="gallery-04.jpg" alt=""></div>
+      <div class="mmm-gallery-item"><img src="gallery-05.jpg" alt=""></div>
+      <div class="mmm-gallery-item"><img src="gallery-06.jpg" alt=""></div>
+      <div class="mmm-gallery-item"><img src="gallery-07.jpg" alt=""></div>
+      <div class="mmm-gallery-item"><img src="gallery-08.jpg" alt=""></div>
+      <div class="mmm-gallery-item"><img src="gallery-09.jpg" alt=""></div>
+      <div class="mmm-gallery-item"><img src="gallery-10.jpg" alt=""></div>
+      <div class="mmm-gallery-item"><img src="gallery-11.jpg" alt=""></div>
+      <div class="mmm-gallery-item"><img src="gallery-12.jpg" alt=""></div>
+      <div class="mmm-gallery-item"><img src="gallery-13.jpg" alt=""></div>
+      <div class="mmm-gallery-item"><img src="gallery-14.jpg" alt=""></div>
+      <div class="mmm-gallery-item"><img src="gallery-01.jpg" alt=""></div>
+      <div class="mmm-gallery-item"><img src="gallery-02.jpg" alt=""></div>
+      <div class="mmm-gallery-item"><img src="gallery-03.jpg" alt=""></div>
+      <div class="mmm-gallery-item"><img src="gallery-04.jpg" alt=""></div>
+      <div class="mmm-gallery-item"><img src="gallery-05.jpg" alt=""></div>
+      <div class="mmm-gallery-item"><img src="gallery-06.jpg" alt=""></div>
+      <div class="mmm-gallery-item"><img src="gallery-07.jpg" alt=""></div>
+      <div class="mmm-gallery-item"><img src="gallery-08.jpg" alt=""></div>
+      <div class="mmm-gallery-item"><img src="gallery-09.jpg" alt=""></div>
+      <div class="mmm-gallery-item"><img src="gallery-10.jpg" alt=""></div>
+      <div class="mmm-gallery-item"><img src="gallery-11.jpg" alt=""></div>
+      <div class="mmm-gallery-item"><img src="gallery-12.jpg" alt=""></div>
+      <div class="mmm-gallery-item"><img src="gallery-13.jpg" alt=""></div>
+      <div class="mmm-gallery-item"><img src="gallery-14.jpg" alt=""></div>
+    </div>
   </div>
 </section>
 
@@ -865,6 +915,12 @@ function closeVideo(){
   document.body.style.overflow='';
 }
 document.addEventListener('keydown',function(e){if(e.key==='Escape')closeVideo()});
+document.querySelectorAll('.mmm-gallery-item').forEach(function(el){
+  el.addEventListener('click',function(){
+    var img=this.querySelector('img');
+    if(img)openLightbox(img.src);
+  });
+});
 </script>
 
 <div class="lightbox-overlay" id="lightbox" onclick="if(event.target===this)closeLightbox()">
