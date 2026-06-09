@@ -296,6 +296,7 @@ footer .copy{color:rgba(255,255,255,.18);font-size:12px}
 @media(max-width:640px){.mmm-gallery-item{height:160px;border-radius:14px}.mmm-gallery-section{padding:40px 0}.mmm-gallery-viewport::before,.mmm-gallery-viewport::after{width:40px}}
 @media(max-width:480px){.mmm-gallery-item{height:140px;border-radius:12px}.mmm-gallery-section{padding:30px 0}}
 @media(prefers-reduced-motion:reduce){.mmm-gallery-track{animation:none}}
+@media(min-width:1025px){.card-grid .cc{grid-column:1/-1;justify-self:center;width:calc(50% - 8px)}}
 </style>
 </head>
 <body>
@@ -488,10 +489,10 @@ footer .copy{color:rgba(255,255,255,.18);font-size:12px}
     <div class="label r" style="text-align:center">Гимнастика для мозга</div>
     <h2 class="title r r1" style="text-align:center">Помогаем снизить напряжение<br>и&nbsp;включиться в&nbsp;работу</h2>
     <p class="r r2">В&nbsp;программе есть простые упражнения, которые помогают ребёнку настроиться на&nbsp;учебные задачи, снять стресс и&nbsp;почувствовать, что&nbsp;он справляется. Это не&nbsp;уроки и&nbsp;не&nbsp;обязательная учёба&nbsp;— а&nbsp;короткие практики, встроенные в&nbsp;дневной ритм.</p>
-    <div class="card-grid" style="margin-top:16px;justify-items:center">
+    <div class="card-grid" style="margin-top:16px">
       <div class="card r"><div class="icon">🧘</div><h4>Дыхательные упражнения</h4><p>Помогают успокоиться, собраться и&nbsp;переключить внимание после активных игр.</p></div>
       <div class="card r r1"><div class="icon">🤸</div><h4>Двигательные практики</h4><p>Простые движения, которые активизируют оба полушария и&nbsp;помогают лучше воспринимать информацию.</p></div>
-      <div class="card r r1" style="grid-column:1/-1;max-width:calc(50% - 8px)"><div class="icon">🎯</div><h4>Упражнения на&nbsp;внимание</h4><p>Игровые задания, которые тренируют сосредоточенность и&nbsp;умение входить в&nbsp;рабочий ритм.</p></div>
+      <div class="card r r1 cc"><div class="icon">🎯</div><h4>Упражнения на&nbsp;внимание</h4><p>Игровые задания, которые тренируют сосредоточенность и&nbsp;умение входить в&nbsp;рабочий ритм.</p></div>
     </div>
   </div>
 </section>
@@ -686,10 +687,15 @@ footer .copy{color:rgba(255,255,255,.18);font-size:12px}
 <style>
 .review-card{display:flex;gap:16px;padding:20px 24px;background:var(--white);border-radius:14px;margin-bottom:16px;transition:all .3s}
 .review-card:hover{box-shadow:var(--shadow)}
-.review-avatar{width:48px;height:48px;border-radius:50%;flex-shrink:0;background:var(--sand)}
+.review-avatar{width:80px;height:80px;border-radius:50%;flex-shrink:0;background:var(--sand)}
 .review-body{flex:1;min-width:0}
 .review-name{font-weight:600;font-size:15px;color:var(--graphite);margin-bottom:4px}
-.review-text{font-size:14px;color:var(--text-light);line-height:1.7;margin:0;white-space:pre-line}
+.review-text{font-size:14px;color:var(--text-light);line-height:1.7;margin:0;white-space:pre-line;max-height:100px;overflow:hidden;position:relative;transition:max-height .4s ease}
+.review-text::after{content:'';position:absolute;bottom:0;left:0;right:0;height:40px;background:linear-gradient(transparent,var(--white));pointer-events:none;transition:opacity .3s}
+.review-card.expanded .review-text{max-height:900px}
+.review-card.expanded .review-text::after{opacity:0}
+.review-expand{display:inline-block;margin-top:8px;font-size:13px;color:var(--baikal);cursor:pointer;font-weight:500;border:none;background:none;padding:0;transition:color .3s}
+.review-expand:hover{color:#2B7BA0}
 .clip-scroll{display:flex;gap:12px;overflow-x:auto;padding-bottom:8px;margin:24px 0 8px;-webkit-overflow-scrolling:touch;scroll-snap-type:x mandatory}
 .clip-scroll::-webkit-scrollbar{height:4px}
 .clip-scroll::-webkit-scrollbar-thumb{background:var(--sand);border-radius:4px}
@@ -699,7 +705,7 @@ footer .copy{color:rgba(255,255,255,.18);font-size:12px}
 .clip-preview::after{content:'';position:absolute;inset:0;background:rgba(0,0,0,.12);z-index:1}
 .clip-play{position:absolute;z-index:2;width:40px;height:40px;background:rgba(0,0,0,.4);border-radius:50%;display:flex;align-items:center;justify-content:center}
 .clip-play svg{width:20px;height:20px;fill:white}
-@media(max-width:640px){.clip-item{width:140px}.review-card{flex-direction:column;align-items:flex-start;gap:10px;padding:16px}.review-avatar{width:40px;height:40px}}
+@media(max-width:640px){.clip-item{width:140px}.review-card{flex-direction:column;align-items:flex-start;gap:10px;padding:16px}.review-avatar{width:60px;height:60px}.review-text{max-height:80px}}
 </style>
 
 <!-- 12. ОТЗЫВЫ -->
@@ -708,41 +714,41 @@ footer .copy{color:rgba(255,255,255,.18);font-size:12px}
     <div class="label r" style="text-align:center">Отзывы</div>
     <h2 class="title r r1" style="text-align:center">Что говорят дети и&nbsp;родители</h2>
 
-    <p class="r r2" style="text-align:center;font-size:16px;color:var(--text-light);margin-bottom:8px">После программы дети рассказывают, что&nbsp;для&nbsp;них стало важным</p>
+    <p class="r r2" style="text-align:center;font-size:20px;font-weight:600;color:var(--graphite);margin-bottom:8px">После программы дети рассказывают, что&nbsp;для&nbsp;них стало важным</p>
 
     <div class="clip-scroll r r2">
       <div class="clip-item" onclick="window.open('https://vkvideo.ru/clip-52472195_456239581','_blank')">
-        <div class="clip-preview" style="background:linear-gradient(160deg,var(--baikal-light),var(--baikal))">
+        <div class="clip-preview" style="background:var(--sand) url('clip1.jpg') center/cover no-repeat">
           <div class="clip-play"><svg viewBox="0 0 24 24"><polygon points="8,5 8,19 19,12"/></svg></div>
         </div>
       </div>
       <div class="clip-item" onclick="window.open('https://vkvideo.ru/clip-52472195_456239580','_blank')">
-        <div class="clip-preview" style="background:linear-gradient(160deg,var(--baikal-light),var(--baikal))">
+        <div class="clip-preview" style="background:var(--sand) url('clip2.jpg') center/cover no-repeat">
           <div class="clip-play"><svg viewBox="0 0 24 24"><polygon points="8,5 8,19 19,12"/></svg></div>
         </div>
       </div>
       <div class="clip-item" onclick="window.open('https://vkvideo.ru/clip-52472195_456239579','_blank')">
-        <div class="clip-preview" style="background:linear-gradient(160deg,var(--baikal-light),var(--baikal))">
+        <div class="clip-preview" style="background:var(--sand) url('clip3.jpg') center/cover no-repeat">
           <div class="clip-play"><svg viewBox="0 0 24 24"><polygon points="8,5 8,19 19,12"/></svg></div>
         </div>
       </div>
       <div class="clip-item" onclick="window.open('https://vkvideo.ru/clip-52472195_456239578','_blank')">
-        <div class="clip-preview" style="background:linear-gradient(160deg,var(--baikal-light),var(--baikal))">
+        <div class="clip-preview" style="background:var(--sand) url('clip4.jpg') center/cover no-repeat">
           <div class="clip-play"><svg viewBox="0 0 24 24"><polygon points="8,5 8,19 19,12"/></svg></div>
         </div>
       </div>
       <div class="clip-item" onclick="window.open('https://vkvideo.ru/clip-52472195_456239577','_blank')">
-        <div class="clip-preview" style="background:linear-gradient(160deg,var(--baikal-light),var(--baikal))">
+        <div class="clip-preview" style="background:var(--sand) url('clip5.jpg') center/cover no-repeat">
           <div class="clip-play"><svg viewBox="0 0 24 24"><polygon points="8,5 8,19 19,12"/></svg></div>
         </div>
       </div>
       <div class="clip-item" onclick="window.open('https://vkvideo.ru/clip-52472195_456239576','_blank')">
-        <div class="clip-preview" style="background:linear-gradient(160deg,var(--baikal-light),var(--baikal))">
+        <div class="clip-preview" style="background:var(--sand) url('clip6.jpg') center/cover no-repeat">
           <div class="clip-play"><svg viewBox="0 0 24 24"><polygon points="8,5 8,19 19,12"/></svg></div>
         </div>
       </div>
       <div class="clip-item" onclick="window.open('https://vkvideo.ru/clip-52472195_456239575','_blank')">
-        <div class="clip-preview" style="background:linear-gradient(160deg,var(--baikal-light),var(--baikal))">
+        <div class="clip-preview" style="background:var(--sand) url('clip7.jpg') center/cover no-repeat">
           <div class="clip-play"><svg viewBox="0 0 24 24"><polygon points="8,5 8,19 19,12"/></svg></div>
         </div>
       </div>
@@ -755,28 +761,32 @@ footer .copy{color:rgba(255,255,255,.18);font-size:12px}
         <div class="review-avatar" style="background-image:url(отзывы1.jpg);background-size:cover;background-position:center"></div>
         <div class="review-body">
           <div class="review-name">Екатерина</div>
-          <p class="review-text">Всем добрый вечер! После лагеря наблюдаю за&nbsp;Таней. Стала ещё более независимой. Буквально на&nbsp;днях на&nbsp;полке нашли конверт с&nbsp;записками. Прочитали вместе! Очень была рада! До&nbsp;этого она мне запретила читать.<br><br>Таня сейчас учится в&nbsp;3&nbsp;кл. и&nbsp;её выбрали старостой класса. Она очень рада! Сказала Таня: &laquo;Я&nbsp;же ответственная, активная и&nbsp;справлюсь с&nbsp;этой задачей&raquo;. Это во-первых.<br><br>Во&nbsp;вторых, сбылась моя мечта! Ещё в&nbsp;далёком 2009&nbsp;г. проходила базовые тренинги в&nbsp;ВЦВ, я&nbsp;замечтала когда у&nbsp;меня будут дети, что обязательно отправлю в&nbsp;лагерь &laquo;Мир&nbsp;моей&nbsp;мечты&raquo;! Нынче дочери исполнилось 8&nbsp;лет и&nbsp;я&nbsp;отправила в&nbsp;лагерь.</p>
+          <div class="review-text">Всем добрый вечер! После лагеря наблюдаю за&nbsp;Таней. Стала ещё более независимой. Буквально на&nbsp;днях на&nbsp;полке нашли конверт с&nbsp;записками. Прочитали вместе! Очень была рада! До&nbsp;этого она мне запретила читать.<br><br>Таня сейчас учится в&nbsp;3&nbsp;кл. и&nbsp;её выбрали старостой класса. Она очень рада! Сказала Таня: &laquo;Я&nbsp;же ответственная, активная и&nbsp;справлюсь с&nbsp;этой задачей&raquo;. Это во-первых.<br><br>Во&nbsp;вторых, сбылась моя мечта! Ещё в&nbsp;далёком 2009&nbsp;г. проходила базовые тренинги в&nbsp;ВЦВ, я&nbsp;замечтала когда у&nbsp;меня будут дети, что обязательно отправлю в&nbsp;лагерь &laquo;Мир&nbsp;моей&nbsp;мечты&raquo;! Нынче дочери исполнилось 8&nbsp;лет и&nbsp;я&nbsp;отправила в&nbsp;лагерь.</div>
+          <button class="review-expand" onclick="this.parentElement.parentElement.classList.toggle('expanded');this.textContent=this.parentElement.parentElement.classList.contains('expanded')?'Свернуть':'Читать далее'">Читать далее</button>
         </div>
       </div>
       <div class="review-card r r1">
         <div class="review-avatar" style="background-image:url(отзывы2.jpg);background-size:cover;background-position:center"></div>
         <div class="review-body">
           <div class="review-name">Татьяна</div>
-          <p class="review-text">Добрый день, Аня и&nbsp;родители! Алёша поначалу очень хотел в&nbsp;лагерь обратно, встретиться с&nbsp;новыми друзьями. Стал рассудительным, анализирует разные ситуации, учится в&nbsp;5&nbsp;классе, стал лидером в&nbsp;классе, учителя хвалят.<br><br>Хочет съездить в&nbsp;Улан-Удэ, пообщаться с&nbsp;друзьями МММ. В&nbsp;общем, я&nbsp;очень довольна результатами!</p>
+          <div class="review-text">Добрый день, Аня и&nbsp;родители! Алёша поначалу очень хотел в&nbsp;лагерь обратно, встретиться с&nbsp;новыми друзьями. Стал рассудительным, анализирует разные ситуации, учится в&nbsp;5&nbsp;классе, стал лидером в&nbsp;классе, учителя хвалят.<br><br>Хочет съездить в&nbsp;Улан-Удэ, пообщаться с&nbsp;друзьями МММ. В&nbsp;общем, я&nbsp;очень довольна результатами!</div>
+          <button class="review-expand" onclick="this.parentElement.parentElement.classList.toggle('expanded');this.textContent=this.parentElement.parentElement.classList.contains('expanded')?'Свернуть':'Читать далее'">Читать далее</button>
         </div>
       </div>
       <div class="review-card r r2">
         <div class="review-avatar" style="background-image:url(отзывы3.jpg);background-size:cover;background-position:center"></div>
         <div class="review-body">
           <div class="review-name">Цырена</div>
-          <p class="review-text">Дорогие тренеры, Аня, Саяна, Саша, Алина и&nbsp;консультанты, Лейла и&nbsp;Лера, огромная вам благодарность за&nbsp;сезон! Доча очень довольна, для&nbsp;меня, как&nbsp;для&nbsp;мамы, раскрылась с&nbsp;другой стороны)<br><br>В&nbsp;предыдущие года ездила в&nbsp;обычный лагерь и&nbsp;вроде тоже всё нравилось, но&nbsp;сейчас, попав в&nbsp;атмосферу любви и&nbsp;уважения, говорит, что&nbsp;в&nbsp;обычном лагере и&nbsp;дети, и&nbsp;взрослые как-то злее там, что&nbsp;чувствовала напряжение из-за&nbsp;того, что&nbsp;кто-то просто может наорать.<br><br>А&nbsp;в&nbsp;МММ чувствовала себя комфортно, спокойно, самостоятельно и&nbsp;поддержку со&nbsp;стороны взрослых. Благодарю всю команду за&nbsp;труд, за&nbsp;вашу любовь, веру и&nbsp;поддержку! Вы&nbsp;вносите большой вклад в&nbsp;будущее.</p>
+          <div class="review-text">Дорогие тренеры, Аня, Саяна, Саша, Алина и&nbsp;консультанты, Лейла и&nbsp;Лера, огромная вам благодарность за&nbsp;сезон! Доча очень довольна, для&nbsp;меня, как&nbsp;для&nbsp;мамы, раскрылась с&nbsp;другой стороны)<br><br>В&nbsp;предыдущие года ездила в&nbsp;обычный лагерь и&nbsp;вроде тоже всё нравилось, но&nbsp;сейчас, попав в&nbsp;атмосферу любви и&nbsp;уважения, говорит, что&nbsp;в&nbsp;обычном лагере и&nbsp;дети, и&nbsp;взрослые как-то злее там, что&nbsp;чувствовала напряжение из-за&nbsp;того, что&nbsp;кто-то просто может наорать.<br><br>А&nbsp;в&nbsp;МММ чувствовала себя комфортно, спокойно, самостоятельно и&nbsp;поддержку со&nbsp;стороны взрослых. Благодарю всю команду за&nbsp;труд, за&nbsp;вашу любовь, веру и&nbsp;поддержку! Вы&nbsp;вносите большой вклад в&nbsp;будущее.</div>
+          <button class="review-expand" onclick="this.parentElement.parentElement.classList.toggle('expanded');this.textContent=this.parentElement.parentElement.classList.contains('expanded')?'Свернуть':'Читать далее'">Читать далее</button>
         </div>
       </div>
       <div class="review-card r r3">
         <div class="review-avatar" style="background-image:url(отзывы4.jpg);background-size:cover;background-position:center"></div>
         <div class="review-body">
           <div class="review-name">Ирина</div>
-          <p class="review-text">Доброе утро!!! Хочу поблагодарить всех тренеров и&nbsp;организаторов данного тренинга, за&nbsp;проведение таких нужных и&nbsp;качественных мероприятий, ребенок в&nbsp;восторге, эмоции переполняют, как&nbsp;много положительных впечатлений и&nbsp;знаний пережил мой сын за&nbsp;эту маленькую неделю.<br><br>Теперь скучает и&nbsp;собирается с&nbsp;братом на&nbsp;следующий год! Вы&nbsp;профессионалы своего дела! Процветания вам и&nbsp;успехов дорогие тренеры и&nbsp;организаторы!!! Большое вам спасибо!!!</p>
+          <div class="review-text">Доброе утро!!! Хочу поблагодарить всех тренеров и&nbsp;организаторов данного тренинга, за&nbsp;проведение таких нужных и&nbsp;качественных мероприятий, ребенок в&nbsp;восторге, эмоции переполняют, как&nbsp;много положительных впечатлений и&nbsp;знаний пережил мой сын за&nbsp;эту маленькую неделю.<br><br>Теперь скучает и&nbsp;собирается с&nbsp;братом на&nbsp;следующий год! Вы&nbsp;профессионалы своего дела! Процветания вам и&nbsp;успехов дорогие тренеры и&nbsp;организаторы!!! Большое вам спасибо!!!</div>
+          <button class="review-expand" onclick="this.parentElement.parentElement.classList.toggle('expanded');this.textContent=this.parentElement.parentElement.classList.contains('expanded')?'Свернуть':'Читать далее'">Читать далее</button>
         </div>
       </div>
     </div>
