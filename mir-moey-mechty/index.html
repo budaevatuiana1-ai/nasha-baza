@@ -113,8 +113,8 @@ p{font-size:15px;color:var(--text);line-height:1.9;margin-bottom:16px}
 .price-card{max-width:500px;margin:32px auto;padding:40px 32px;background:#F5F9FC;border-radius:16px;text-align:center;border:1px solid transparent;transition:all .3s}
 .price-card:hover{box-shadow:var(--shadow-hover);border-color:var(--sand);transform:translateY(-4px)}
 .price-card h3{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--baikal);font-weight:600;margin-bottom:16px}
-.price-amount{font-family:'Plus Jakarta Sans',sans-serif;font-size:42px;font-weight:700;color:var(--baikal);margin-bottom:16px;letter-spacing:-1px}
-.price-amount span{font-size:18px;font-weight:400;color:var(--text-light)}
+.price-amount{font-family:'Plus Jakarta Sans',sans-serif;font-size:34px;font-weight:700;color:var(--baikal);margin-bottom:16px;letter-spacing:-1px}
+.price-amount span{font-size:16px;font-weight:400;color:var(--text-light)}
 .price-includes{text-align:left;padding:20px 0}
 .price-includes li{padding:6px 0;font-size:14px;color:var(--text-light);list-style:none;display:flex;align-items:center;gap:10px}
 .price-includes li::before{content:'✓';color:var(--baikal);font-weight:600}
@@ -230,7 +230,7 @@ footer .copy{color:rgba(255,255,255,.18);font-size:12px}
   .highlight{padding:24px 20px}
   .step{padding:16px}
   .price-card{padding:28px 20px}
-  .price-amount{font-size:34px}
+  .price-amount{font-size:28px}
   .trainer-grid{grid-template-columns:repeat(3,1fr)!important}
   .trainer-card:nth-child(4n+1) .popup,.trainer-card:nth-child(4n) .popup,.trainer-card:nth-child(3n) .popup{left:50%;right:auto;transform:translateX(-50%)}
   .hero-buttons .btn{width:100%;justify-content:center}
@@ -466,9 +466,20 @@ footer .copy{color:rgba(255,255,255,.18);font-size:12px}
       <p style="margin:0;font-size:15px;color:var(--text-light)"><strong style="color:var(--graphite)">Разновозрастная программа:</strong> сезон не&nbsp;делится по&nbsp;возрастам — младшие и&nbsp;старшие живут вместе, учатся взаимодействовать, поддерживать друг друга и&nbsp;договариваться.</p>
     </div>
 
-    <p class="r r3" style="font-weight:500;color:var(--graphite);margin-top:24px"><strong>Важный принцип: жизнь на&nbsp;базе планируют сами дети.</strong> Взрослые (тренеры и&nbsp;консультанты) поддерживают и&nbsp;направляют, но&nbsp;основные решения ребята принимают сами. Это создаёт реальный опыт ответственности, а&nbsp;не&nbsp;просто «говорильню на&nbsp;тренингах».</p>
-
-    <p class="r r3" style="font-size:15px;color:var(--text-light);margin-top:16px">У&nbsp;детей есть ежедневная рутина: зарядка, завтрак, уборка, дежурство, прогулка. Самостоятельность начинается не&nbsp;с&nbsp;решения глобальных вопросов, а&nbsp;с&nbsp;умения следить за&nbsp;своими вещами, вовремя вставать, помогать другим и&nbsp;договариваться о&nbsp;быте. Дети участвуют в&nbsp;обсуждении распорядка дня, дежурные команды предлагают меню, ребята учатся заявлять о&nbsp;своих желаниях, учитывать мнение других и&nbsp;договариваться. Взрослые не&nbsp;развлекают детей постоянно&nbsp;— они помогают им проявлять инициативу и&nbsp;организовывать свои идеи. Именно в&nbsp;этом живом опыте и&nbsp;рождается ответственность.</p>
+    <div class="r r3" style="margin-top:24px;display:grid;gap:14px">
+      <div style="padding:18px 20px;background:var(--white);border-radius:12px;border-left:3px solid var(--baikal-light)">
+        <strong style="font-size:15px;color:var(--graphite);display:block;margin-bottom:6px">Дети участвуют в решениях</strong>
+        <p style="margin:0;font-size:14px;color:var(--text-light);line-height:1.6">Распорядок дня, правила, дежурства, меню — ребята обсуждают и&nbsp;принимают решения вместе.</p>
+      </div>
+      <div style="padding:18px 20px;background:var(--white);border-radius:12px;border-left:3px solid var(--baikal-light)">
+        <strong style="font-size:15px;color:var(--graphite);display:block;margin-bottom:6px">Быт становится практикой самостоятельности</strong>
+        <p style="margin:0;font-size:14px;color:var(--text-light);line-height:1.6">Свои вещи, уборка, помощь другим, ответственность за&nbsp;порядок — это не&nbsp;обязанности, а&nbsp;часть жизни в&nbsp;команде.</p>
+      </div>
+      <div style="padding:18px 20px;background:var(--white);border-radius:12px;border-left:3px solid var(--baikal-light)">
+        <strong style="font-size:15px;color:var(--graphite);display:block;margin-bottom:6px">Свободное время не заполняют взрослые</strong>
+        <p style="margin:0;font-size:14px;color:var(--text-light);line-height:1.6">Дети учатся предлагать идеи, договариваться и&nbsp;организовывать свой досуг сами.</p>
+      </div>
+    </div>
 
     <div class="card-grid" style="margin-top:24px">
       <div class="card r"><div class="icon">👥</div><h4>Групповые занятия</h4><p>Каждый день программы посвящён одной теме: я, дружба, чувства, команда, семья, цели, мечты, отношения. В&nbsp;течение дня занятие строится вокруг неё — через игры, обсуждения и&nbsp;практические задания.</p></div>
@@ -819,79 +830,93 @@ footer .copy{color:rgba(255,255,255,.18);font-size:12px}
   <div class="section-inner">
     <div class="label r" style="text-align:center">Участие</div>
     <h2 class="title r r1" style="text-align:center">Ближайшие сезоны</h2>
-    <div style="display:grid;gap:16px;margin-top:24px">
-      <div class="card r" style="padding:24px 24px 20px;background:#F5F9FC;border-radius:14px;border-left:4px solid var(--baikal);margin:0">
-        <div style="display:flex;gap:12px;align-items:flex-start;flex-wrap:wrap">
-          <span style="font-size:24px;flex-shrink:0">✅</span>
-          <div style="flex:1;min-width:200px">
-            <h4 style="font-size:16px;font-weight:600;color:var(--graphite);margin-bottom:6px">29 июня — 6 июля · 1 сезон, неделя</h4>
-            <p style="margin:0;font-size:14px;color:var(--text-light);line-height:1.6">Старший тренер: Павел Попов<br>Тренер: Саяна Федерова<br>Стажёр: Максарова Цырена</p>
-          </div>
-        </div>
-      </div>
-      <div class="card r r1" style="padding:24px 24px 20px;background:#F5F9FC;border-radius:14px;border-left:4px solid var(--baikal);margin:0">
-        <div style="display:flex;gap:12px;align-items:flex-start;flex-wrap:wrap">
-          <span style="font-size:24px;flex-shrink:0">✅</span>
-          <div style="flex:1;min-width:200px">
-            <h4 style="font-size:16px;font-weight:600;color:var(--graphite);margin-bottom:6px">7–17 июля · 2 сезон, 10 дней</h4>
-            <p style="margin:0;font-size:14px;color:var(--text-light);line-height:1.6">Ведущий тренер: Анна Марактаева<br>Стажёры: Екатерина Албашеева, Татьяна Говенько, Александр Марактаев</p>
-          </div>
-        </div>
-      </div>
-      <div class="card r r2" style="padding:24px 24px 20px;background:#F5F9FC;border-radius:14px;border-left:4px solid var(--baikal);margin:0">
-        <div style="display:flex;gap:12px;align-items:flex-start;flex-wrap:wrap">
-          <span style="font-size:24px;flex-shrink:0">✅</span>
-          <div style="flex:1;min-width:200px">
-            <h4 style="font-size:16px;font-weight:600;color:var(--graphite);margin-bottom:6px">31 июля — 10 августа · 10 дней</h4>
-            <p style="margin:0;font-size:14px;color:var(--text-light);line-height:1.6">Ведущий тренер: Анна Марактаева<br>Стажёры: Александр Бадмаев, Александр Марактаев</p>
-          </div>
-        </div>
-      </div>
-      <div class="card r r2" style="padding:24px 24px 20px;background:#F5F9FC;border-radius:14px;border-left:4px solid var(--baikal);margin:0">
-        <div style="display:flex;gap:12px;align-items:flex-start;flex-wrap:wrap">
-          <span style="font-size:24px;flex-shrink:0">✅</span>
-          <div style="flex:1;min-width:200px">
-            <h4 style="font-size:16px;font-weight:600;color:var(--graphite);margin-bottom:6px">11–19 августа · 3 сезон, неделя</h4>
-            <p style="margin:0;font-size:14px;color:var(--text-light);line-height:1.6">Старший тренер: Светлана Ноздрина<br>Стажёры: Цырена Максарова, Оюна Имыкшенова</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="price-card r r3">
-      <h3>Стоимость участия</h3>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px">
-        <div style="text-align:center">
-          <div class="price-amount">40 000 <span>₽</span></div>
-          <div style="font-size:14px;color:var(--text-light)">7-дневный сезон</div>
-        </div>
-        <div style="text-align:center">
-          <div class="price-amount">55 000 <span>₽</span></div>
-          <div style="font-size:14px;color:var(--text-light)">10-дневный сезон</div>
-        </div>
-      </div>
-      <div style="padding:10px 14px;background:rgba(95,168,211,.08);border-radius:8px;font-size:13px;color:var(--baikal);font-weight:600;margin-bottom:16px">При раннем бронировании действуют специальные условия</div>
 
-      <div style="border-top:1px solid rgba(142,197,232,0.2);margin:16px 0 0"></div>
-      <div class="price-includes">
-        <li>проживание на базе</li>
-        <li>питание</li>
-        <li>участие в программе</li>
-        <li>групповые занятия и практики</li>
-        <li>игры, командные задания и обсуждения</li>
-        <li>сопровождение команды</li>
-        <li>родительское собрание перед сезоном</li>
-        <li>обратная связь от психолога после программы</li>
-        <li>трансфер от Улан-Удэ до базы и обратно</li>
-        <li>индивидуальная консультация для родителей после сезона</li>
-        <li>сопровождение родителей во время сезона в родительском чате</li>
+    <div style="display:grid;gap:12px;margin-top:24px">
+      <div class="card r" style="padding:16px 20px;background:#F5F9FC;border-radius:12px;border-left:3px solid var(--baikal-light);margin:0">
+        <div style="display:flex;gap:10px;align-items:flex-start">
+          <div style="flex:1;min-width:0">
+            <div style="font-size:14px;font-weight:600;color:var(--graphite);margin-bottom:2px">29 июня — 6 июля · неделя</div>
+            <div style="font-size:13px;color:var(--text-light)">Павел Попов, Саяна Федорова, Цырена Максарова</div>
+          </div>
+        </div>
+      </div>
+      <div class="card r r1" style="padding:16px 20px;background:#F5F9FC;border-radius:12px;border-left:3px solid var(--baikal);margin:0">
+        <div style="display:flex;gap:10px;align-items:flex-start">
+          <div style="flex:1;min-width:0">
+            <div style="font-size:14px;font-weight:600;color:var(--graphite);margin-bottom:2px">7 — 17 июля · 10 дней</div>
+            <div style="font-size:13px;color:var(--text-light)">Анна Марактаева, Екатерина Албашеева, Татьяна Говенько, Александр Марактаев</div>
+          </div>
+        </div>
+      </div>
+      <div class="card r r2" style="padding:16px 20px;background:#F5F9FC;border-radius:12px;border-left:3px solid var(--baikal);margin:0">
+        <div style="display:flex;gap:10px;align-items:flex-start">
+          <div style="flex:1;min-width:0">
+            <div style="font-size:14px;font-weight:600;color:var(--graphite);margin-bottom:2px">31 июля — 10 августа · 10 дней</div>
+            <div style="font-size:13px;color:var(--text-light)">Анна Марактаева, Александр Бадмаев, Александр Марактаев</div>
+          </div>
+        </div>
+      </div>
+      <div class="card r r2" style="padding:16px 20px;background:#F5F9FC;border-radius:12px;border-left:3px solid var(--baikal-light);margin:0">
+        <div style="display:flex;gap:10px;align-items:flex-start">
+          <div style="flex:1;min-width:0">
+            <div style="font-size:14px;font-weight:600;color:var(--graphite);margin-bottom:2px">11 — 19 августа · неделя</div>
+            <div style="font-size:13px;color:var(--text-light)">Светлана Ноздрина, Цырена Максарова, Оюна Имыкшенова</div>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="highlight r r4" style="margin-top:0">
-      <p style="margin:0;font-size:14px;color:var(--text-light);line-height:1.7"><strong style="color:var(--graphite)">Количество мест ограничено:</strong> нам важно сохранить камерный формат и внимание к каждому ребёнку.</p>
-      <p style="margin:12px 0 0;font-size:14px;color:var(--text-light);line-height:1.7">Чем раньше вы бронируете место, тем спокойнее проходит подготовка к сезону — и тем выгоднее стоимость участия.</p>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:28px 0 20px">
+      <div style="padding:28px 24px;background:#F5F9FC;border-radius:14px;text-align:center;border:1px solid rgba(142,197,232,0.2)">
+        <div style="font-size:13px;font-weight:600;color:var(--baikal);text-transform:uppercase;letter-spacing:1px;margin-bottom:4px">7-дневный сезон</div>
+        <div style="font-size:13px;color:var(--text-light);margin-bottom:16px">29 июня — 6 июля · 11 — 19 августа</div>
+        <div class="price-amount" style="margin-bottom:0">40 000 <span>₽</span></div>
+      </div>
+      <div style="padding:28px 24px;background:#F5F9FC;border-radius:14px;text-align:center;border:1px solid rgba(142,197,232,0.2)">
+        <div style="font-size:13px;font-weight:600;color:var(--baikal);text-transform:uppercase;letter-spacing:1px;margin-bottom:4px">10-дневный сезон</div>
+        <div style="font-size:13px;color:var(--text-light);margin-bottom:16px">7 — 17 июля · 31 июля — 10 августа</div>
+        <div class="price-amount" style="margin-bottom:0">55 000 <span>₽</span></div>
+      </div>
     </div>
-    <p class="r r4" style="font-size:14px;color:var(--text-light);text-align:center;max-width:500px;margin:0 auto">Напишите организатору — Анна ответит на вопросы и расскажет, как забронировать место.</p>
-    <div style="text-align:center;margin-top:24px" class="r r4">
+
+    <p style="text-align:center;font-size:13px;color:var(--text-light);margin:0 0 24px">При раннем бронировании возможны специальные условия — уточните у&nbsp;организатора.</p>
+
+    <div style="background:#F5F9FC;border-radius:14px;padding:24px 20px;border:1px solid rgba(142,197,232,0.15)">
+      <div style="font-size:13px;font-weight:600;color:var(--baikal);text-transform:uppercase;letter-spacing:1px;margin-bottom:16px;text-align:center">В стоимость входит</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px">
+        <div style="background:var(--white);border-radius:10px;padding:16px">
+          <div style="font-size:13px;font-weight:600;color:var(--graphite);margin-bottom:10px">Проживание и быт</div>
+          <div style="font-size:13px;color:var(--text-light);display:flex;flex-direction:column;gap:6px">
+            <span style="display:flex;align-items:center;gap:6px"><span style="color:var(--baikal);font-weight:600;font-size:12px">✓</span>проживание на базе</span>
+            <span style="display:flex;align-items:center;gap:6px"><span style="color:var(--baikal);font-weight:600;font-size:12px">✓</span>питание</span>
+            <span style="display:flex;align-items:center;gap:6px"><span style="color:var(--baikal);font-weight:600;font-size:12px">✓</span>трансфер от Улан-Удэ до базы и обратно</span>
+          </div>
+        </div>
+        <div style="background:var(--white);border-radius:10px;padding:16px">
+          <div style="font-size:13px;font-weight:600;color:var(--graphite);margin-bottom:10px">Программа</div>
+          <div style="font-size:13px;color:var(--text-light);display:flex;flex-direction:column;gap:6px">
+            <span style="display:flex;align-items:center;gap:6px"><span style="color:var(--baikal);font-weight:600;font-size:12px">✓</span>участие в программе</span>
+            <span style="display:flex;align-items:center;gap:6px"><span style="color:var(--baikal);font-weight:600;font-size:12px">✓</span>групповые занятия и практики</span>
+            <span style="display:flex;align-items:center;gap:6px"><span style="color:var(--baikal);font-weight:600;font-size:12px">✓</span>игры, командные задания и обсуждения</span>
+          </div>
+        </div>
+        <div style="background:var(--white);border-radius:10px;padding:16px">
+          <div style="font-size:13px;font-weight:600;color:var(--graphite);margin-bottom:10px">Сопровождение</div>
+          <div style="font-size:13px;color:var(--text-light);display:flex;flex-direction:column;gap:6px">
+            <span style="display:flex;align-items:center;gap:6px"><span style="color:var(--baikal);font-weight:600;font-size:12px">✓</span>сопровождение команды</span>
+            <span style="display:flex;align-items:center;gap:6px"><span style="color:var(--baikal);font-weight:600;font-size:12px">✓</span>родительское собрание перед сезоном</span>
+            <span style="display:flex;align-items:center;gap:6px"><span style="color:var(--baikal);font-weight:600;font-size:12px">✓</span>сопровождение родителей в чате</span>
+            <span style="display:flex;align-items:center;gap:6px"><span style="color:var(--baikal);font-weight:600;font-size:12px">✓</span>индивидуальная консультация после сезона</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="highlight r r4" style="margin-top:24px;max-width:520px;margin-left:auto;margin-right:auto;padding:16px 24px">
+      <p style="margin:0;font-size:14px;color:var(--text-light);line-height:1.6"><strong style="color:var(--graphite)">Количество мест ограничено:</strong> нам важно сохранить камерный формат и внимание к каждому ребёнку.</p>
+    </div>
+    <p class="r r4" style="font-size:14px;color:var(--text-light);text-align:center;max-width:500px;margin:16px auto 0">Напишите организатору — Анна ответит на вопросы и расскажет, как забронировать место.</p>
+    <div style="text-align:center;margin-top:16px" class="r r4">
       <a href="https://vk.me/annamaraktaeva" target="_blank" class="btn btn-primary btn-lg">Забронировать место</a>
     </div>
   </div>
