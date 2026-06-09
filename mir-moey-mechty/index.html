@@ -683,13 +683,102 @@ footer .copy{color:rgba(255,255,255,.18);font-size:12px}
   </div>
 </section>
 
+<style>
+.review-card{display:flex;gap:16px;padding:20px 24px;background:var(--white);border-radius:14px;margin-bottom:16px;transition:all .3s}
+.review-card:hover{box-shadow:var(--shadow)}
+.review-avatar{width:48px;height:48px;border-radius:50%;flex-shrink:0;background:var(--sand)}
+.review-body{flex:1;min-width:0}
+.review-name{font-weight:600;font-size:15px;color:var(--graphite);margin-bottom:4px}
+.review-text{font-size:14px;color:var(--text-light);line-height:1.7;margin:0;white-space:pre-line}
+.clip-scroll{display:flex;gap:12px;overflow-x:auto;padding-bottom:8px;margin:24px 0 8px;-webkit-overflow-scrolling:touch;scroll-snap-type:x mandatory}
+.clip-scroll::-webkit-scrollbar{height:4px}
+.clip-scroll::-webkit-scrollbar-thumb{background:var(--sand);border-radius:4px}
+.clip-item{flex-shrink:0;width:160px;scroll-snap-align:start;border-radius:10px;overflow:hidden;cursor:pointer;background:#fff;box-shadow:0 2px 12px rgba(45,45,45,.06);transition:all .3s}
+.clip-item:hover{box-shadow:var(--shadow-hover);transform:translateY(-3px)}
+.clip-preview{position:relative;width:100%;aspect-ratio:1/1;background:var(--sand);display:flex;align-items:center;justify-content:center}
+.clip-preview::after{content:'';position:absolute;inset:0;background:rgba(0,0,0,.12);z-index:1}
+.clip-play{position:absolute;z-index:2;width:40px;height:40px;background:rgba(0,0,0,.4);border-radius:50%;display:flex;align-items:center;justify-content:center}
+.clip-play svg{width:20px;height:20px;fill:white}
+@media(max-width:640px){.clip-item{width:140px}.review-card{flex-direction:column;align-items:flex-start;gap:10px;padding:16px}.review-avatar{width:40px;height:40px}}
+</style>
+
 <!-- 12. ОТЗЫВЫ -->
-<section style="background:#F5F9FC">
+<section style="background:#F5F9FC" id="reviews">
   <div class="section-inner">
     <div class="label r" style="text-align:center">Отзывы</div>
     <h2 class="title r r1" style="text-align:center">Что говорят дети и&nbsp;родители</h2>
-    <div class="highlight r r2">
-      <p style="margin:0;font-size:15px;color:var(--text-light);text-align:center">Скоро здесь появятся реальные отзывы детей и&nbsp;родителей после согласования публикации.</p>
+
+    <p class="r r2" style="text-align:center;font-size:16px;color:var(--text-light);margin-bottom:8px">После программы дети рассказывают, что&nbsp;для&nbsp;них стало важным</p>
+
+    <div class="clip-scroll r r2">
+      <div class="clip-item" onclick="window.open('https://vkvideo.ru/clip-52472195_456239581','_blank')">
+        <div class="clip-preview" style="background:linear-gradient(160deg,var(--baikal-light),var(--baikal))">
+          <div class="clip-play"><svg viewBox="0 0 24 24"><polygon points="8,5 8,19 19,12"/></svg></div>
+        </div>
+      </div>
+      <div class="clip-item" onclick="window.open('https://vkvideo.ru/clip-52472195_456239580','_blank')">
+        <div class="clip-preview" style="background:linear-gradient(160deg,var(--baikal-light),var(--baikal))">
+          <div class="clip-play"><svg viewBox="0 0 24 24"><polygon points="8,5 8,19 19,12"/></svg></div>
+        </div>
+      </div>
+      <div class="clip-item" onclick="window.open('https://vkvideo.ru/clip-52472195_456239579','_blank')">
+        <div class="clip-preview" style="background:linear-gradient(160deg,var(--baikal-light),var(--baikal))">
+          <div class="clip-play"><svg viewBox="0 0 24 24"><polygon points="8,5 8,19 19,12"/></svg></div>
+        </div>
+      </div>
+      <div class="clip-item" onclick="window.open('https://vkvideo.ru/clip-52472195_456239578','_blank')">
+        <div class="clip-preview" style="background:linear-gradient(160deg,var(--baikal-light),var(--baikal))">
+          <div class="clip-play"><svg viewBox="0 0 24 24"><polygon points="8,5 8,19 19,12"/></svg></div>
+        </div>
+      </div>
+      <div class="clip-item" onclick="window.open('https://vkvideo.ru/clip-52472195_456239577','_blank')">
+        <div class="clip-preview" style="background:linear-gradient(160deg,var(--baikal-light),var(--baikal))">
+          <div class="clip-play"><svg viewBox="0 0 24 24"><polygon points="8,5 8,19 19,12"/></svg></div>
+        </div>
+      </div>
+      <div class="clip-item" onclick="window.open('https://vkvideo.ru/clip-52472195_456239576','_blank')">
+        <div class="clip-preview" style="background:linear-gradient(160deg,var(--baikal-light),var(--baikal))">
+          <div class="clip-play"><svg viewBox="0 0 24 24"><polygon points="8,5 8,19 19,12"/></svg></div>
+        </div>
+      </div>
+      <div class="clip-item" onclick="window.open('https://vkvideo.ru/clip-52472195_456239575','_blank')">
+        <div class="clip-preview" style="background:linear-gradient(160deg,var(--baikal-light),var(--baikal))">
+          <div class="clip-play"><svg viewBox="0 0 24 24"><polygon points="8,5 8,19 19,12"/></svg></div>
+        </div>
+      </div>
+    </div>
+
+    <h3 class="r r2" style="text-align:center;font-size:20px;font-weight:600;color:var(--graphite);margin:32px 0 24px">Что отмечают родители</h3>
+
+    <div class="r r2">
+      <div class="review-card">
+        <div class="review-avatar" style="background-image:url(отзывы1.jpg);background-size:cover;background-position:center"></div>
+        <div class="review-body">
+          <div class="review-name">Екатерина</div>
+          <p class="review-text">Всем добрый вечер! После лагеря наблюдаю за&nbsp;Таней. Стала ещё более независимой. Буквально на&nbsp;днях на&nbsp;полке нашли конверт с&nbsp;записками. Прочитали вместе! Очень была рада! До&nbsp;этого она мне запретила читать.<br><br>Таня сейчас учится в&nbsp;3&nbsp;кл. и&nbsp;её выбрали старостой класса. Она очень рада! Сказала Таня: &laquo;Я&nbsp;же ответственная, активная и&nbsp;справлюсь с&nbsp;этой задачей&raquo;. Это во-первых.<br><br>Во&nbsp;вторых, сбылась моя мечта! Ещё в&nbsp;далёком 2009&nbsp;г. проходила базовые тренинги в&nbsp;ВЦВ, я&nbsp;замечтала когда у&nbsp;меня будут дети, что обязательно отправлю в&nbsp;лагерь &laquo;Мир&nbsp;моей&nbsp;мечты&raquo;! Нынче дочери исполнилось 8&nbsp;лет и&nbsp;я&nbsp;отправила в&nbsp;лагерь.</p>
+        </div>
+      </div>
+      <div class="review-card r r1">
+        <div class="review-avatar" style="background-image:url(отзывы2.jpg);background-size:cover;background-position:center"></div>
+        <div class="review-body">
+          <div class="review-name">Татьяна</div>
+          <p class="review-text">Добрый день, Аня и&nbsp;родители! Алёша поначалу очень хотел в&nbsp;лагерь обратно, встретиться с&nbsp;новыми друзьями. Стал рассудительным, анализирует разные ситуации, учится в&nbsp;5&nbsp;классе, стал лидером в&nbsp;классе, учителя хвалят.<br><br>Хочет съездить в&nbsp;Улан-Удэ, пообщаться с&nbsp;друзьями МММ. В&nbsp;общем, я&nbsp;очень довольна результатами!</p>
+        </div>
+      </div>
+      <div class="review-card r r2">
+        <div class="review-avatar" style="background-image:url(отзывы3.jpg);background-size:cover;background-position:center"></div>
+        <div class="review-body">
+          <div class="review-name">Цырена</div>
+          <p class="review-text">Дорогие тренеры, Аня, Саяна, Саша, Алина и&nbsp;консультанты, Лейла и&nbsp;Лера, огромная вам благодарность за&nbsp;сезон! Доча очень довольна, для&nbsp;меня, как&nbsp;для&nbsp;мамы, раскрылась с&nbsp;другой стороны)<br><br>В&nbsp;предыдущие года ездила в&nbsp;обычный лагерь и&nbsp;вроде тоже всё нравилось, но&nbsp;сейчас, попав в&nbsp;атмосферу любви и&nbsp;уважения, говорит, что&nbsp;в&nbsp;обычном лагере и&nbsp;дети, и&nbsp;взрослые как-то злее там, что&nbsp;чувствовала напряжение из-за&nbsp;того, что&nbsp;кто-то просто может наорать.<br><br>А&nbsp;в&nbsp;МММ чувствовала себя комфортно, спокойно, самостоятельно и&nbsp;поддержку со&nbsp;стороны взрослых. Благодарю всю команду за&nbsp;труд, за&nbsp;вашу любовь, веру и&nbsp;поддержку! Вы&nbsp;вносите большой вклад в&nbsp;будущее.</p>
+        </div>
+      </div>
+      <div class="review-card r r3">
+        <div class="review-avatar" style="background-image:url(отзывы4.jpg);background-size:cover;background-position:center"></div>
+        <div class="review-body">
+          <div class="review-name">Ирина</div>
+          <p class="review-text">Доброе утро!!! Хочу поблагодарить всех тренеров и&nbsp;организаторов данного тренинга, за&nbsp;проведение таких нужных и&nbsp;качественных мероприятий, ребенок в&nbsp;восторге, эмоции переполняют, как&nbsp;много положительных впечатлений и&nbsp;знаний пережил мой сын за&nbsp;эту маленькую неделю.<br><br>Теперь скучает и&nbsp;собирается с&nbsp;братом на&nbsp;следующий год! Вы&nbsp;профессионалы своего дела! Процветания вам и&nbsp;успехов дорогие тренеры и&nbsp;организаторы!!! Большое вам спасибо!!!</p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -766,7 +855,7 @@ footer .copy{color:rgba(255,255,255,.18);font-size:12px}
           <div style="font-size:14px;color:var(--text-light)">7-дневный сезон</div>
         </div>
         <div style="text-align:center">
-          <div class="price-amount" style="font-size:36px">55 000 <span>₽</span></div>
+          <div class="price-amount">55 000 <span>₽</span></div>
           <div style="font-size:14px;color:var(--text-light)">10-дневный сезон</div>
         </div>
       </div>
