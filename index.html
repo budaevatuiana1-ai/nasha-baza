@@ -77,6 +77,10 @@ nav.scrolled ~ .nav-links{top:12px}
 .nav-links a:hover{color:var(--white)}
 nav.scrolled ~ .nav-links a{color:#5F6368}
 nav.scrolled ~ .nav-links a:hover{color:var(--baikal)}
+.nav-links .nav-highlight a{font-weight:600;color:rgba(255,255,255,.95)}
+nav.scrolled ~ .nav-links .nav-highlight a{color:var(--baikal);font-weight:600}
+.nav-links .nav-highlight a::before{content:'•';margin-right:4px;color:var(--baikal-light);font-size:18px;line-height:1;display:inline-block;vertical-align:middle}
+nav.scrolled ~ .nav-links .nav-highlight a::before{color:var(--baikal)}
 .nav-cta{
   background:rgba(255,255,255,.2);color:var(--white)!important;
   padding:9px 22px;border-radius:100px;font-size:13px!important;
@@ -405,6 +409,8 @@ footer .copy{color:rgba(255,255,255,.18);font-size:12px}
   .nav-links.open{display:flex;position:fixed;inset:0;flex-direction:column;background:rgba(255,255,255,.88);backdrop-filter:blur(12px);gap:4px;padding:70px 40px 40px;z-index:1001;justify-content:flex-start;align-items:center;overflow-y:auto;top:0!important;right:0!important;left:0!important;bottom:0!important}
   .nav-links.open a{color:var(--graphite)!important;font-size:18px;padding:14px 0;border-bottom:1px solid rgba(142,197,232,.12);width:100%;text-align:center;font-weight:500;flex-shrink:0}
   .nav-links.open a:hover{color:var(--baikal)!important}
+  .nav-links.open .nav-highlight a{color:var(--baikal)!important;font-weight:600}
+  .nav-links.open .nav-highlight a::before{content:'•';margin-right:4px;color:var(--baikal-light);font-size:22px;line-height:1;display:inline-block;vertical-align:middle}
   .nav-links.open li:last-child{margin-top:56px}
   .nav-links.open li:last-child a{border:none!important;padding:16px 36px!important;background:var(--baikal)!important;color:var(--white)!important;border-radius:100px;width:auto!important;font-size:16px!important;font-weight:600!important;margin:0!important}
   .nav-toggle.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
@@ -442,7 +448,7 @@ footer .copy{color:rgba(255,255,255,.18);font-size:12px}
   <li><a href="#rooms">Проживание</a></li>
   <li><a href="#spaces">Пространства</a></li>
   <li><a href="#baikal">Байкал</a></li>
-  <li><a href="/mir-moey-mechty/">Мир Моей Мечты</a></li>
+  <li class="nav-highlight"><a href="/mir-moey-mechty/">Мир Моей Мечты</a></li>
   <li><a href="#price">Стоимость</a></li>
   <li><a href="#contact">Контакты</a></li>
    <li><a href="https://vk.me/annamaraktaeva" target="_blank" class="nav-cta">Связаться</a></li>
